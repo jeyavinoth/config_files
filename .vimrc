@@ -47,6 +47,7 @@ syntax on
 
 " pathogen.vim
 execute pathogen#infect()
+filetype plugin indent on
 
 " commentary 
 autocmd FileType python setlocal commentstring=#\ %s  " python
