@@ -26,8 +26,10 @@ set cursorline " show cursor line
   " set cursorline to highlight
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 " hi CursorLine term=bold cterm=bold guibg=Grey40
-hi CursorLine ctermbg=darkgrey cterm=none
+hi CursorLine ctermbg=lightgrey cterm=none
 
+" setting colorscheme
+colorscheme hybrid
   
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
