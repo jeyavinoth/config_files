@@ -56,6 +56,9 @@ autocmd FileType python setlocal commentstring=#\ %s  " python
 autocmd FileType vim setlocal commentstring=\"\ %s    " vim 
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
 
+" getting rid of autocommenting next line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
   " start NerdTree if no files specified
