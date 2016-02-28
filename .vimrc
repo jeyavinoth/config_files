@@ -47,9 +47,14 @@ set encoding=utf-8
 " syntax 
 syntax on
 
+" adding empty line before and after
+nmap <C-j> o<Esc>
+nmap <C-k> O<Esc>
+
 " pathogen.vim
 execute pathogen#infect()
 filetype plugin indent on
+
 
 " commentary 
 autocmd FileType python setlocal commentstring=#\ %s  " python
