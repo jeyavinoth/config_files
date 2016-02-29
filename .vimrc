@@ -51,6 +51,9 @@ syntax on
 nmap <C-j> o<Esc>
 nmap <C-k> O<Esc>
 
+" highlighting all the search values 
+set hlsearch
+
 " pathogen.vim
 execute pathogen#infect()
 filetype plugin indent on
