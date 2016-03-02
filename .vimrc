@@ -58,6 +58,11 @@ set hlsearch
 execute pathogen#infect()
 filetype plugin indent on
 
+" indentLine (display vertical lines)
+" set list lcs=tab:\|\
+
+" autoclose parenthesis
+let delimitMate_expand_cr = 1
 
 " commentary 
 autocmd FileType python setlocal commentstring=#\ %s  " python

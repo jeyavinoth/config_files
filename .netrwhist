@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/jj/.vim/bundle'
 let g:netrw_dirhist_2='/home/jj/.local/lib'
 let g:netrw_dirhist_3='/home/jj/.config/powerline/themes'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/media/diskstation/homes/jj/marco/swe_algorithm/swe_l2a/s
 let g:netrw_dirhist_6='/media/diskstation/homes/jj/marco/swe_algorithm/swe_l2a/src/snow/level3/granule'
 let g:netrw_dirhist_7='/home/jj/.vim/bundle'
 let g:netrw_dirhist_8='/Users/JJ/.vim/bundle'
+let g:netrw_dirhist_9='/Users/JJ/.vim'
