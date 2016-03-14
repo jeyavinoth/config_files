@@ -29,7 +29,8 @@ set cursorline " show cursor line
 hi CursorLine ctermbg=lightgrey cterm=none
 
 " setting colorscheme
-colorscheme hybrid
+colorscheme jellybeans
+" colorscheme hybrid
   
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
