@@ -26,12 +26,31 @@ set cursorline " show cursor line
   " set cursorline to highlight
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 " hi CursorLine term=bold cterm=bold guibg=Grey40
-hi CursorLine ctermbg=lightgrey cterm=none
+hi CursorLine ctermbg=darkgrey cterm=none
 
 " setting colorscheme
+
+" jellybeans theme
 colorscheme jellybeans
+
+" lucius theme (select one from below)
+" LuciusDark (dark default)
+" LuciusDarkHighContrast
+" LuciusDarkLowContrast
+" LuciusBlack
+" LuciusBlackHighContrast
+" LuciusBlackLowContrast
+" LuciusLight (light default)
+" LuciusLightLowContrast
+" LuciusWhite
+" LuciusWhiteLowContrast
+
+" colorscheme lucius
+" LuciusBlackLowContrast
+
+" hybrid theme
 " colorscheme hybrid
-  
+
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
 set shiftwidth=2 " >> | << moves by 2 spaces
@@ -61,9 +80,6 @@ filetype plugin indent on
 
 " indentLine (display vertical lines)
 " set list lcs=tab:\|\
-
-" autoclose parenthesis
-let delimitMate_expand_cr = 1
 
 " commentary 
 autocmd FileType python setlocal commentstring=#\ %s  " python
