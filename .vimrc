@@ -31,7 +31,8 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " setting colorscheme
 
 " jellybeans theme
-" colorscheme jellybeans
+" colorscheme hybrid
+colorscheme jellybeans
 
 " lucius theme (select one from below)
 " LuciusDark (dark default)
@@ -45,11 +46,11 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " LuciusWhite
 " LuciusWhiteLowContrast
 
-colorscheme lucius
-LuciusBlackLowContrast
+" colorscheme lucius
+" LuciusBlackLowContrast
 
 " hybrid theme
-colorscheme hybrid
+" colorscheme hybrid
 
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
