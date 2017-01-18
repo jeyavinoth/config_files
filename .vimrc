@@ -34,7 +34,7 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " setting colorscheme
 
 " jellybeans theme
-colorscheme jellybeans
+" colorscheme jellybeans
 
 " lucius theme (select one from below)
 " LuciusDark (dark default)
@@ -52,7 +52,7 @@ colorscheme lucius
 LuciusBlackLowContrast
 
 " hybrid theme
-" colorscheme hybrid
+colorscheme hybrid
 
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
@@ -70,9 +70,9 @@ set encoding=utf-8
 " syntax 
 syntax on
 
-" adding empty line before and after
-nmap <C-j> o<Esc>
-nmap <C-k> O<Esc>
+" " adding empty line before and after
+" nmap <C-j> o<Esc>
+" nmap <C-k> O<Esc>
 
 " highlighting all the search values 
 set hlsearch
@@ -113,3 +113,11 @@ let g:ctrlp_working_path_mode = 'ra'
   " ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+" Code Folding
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable folding with the spacebar
+nnoremap <space> za
