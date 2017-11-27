@@ -2,15 +2,16 @@
 " set rtp+=/home/jj/.local/lib/python3.2/site-packages/powerline/bindings/vim
 " set rtp+=/home/jj/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
 set t_Co=256
 
-" let g:minBufExplForceSyntaxEnable = 1
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
+let g:minBufExplForceSyntaxEnable = 1
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 
 if ! has('gui_running')
@@ -33,8 +34,13 @@ hi CursorLine ctermbg=darkgrey cterm=none
 
 " setting colorscheme
 
+" testing colorschemes
+
 " jellybeans theme
 " colorscheme jellybeans
+
+" Monokai
+" colorscheme Monokai
 
 " lucius theme (select one from below)
 " LuciusDark (dark default)
@@ -48,8 +54,8 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " LuciusWhite
 " LuciusWhiteLowContrast
 
-colorscheme lucius
-LuciusBlackLowContrast
+" colorscheme lucius
+" LuciusBlackLowContrast
 
 " hybrid theme
 colorscheme hybrid
