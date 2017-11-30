@@ -35,9 +35,11 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " setting colorscheme
 
 " testing colorschemes
+colorscheme 256_noir
+colorscheme afterglow
 
 " jellybeans theme
-colorscheme jellybeans
+" colorscheme jellybeans
 
 " Monokai
 " colorscheme Monokai
@@ -45,12 +47,14 @@ colorscheme jellybeans
 " lucius theme (select one from below)
 " colorscheme lucius
 " LuciusDark (dark default)
+" LuciusDark
 " LuciusDarkHighContrast
 " LuciusDarkLowContrast
 " LuciusBlack
 " LuciusBlackHighContrast
 " LuciusBlackLowContrast
 " LuciusLight (light default)
+" LuciusLight
 " LuciusLightLowContrast
 " LuciusWhite
 " LuciusWhiteLowContrast
