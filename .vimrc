@@ -1,14 +1,32 @@
 " powerline settings 
-set rtp+=/home/jj/.local/lib/python3.4/site-packages/powerline/bindings/vim
+" set rtp+=/home/jj/.local/lib/python3.4/site-packages/powerline/bindings/vim
+
+func! WordProcessor()
+  " movement changes
+  map j gj
+  map k gk
+  " formatting text
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal wrap
+  setlocal linebreak
+  " spelling and thesaurus
+  setlocal spell spelllang=en_us
+  set thesaurus+=/Users/jj/.vim/thesaurus/mthesaur.txt
+  " complete+=s makes autocompletion search the thesaurus
+  set complete+=s
+endfu
+com! WP call WordProcessor()
+
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
 set t_Co=256
 
-let g:minBufExplForceSyntaxEnable = 1
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" let g:minBufExplForceSyntaxEnable = 1
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -31,7 +49,7 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " setting colorscheme
 
 " jellybeans theme
-" colorscheme jellybeans
+colorscheme jellybeans
 
 " lucius theme (select one from below)
 " LuciusDark (dark default)
@@ -49,7 +67,7 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " LuciusBlackLowContrast
 
 " hybrid theme
-colorscheme hybrid
+" colorscheme hybrid
 
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
