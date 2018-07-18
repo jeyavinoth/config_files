@@ -18,15 +18,14 @@ func! WordProcessor()
 endfu
 com! WP call WordProcessor()
 
-
 " These lines setup the evn to show graphics and colors
 set nocompatible
 set t_Co=256
 
-" let g:minBufExplForceSyntaxEnable = 1
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
+let g:minBufExplForceSyntaxEnable = 1
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -48,22 +47,31 @@ hi CursorLine ctermbg=darkgrey cterm=none
 
 " setting colorscheme
 
+" testing colorschemes
+colorscheme 256_noir
+colorscheme afterglow
+
 " jellybeans theme
 colorscheme jellybeans
 
+" Monokai
+" colorscheme Monokai
+
 " lucius theme (select one from below)
+" colorscheme lucius
 " LuciusDark (dark default)
+" LuciusDark
 " LuciusDarkHighContrast
 " LuciusDarkLowContrast
 " LuciusBlack
 " LuciusBlackHighContrast
 " LuciusBlackLowContrast
 " LuciusLight (light default)
+" LuciusLight
 " LuciusLightLowContrast
 " LuciusWhite
 " LuciusWhiteLowContrast
 
-" colorscheme lucius
 " LuciusBlackLowContrast
 
 " hybrid theme
