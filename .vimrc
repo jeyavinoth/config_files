@@ -22,7 +22,6 @@ func! WordProcessor()
 endfu
 com! WP call WordProcessor()
 
-imap <F5> <Esc>:w<CR>:!clear;python %<CR>
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
@@ -150,3 +149,5 @@ set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+map <F5> <Esc>:w<CR>:!clear;python %<CR>
