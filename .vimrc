@@ -12,7 +12,7 @@ func! WordProcessor()
   setlocal linebreak
   " spelling and thesaurus
   setlocal spell spelllang=en_us
-  set thesaurus+=/Users/jj/.vim/thesaurus/mthesaur.txt
+  set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
   " complete+=s makes autocompletion search the thesaurus
   set complete+=s
 endfu
@@ -48,11 +48,14 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " setting colorscheme
 
 " testing colorschemes
-colorscheme 256_noir
-colorscheme afterglow
+" colorscheme 256_noir
+" colorscheme afterglow
 
 " jellybeans theme
-colorscheme jellybeans
+" colorscheme jellybeans
+colorscheme gruvbox
+set background=dark
+
 
 " Monokai
 " colorscheme Monokai
@@ -98,7 +101,7 @@ syntax on
 " nmap <C-k> O<Esc>
 
 " highlighting all the search values 
-set hlsearch
+set nohlsearch
 
 " pathogen.vim
 execute pathogen#infect()
