@@ -15,8 +15,13 @@ func! WordProcessor()
   set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
   " complete+=s makes autocompletion search the thesaurus
   set complete+=s
+  colorscheme hybrid-light
+  " colorscheme solarized8_high
+  " colorscheme Lucius
+  " LuciusWhite
 endfu
 com! WP call WordProcessor()
+
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
@@ -147,3 +152,5 @@ set foldlevel=99
 
 " Enable folding with the spacebar
 nnoremap <space> za
+
+map <F5> <Esc>:w<CR>:!clear;python %<CR>
