@@ -22,6 +22,8 @@ func! WordProcessor()
 endfu
 com! WP call WordProcessor()
 
+imap <F5> <Esc>:w<CR>:!clear;python %<CR>
+
 " These lines setup the evn to show graphics and colors
 set nocompatible
 set t_Co=256
