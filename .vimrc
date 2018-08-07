@@ -15,6 +15,10 @@ func! WordProcessor()
   set thesaurus+=/Users/jj/.vim/thesaurus/mthesaur.txt
   " complete+=s makes autocompletion search the thesaurus
   set complete+=s
+  colorscheme hybrid-light
+  " colorscheme solarized8_high
+  " colorscheme Lucius
+  " LuciusWhite
 endfu
 com! WP call WordProcessor()
 
