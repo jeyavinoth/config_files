@@ -9,6 +9,7 @@ bundle/vim-airline
 bundle/ctrlp.vim
 bunlde/auto-pairs
 bundle/deoplete.nvim
+bundle/VimCompletesMe
 
 
 

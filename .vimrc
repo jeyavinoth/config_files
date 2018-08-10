@@ -32,6 +32,7 @@ endfu
 com! PW call WordProcessor()
 
 " VUNLDE PACKAGES TO BE INSTALLED
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'chrisbra/vim-commentary'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -42,6 +43,7 @@ Plugin 'jiangmiao/auto-pairs'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ajh17/VimCompletesMe'
 
 " STANDARD SETTINGS FOR VIM
 set laststatus=2 "Always display the statusline in all windows
@@ -146,4 +148,8 @@ map <F5> <Esc>:w<CR>:!clear;python %<CR>
 
 " let g:ycm_key_list_select_completion=[]
 " let g:ycm_key_list_previous_completion=[]
+
+" " VimCompletesMe
+" autocmd FileType vim let b:vcm_tab_complete = 'vim'
+
 
