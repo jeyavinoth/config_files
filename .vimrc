@@ -4,6 +4,8 @@
 set nocompatible
 filetype off
 set t_Co=256
+filetype plugin on
+filetype plugin indent on
 
 " setting up vundle install
 set rtp+=~/.vim/bundle/vundle/
@@ -34,6 +36,7 @@ com! PW call WordProcessor()
 " VUNLDE PACKAGES TO BE INSTALLED
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'chrisbra/vim-commentary'
+" Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
@@ -103,7 +106,6 @@ set background=dark
 
 " " pathogen.vim
 " execute pathogen#infect()
-" filetype plugin indent on
 
 " indentLine (display vertical lines)
 " set list lcs=tab:\|\
