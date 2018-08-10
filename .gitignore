@@ -11,5 +11,6 @@ bunlde/auto-pairs
 bundle/deoplete.nvim
 bundle/VimCompletesMe
 bunlde/nerdcommenter
+bunlde/tcomment_vim
 
 

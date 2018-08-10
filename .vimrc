@@ -13,48 +13,53 @@ call vundle#rc()
 
 " Call a word prcoessor version of VIM if needed by type :PW
 func! WordProcessor()
-  " movement changes
-  map j gj
-  map k gk
-  " formatting text
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  setlocal wrap
-  setlocal linebreak
-  " spelling and thesaurus
-  setlocal spell spelllang=en_us
-  set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
-  " complete+=s makes autocompletion search the thesaurus
-  set complete+=s
-  colorscheme hybrid-light
-  " colorscheme solarized8_high
-  " colorscheme Lucius
-  " LuciusWhite
+" movement changes
+map j gj
+map k gk
+" formatting text
+setlocal formatoptions=1
+setlocal noexpandtab
+setlocal wrap
+setlocal linebreak
+" spelling and thesaurus
+setlocal spell spelllang=en_us
+set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
+" complete+=s makes autocompletion search the thesaurus
+set complete+=s
+colorscheme hybrid-light
+" colorscheme solarized8_high
+" colorscheme Lucius
+" LuciusWhite
 endfu
 com! PW call WordProcessor()
 
 " VUNLDE PACKAGES TO BE INSTALLED
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'chrisbra/vim-commentary'
-" Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ajh17/VimCompletesMe'
 
+" Plugin 'chrisbra/vim-commentary'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'scrooloose/nerdcommenter'
+
 " STANDARD SETTINGS FOR VIM
+
 set laststatus=2 "Always display the statusline in all windows
 set noshowmode " Hide the default mode text
 set cursorline " show cursor line
+
   " set cursorline to highlight
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 " hi CursorLine term=bold cterm=bold guibg=Grey40
+
 hi CursorLine ctermbg=darkgrey cterm=none
 set mouse=a " allow mouse usage
 set ts=2 " set tab spacing as 2
@@ -62,12 +67,12 @@ set shiftwidth=2 " >> | << moves by 2 spaces
 set autoindent " auto indents the next line
 set expandtab " expands tab to spaces
 set showmatch " shows matching brackets/quotes
-set completeopt=longest,menuone " no idea what this ist 
+set completeopt=longest,menuone " no idea what this ist
 set rnu " setting relative numbers
 set nu " setting the absolute number as well
 set encoding=utf-8 " set encoding in vimrc
-syntax on " setting syntax 
-set nohlsearch " highlighting all the search values 
+syntax on " setting syntax
+set nohlsearch " highlighting all the search values
 
 " SETTING COLORSCHEME
 
@@ -77,6 +82,7 @@ set nohlsearch " highlighting all the search values
 
 " jellybeans theme
 " colorscheme jellybeans
+
 colorscheme gruvbox
 set background=dark
 
@@ -111,8 +117,9 @@ set background=dark
 " set list lcs=tab:\|\
 
 " commentary additional settings
+
 autocmd FileType python setlocal commentstring=#\ %s  " python
-autocmd FileType vim setlocal commentstring=\"\ %s    " vim 
+autocmd FileType vim setlocal commentstring=\"\ %s    " vim
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " getting rid of autocommenting next line
 
