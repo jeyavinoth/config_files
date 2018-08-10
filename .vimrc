@@ -1,6 +1,15 @@
-" powerline settings 
-" set rtp+=/home/jj/.local/lib/python3.4/site-packages/powerline/bindings/vim
+" VIMRC - for Jeyavinoth Jeyavinoth
 
+" These lines setup the evn to show graphics and colors
+set nocompatible
+filetype off
+set t_Co=256
+
+" setting up vundle install
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Call a word prcoessor version of VIM if needed by type :PW
 func! WordProcessor()
   " movement changes
   map j gj
@@ -20,28 +29,21 @@ func! WordProcessor()
   " colorscheme Lucius
   " LuciusWhite
 endfu
-com! WP call WordProcessor()
+com! PW call WordProcessor()
 
+" VUNLDE PACKAGES TO BE INSTALLED
+Plugin 'chrisbra/vim-commentary'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'shougo/deoplete.nvim'
+Plugin 'vim-airline/vim-airline'
 
-" These lines setup the evn to show graphics and colors
-set nocompatible
-set t_Co=256
-
-" let g:minBufExplForceSyntaxEnable = 1
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
-" edditing standard vim settings
+" STANDARD SETTINGS FOR VIM
 set laststatus=2 "Always display the statusline in all windows
 set noshowmode " Hide the default mode text
 set cursorline " show cursor line
@@ -49,8 +51,20 @@ set cursorline " show cursor line
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 hi CursorLine ctermbg=darkgrey cterm=none
+set mouse=a " allow mouse usage
+set ts=2 " set tab spacing as 2
+set shiftwidth=2 " >> | << moves by 2 spaces
+set autoindent " auto indents the next line
+set expandtab " expands tab to spaces
+set showmatch " shows matching brackets/quotes
+set completeopt=longest,menuone " no idea what this ist 
+set rnu " setting relative numbers
+set nu " setting the absolute number as well
+set encoding=utf-8 " set encoding in vimrc
+syntax on " setting syntax 
+set nohlsearch " highlighting all the search values 
 
-" setting colorscheme
+" SETTING COLORSCHEME
 
 " testing colorschemes
 " colorscheme 256_noir
@@ -60,7 +74,6 @@ hi CursorLine ctermbg=darkgrey cterm=none
 " colorscheme jellybeans
 colorscheme gruvbox
 set background=dark
-
 
 " Monokai
 " colorscheme Monokai
@@ -85,43 +98,19 @@ set background=dark
 " hybrid theme
 " colorscheme hybrid
 
-set mouse=a " allow mouse usage
-set ts=2 " set tab spacing as 2
-set shiftwidth=2 " >> | << moves by 2 spaces
-set autoindent " auto indents the next line
-set expandtab " expands tab to spaces
-set showmatch " shows matching brackets/quotes
-set completeopt=longest,menuone " no idea what this ist 
-set rnu " setting relative numbers
-set nu " setting the absolute number as well
 
-" set encoding in vimrc
-set encoding=utf-8
-
-" syntax 
-syntax on
-
-" " adding empty line before and after
-" nmap <C-j> o<Esc>
-" nmap <C-k> O<Esc>
-
-" highlighting all the search values 
-set nohlsearch
-
-" pathogen.vim
-execute pathogen#infect()
-filetype plugin indent on
+" " pathogen.vim
+" execute pathogen#infect()
+" filetype plugin indent on
 
 " indentLine (display vertical lines)
 " set list lcs=tab:\|\
 
-" commentary 
+" commentary additional settings
 autocmd FileType python setlocal commentstring=#\ %s  " python
 autocmd FileType vim setlocal commentstring=\"\ %s    " vim 
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
-
-" getting rid of autocommenting next line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " getting rid of autocommenting next line
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -154,3 +143,7 @@ set foldlevel=99
 nnoremap <space> za
 
 map <F5> <Esc>:w<CR>:!clear;python %<CR>
+
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+
