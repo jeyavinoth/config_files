@@ -1,17 +1,22 @@
 " powerline settings 
 " set rtp+=/home/jj/.local/lib/python3.2/site-packages/powerline/bindings/vim
-" set rtp+=/home/jj/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=/home/jj/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 " set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
+
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
 set t_Co=256
+set laststatus=2
 
-let g:minBufExplForceSyntaxEnable = 1
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+let g:ycm_server_python_interpreter = ''
+
+
+"let g:minBufExplForceSyntaxEnable = 1
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
 
 
 if ! has('gui_running')
