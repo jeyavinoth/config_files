@@ -51,29 +51,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'scrooloose/nerdcommenter'
 
-" STANDARD SETTINGS FOR VIM
-
-set laststatus=2 "Always display the statusline in all windows
-set noshowmode " Hide the default mode text
-set cursorline " show cursor line
-
-  " set cursorline to highlight
-" hi CursorLine term=bold cterm=bold guibg=Grey40
-" hi CursorLine term=bold cterm=bold guibg=Grey40
-
-hi CursorLine ctermbg=darkgrey cterm=none
-set mouse=a " allow mouse usage
-set ts=2 " set tab spacing as 2
-set shiftwidth=2 " >> | << moves by 2 spaces
-set autoindent " auto indents the next line
-set expandtab " expands tab to spaces
-set showmatch " shows matching brackets/quotes
-set completeopt=longest,menuone " no idea what this ist
-set rnu " setting relative numbers
-set nu " setting the absolute number as well
-set encoding=utf-8 " set encoding in vimrc
-syntax on " setting syntax
-set nohlsearch " highlighting all the search values
 
 " SETTING COLORSCHEME
 
@@ -161,3 +138,27 @@ map <F5> <Esc>:w<CR>:!clear;python %<CR>
 
 " " VimCompletesMe
 " autocmd FileType vim let b:vcm_tab_complete = 'vim'
+
+" STANDARD SETTINGS FOR VIM
+
+set laststatus=2 "Always display the statusline in all windows
+set noshowmode " Hide the default mode text
+set cursorline " show cursor line
+
+  " set cursorline to highlight
+" hi CursorLine term=bold cterm=bold guibg=Grey40
+" hi CursorLine term=bold cterm=bold guibg=Grey40
+
+hi CursorLine ctermbg=darkgrey cterm=none
+set mouse=a " allow mouse usage
+set ts=2 " set tab spacing as 2
+set shiftwidth=2 " >> | << moves by 2 spaces
+set autoindent " auto indents the next line
+set expandtab " expands tab to spaces
+set showmatch " shows matching brackets/quotes
+set completeopt=longest,menuone " no idea what this ist
+set rnu " setting relative numbers
+set nu " setting the absolute number as well
+set encoding=utf-8 " set encoding in vimrc
+syntax on " setting syntax
+set nohlsearch " highlighting all the search values
