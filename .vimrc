@@ -27,6 +27,10 @@ setlocal spell spelllang=en_us
 set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
 " complete+=s makes autocompletion search the thesaurus
 set complete+=s
+set tw=79
+set fo?
+set fo+=t
+set fo-=l
 colorscheme hybrid-light
 " colorscheme solarized8_high
 " colorscheme Lucius
