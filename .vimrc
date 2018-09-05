@@ -19,7 +19,7 @@ map j gj
 map k gk
 " formatting text
 setlocal formatoptions=1
-setlocal noexpandtab
+" setlocal noexpandtab
 setlocal wrap
 setlocal linebreak
 " spelling and thesaurus
@@ -49,12 +49,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
-" Plugin 'ajh17/VimCompletesMe'
-
-" Plugin 'chrisbra/vim-commentary'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'scrooloose/nerdcommenter'
 
+" Plugin 'ajh17/VimCompletesMe'
+" Plugin 'chrisbra/vim-commentary'
+" Plugin 'scrooloose/nerdcommenter'
 
 " SETTING COLORSCHEME
 
@@ -101,6 +100,7 @@ set background=dark
 " commentary additional settings
 
 autocmd FileType python setlocal commentstring=#\ %s  " python
+autocmd FileType python setlocal ts=2 sts=2 et sw=2  " python
 autocmd FileType vim setlocal commentstring=\"\ %s    " vim
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " getting rid of autocommenting next line
@@ -135,7 +135,7 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-map <F5> <Esc>:w<CR>:!clear;python %<CR>
+map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
 " let g:ycm_key_list_select_completion=[]
 " let g:ycm_key_list_previous_completion=[]
@@ -155,7 +155,7 @@ set cursorline " show cursor line
 
 hi CursorLine ctermbg=darkgrey cterm=none
 set mouse=a " allow mouse usage
-set ts=2 " set tab spacing as 2
+set tabstop=2 " set tab spacing as 2
 set shiftwidth=2 " >> | << moves by 2 spaces
 set autoindent " auto indents the next line
 set expandtab " expands tab to spaces
