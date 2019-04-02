@@ -7,10 +7,10 @@ bundle/vim-fugitive
 bundle/vim-repeat
 bundle/vim-airline
 bundle/ctrlp.vim
-bunlde/auto-pairs
+bundle/auto-pairs
 bundle/deoplete.nvim
 bundle/VimCompletesMe
-bunlde/nerdcommenter
-bunlde/tcomment_vim
+bundle/nerdcommenter
+bundle/vim-multiple-cursors
 
 

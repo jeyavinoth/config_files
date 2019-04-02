@@ -45,6 +45,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
+
 " Plugin 'ajh17/VimCompletesMe'
 
 " Plugin 'chrisbra/vim-commentary'
@@ -115,6 +117,11 @@ let g:NERDTreeDirArrows=0
   " remapping hot key
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|nc|mat|png|jpeg|jpg|pyc)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
   " start at current directory
 let g:ctrlp_working_path_mode = 'ra'
