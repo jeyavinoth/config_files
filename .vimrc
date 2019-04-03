@@ -133,6 +133,7 @@ let g:ctrlp_working_path_mode = 'ra'
   " ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
 
 " Code Folding
 " Enable folding
@@ -172,4 +173,4 @@ set rnu " setting relative numbers
 set nu " setting the absolute number as well
 set encoding=utf-8 " set encoding in vimrc
 syntax on " setting syntax
-set nohlsearch " highlighting all the search values
+" set nohlsearch " turn off highlighting all the search values
