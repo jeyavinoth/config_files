@@ -51,7 +51,7 @@ Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 
-" Plugin 'ajh17/VimCompletesMe'
+Plugin 'ajh17/VimCompletesMe'
 " Plugin 'chrisbra/vim-commentary'
 " Plugin 'scrooloose/nerdcommenter'
 
@@ -59,13 +59,13 @@ Plugin 'Valloric/YouCompleteMe'
 
 " testing colorschemes
 " colorscheme 256_noir
-" colorscheme afterglow
+colorscheme afterglow
 
-" jellybeans theme
+" " jellybeans theme
 " colorscheme jellybeans
 
-colorscheme gruvbox
-set background=dark
+" colorscheme gruvbox
+" set background=dark
 
 " Monokai
 " colorscheme Monokai
