@@ -64,7 +64,7 @@ Plugin 'Valloric/YouCompleteMe'
 " jellybeans theme
 " colorscheme jellybeans
 
-colorscheme gruvbox
+" colorscheme gruvbox
 set background=dark
 
 " Monokai
@@ -88,7 +88,7 @@ set background=dark
 " LuciusBlackLowContrast
 
 " hybrid theme
-" colorscheme hybrid
+colorscheme hybrid
 
 
 " " pathogen.vim
@@ -147,10 +147,11 @@ map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
 set laststatus=2 "Always display the statusline in all windows
 set noshowmode " Hide the default mode text
-set cursorline " show cursor line
+" set cursorline " show cursor line
 
   " set cursorline to highlight
-" hi CursorLine term=bold cterm=bold guibg=Grey40
+" hi CursorLine term=bold cterm=underline 
+" hi CursorLine term=bold cterm=bold guibg=Grey93
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 
 hi CursorLine ctermbg=darkgrey cterm=none
