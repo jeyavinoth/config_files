@@ -90,7 +90,7 @@ set background=dark
 
 " LuciusBlackLowContrast
 
-" hybrid theme
+" " hybrid theme
 " colorscheme hybrid
 
 
@@ -174,4 +174,6 @@ set rnu " setting relative numbers
 set nu " setting the absolute number as well
 set encoding=utf-8 " set encoding in vimrc
 syntax on " setting syntax
-" set nohlsearch " turn off highlighting all the search values
+set nohlsearch " highlighting all the search values
+
+set clipboard=unnamed
