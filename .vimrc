@@ -59,13 +59,13 @@ Plugin 'Valloric/YouCompleteMe'
 
 " testing colorschemes
 " colorscheme 256_noir
-colorscheme afterglow
+" colorscheme afterglow
 
 " " jellybeans theme
 " colorscheme jellybeans
 
-" colorscheme gruvbox
-" set background=dark
+colorscheme gruvbox
+set background=dark
 
 " Monokai
 " colorscheme Monokai
