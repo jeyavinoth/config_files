@@ -50,9 +50,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
-Plugin 'neoclide/coc.nvim'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Yggdroot/indentLine'
+" Plugin 'neoclide/coc.nvim'
 
 " Plugin 'ajh17/VimCompletesMe'
 
