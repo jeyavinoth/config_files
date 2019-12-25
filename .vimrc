@@ -49,7 +49,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
+
+" Plugin 'ajh17/VimCompletesMe'
 
 " Plugin 'ajh17/VimCompletesMe'
 " Plugin 'chrisbra/vim-commentary'
@@ -64,7 +67,7 @@ Plugin 'Valloric/YouCompleteMe'
 " jellybeans theme
 " colorscheme jellybeans
 
-" colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
 
 " Monokai
@@ -88,8 +91,7 @@ set background=dark
 " LuciusBlackLowContrast
 
 " hybrid theme
-colorscheme hybrid
-
+" colorscheme hybrid
 
 " " pathogen.vim
 " execute pathogen#infect()
@@ -119,6 +121,11 @@ let g:NERDTreeDirArrows=0
   " remapping hot key
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|nc|mat|png|jpeg|jpg|pyc)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
   " start at current directory
 let g:ctrlp_working_path_mode = 'ra'
@@ -126,6 +133,7 @@ let g:ctrlp_working_path_mode = 'ra'
   " ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
 
 " Code Folding
 " Enable folding
@@ -167,3 +175,10 @@ set nu " setting the absolute number as well
 set encoding=utf-8 " set encoding in vimrc
 syntax on " setting syntax
 set nohlsearch " highlighting all the search values
+
+set clipboard=unnamed
+
+set backupdir=~/.vim/tmp//,.
+set directory=~/.vim/tmp//,.
+
+set backup
