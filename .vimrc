@@ -51,7 +51,7 @@ Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'KabbAmine/vCoolor.vim'
+Plugin 'KabbAmine/vCoolor.vim' " color picker for vim 
 " Plugin 'junegunn/fzf.vim'
 
 " Plugin 'ajh17/VimCompletesMe'
@@ -92,9 +92,8 @@ set background=dark
 
 " LuciusBlackLowContrast
 
-" " hybrid theme
+" hybrid theme
 " colorscheme hybrid
-
 
 " " pathogen.vim
 " execute pathogen#infect()
@@ -158,10 +157,11 @@ map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
 set laststatus=2 "Always display the statusline in all windows
 set noshowmode " Hide the default mode text
-set cursorline " show cursor line
+" set cursorline " show cursor line
 
   " set cursorline to highlight
-" hi CursorLine term=bold cterm=bold guibg=Grey40
+" hi CursorLine term=bold cterm=underline 
+" hi CursorLine term=bold cterm=bold guibg=Grey93
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 
 hi CursorLine ctermbg=darkgrey cterm=none
@@ -179,3 +179,8 @@ syntax on " setting syntax
 set nohlsearch " highlighting all the search values
 
 set clipboard=unnamed
+
+set backupdir=~/.vim/tmp//,.
+set directory=~/.vim/tmp//,.
+
+set backup
