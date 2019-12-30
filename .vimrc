@@ -43,16 +43,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
-Plugin 'neoclide/coc.nvim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'KabbAmine/vCoolor.vim' " color picker for vim 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Plugin 'ajh17/VimCompletesMe'
 
@@ -92,9 +93,8 @@ set background=dark
 
 " LuciusBlackLowContrast
 
-" " hybrid theme
+" hybrid theme
 " colorscheme hybrid
-
 
 " " pathogen.vim
 " execute pathogen#infect()
@@ -110,8 +110,11 @@ autocmd FileType vim setlocal commentstring=\"\ %s    " vim
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " getting rid of autocommenting next line
 
+" FZF ctrl-p remap 
+map <C-p> :Files <CR>
+
 " NerdTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeToggle<CR>
   " start NerdTree if no files specified
 autocmd StdinReadPre * let s:std_in=1
   " close vim if NerdTree only left open
@@ -120,23 +123,23 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
   " no fancy arrows
 let g:NERDTreeDirArrows=0
 
-" ctrlp fuzzy file search
-  " remapping hot key
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|nc|mat|png|jpeg|jpg|pyc)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
-  " start at current directory
-let g:ctrlp_working_path_mode = 'ra'
-
-  " ignore files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
+" " ctrlp fuzzy file search
+"   " remapping hot key
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+"   \ 'file': '\v\.(exe|so|dll|nc|mat|png|jpeg|jpg|pyc)$',
+"   \ 'link': 'some_bad_symbolic_links',
+"   \ }
+"
+"   " start at current directory
+" let g:ctrlp_working_path_mode = 'ra'
+"
+"   " ignore files
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
 
 " Code Folding
 " Enable folding
@@ -158,10 +161,11 @@ map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
 set laststatus=2 "Always display the statusline in all windows
 set noshowmode " Hide the default mode text
-set cursorline " show cursor line
+" set cursorline " show cursor line
 
   " set cursorline to highlight
-" hi CursorLine term=bold cterm=bold guibg=Grey40
+" hi CursorLine term=bold cterm=underline 
+" hi CursorLine term=bold cterm=bold guibg=Grey93
 " hi CursorLine term=bold cterm=bold guibg=Grey40
 
 hi CursorLine ctermbg=darkgrey cterm=none
@@ -179,3 +183,8 @@ syntax on " setting syntax
 set nohlsearch " highlighting all the search values
 
 set clipboard=unnamed
+
+set backupdir=~/.vim/tmp//,.
+set directory=~/.vim/tmp//,.
+
+set backup
