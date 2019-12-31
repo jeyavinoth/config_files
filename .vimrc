@@ -188,4 +188,9 @@ set backupdir=~/.vim/tmp//,.
 set directory=~/.vim/tmp//,.
 
 set backup
+set swapfile
 set undofile
+
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
