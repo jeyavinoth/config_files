@@ -191,6 +191,5 @@ set backup
 set swapfile
 set undofile
 
-set backupdir=.backup/,~/.backup/,/tmp//
-set directory=.swp/,~/.swp/,/tmp//
-set undodir=.undo/,~/.undo/,/tmp//
+set backupdir=.backup//,~/.backup//,/tmp//
+set undodir=.undo//,~/.undo//,/tmp//
