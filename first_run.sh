@@ -13,7 +13,6 @@ ln -s ./.tmux.conf ~/.tmux.conf
 # making directories needed for my vim files
 mkdir ~/.backup
 mkdir ~/.undo
-mkdir ~/.swp
 
 # adding alias to zshrc 
 echo 'alias tmux="tmux -2"' >> ~/.zshrc
