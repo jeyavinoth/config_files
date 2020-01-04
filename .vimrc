@@ -54,6 +54,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'KabbAmine/vCoolor.vim' " color picker for vim 
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jupyter-vim/jupyter-vim'
 
 " Plugin 'ajh17/VimCompletesMe'
 
@@ -113,11 +114,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 " FZF ctrl-p remap 
 map <C-p> :Files <CR>
 
-" NerdTree
-map <C-m> :NERDTreeToggle<CR>
+" " NerdTree
+" map <C-m> :NERDTreeToggle<CR>
 "   " start NerdTree if no files specified
 " autocmd StdinReadPre * let s:std_in=1
-
 "   " close vim if NerdTree only left open
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
