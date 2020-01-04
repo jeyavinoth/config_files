@@ -55,6 +55,7 @@ Plugin 'KabbAmine/vCoolor.vim' " color picker for vim
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jupyter-vim/jupyter-vim'
+Plugin 'masukomi/vim-markdown-folding'
 
 " Plugin 'ajh17/VimCompletesMe'
 
@@ -144,11 +145,11 @@ map <C-p> :Files <CR>
 
 " " Code Folding
 " " Enable folding
-" set foldmethod=manual
+set foldmethod=manual
 " set foldlevel=99
 "
-" " Enable folding with the spacebar
-" nnoremap <space> za
+" Enable folding with the spacebar
+nnoremap <space> za
 
 map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
@@ -202,3 +203,14 @@ augroup AutoSaveFolds
   autocmd BufWinLeave * mkview
   autocmd BufWinEnter * silent loadview
 augroup END
+
+" Jupyter stuff to connect
+nnoremap <buffer> <silent> <localleader>C :JupyterConnect<CR>
+
+" " my custom fold operation
+" nnoremap <buffer> <silent> <localleader><space><CR>
+
+" nnoremap \z :setlocal foldmethod=expr foldexpr=getline(v:lnum)=='##'?'>1':getline(v:lnum)=='##'<1':'='
+" nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
+
+map <leader>z /##<CR>V?##<CR>
