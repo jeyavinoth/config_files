@@ -142,13 +142,13 @@ map <C-p> :Files <CR>
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 " set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
 
-" Code Folding
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
+" " Code Folding
+" " Enable folding
+" set foldmethod=manual
+" set foldlevel=99
+"
+" " Enable folding with the spacebar
+" nnoremap <space> za
 
 map <F5> <Esc>:w<CR>:!clear;./%<CR>
 
@@ -194,3 +194,11 @@ set undofile
 
 set backupdir=.backup//,~/.backup//,/tmp//
 set undodir=.undo//,~/.undo//,/tmp//
+
+
+" Saving Folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
