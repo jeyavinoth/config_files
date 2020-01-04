@@ -115,13 +115,14 @@ map <C-p> :Files <CR>
 
 " NerdTree
 map <C-m> :NERDTreeToggle<CR>
-  " start NerdTree if no files specified
-autocmd StdinReadPre * let s:std_in=1
-  " close vim if NerdTree only left open
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  " no fancy arrows
-let g:NERDTreeDirArrows=0
+"   " start NerdTree if no files specified
+" autocmd StdinReadPre * let s:std_in=1
+
+"   " close vim if NerdTree only left open
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"   " no fancy arrows
+" let g:NERDTreeDirArrows=0
 
 " " ctrlp fuzzy file search
 "   " remapping hot key
@@ -188,3 +189,8 @@ set backupdir=~/.vim/tmp//,.
 set directory=~/.vim/tmp//,.
 
 set backup
+set swapfile
+set undofile
+
+set backupdir=.backup//,~/.backup//,/tmp//
+set undodir=.undo//,~/.undo//,/tmp//
