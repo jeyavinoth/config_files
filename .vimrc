@@ -54,6 +54,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'KabbAmine/vCoolor.vim' " color picker for vim 
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jupyter-vim/jupyter-vim'
+Plugin 'masukomi/vim-markdown-folding'
 
 " Plugin 'chrisbra/vim-commentary'
 " Plugin 'scrooloose/nerdcommenter'
@@ -113,15 +115,15 @@ map <C-p> :Files <CR>
 let g:fzf_layout = {'left': '50%'}
 " let g:fzf_layout = {'window': 'split enew'}
 
-" NerdTree
-map <C-m> :NERDTreeToggle<CR>
-  " start NerdTree if no files specified
-autocmd StdinReadPre * let s:std_in=1
-  " close vim if NerdTree only left open
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  " no fancy arrows
-let g:NERDTreeDirArrows=0
+" " NerdTree
+" map <C-m> :NERDTreeToggle<CR>
+"   " start NerdTree if no files specified
+" autocmd StdinReadPre * let s:std_in=1
+"   " close vim if NerdTree only left open
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"   " no fancy arrows
+" let g:NERDTreeDirArrows=0
 
 " " ctrlp fuzzy file search
 "   " remapping hot key
@@ -141,11 +143,11 @@ let g:NERDTreeDirArrows=0
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 " set wildignore+=*.mat,*.nc,*.nc4,*.hdf,*.he5,*.pyc  " Data files
 
-" Code Folding
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
+" " Code Folding
+" " Enable folding
+set foldmethod=manual
+" set foldlevel=99
+"
 " Enable folding with the spacebar
 nnoremap <space> za
 
@@ -188,3 +190,27 @@ set backupdir=~/.vim/tmp//,.
 set directory=~/.vim/tmp//,.
 
 set backup
+set swapfile
+set undofile
+
+set backupdir=.backup//,~/.backup//,/tmp//
+set undodir=.undo//,~/.undo//,/tmp//
+
+
+" Saving Folds
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+" Jupyter stuff to connect
+nnoremap <buffer> <silent> <localleader>C :JupyterConnect<CR>
+
+" " my custom fold operation
+" nnoremap <buffer> <silent> <localleader><space><CR>
+
+" nnoremap \z :setlocal foldmethod=expr foldexpr=getline(v:lnum)=='##'?'>1':getline(v:lnum)=='##'<1':'='
+" nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
+
+map <leader>z /##<CR>V?##<CR>
