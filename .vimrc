@@ -57,9 +57,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jupyter-vim/jupyter-vim'
 Plugin 'masukomi/vim-markdown-folding'
 
-" Plugin 'ajh17/VimCompletesMe'
-
-" Plugin 'ajh17/VimCompletesMe'
 " Plugin 'chrisbra/vim-commentary'
 " Plugin 'scrooloose/nerdcommenter'
 
@@ -69,7 +66,7 @@ Plugin 'masukomi/vim-markdown-folding'
 " colorscheme 256_noir
 " colorscheme afterglow
 
-" jellybeans theme
+" " jellybeans theme
 " colorscheme jellybeans
 
 colorscheme gruvbox
@@ -114,6 +111,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 
 " FZF ctrl-p remap 
 map <C-p> :Files <CR>
+" Azore fix
+let g:fzf_layout = {'left': '50%'}
+" let g:fzf_layout = {'window': 'split enew'}
 
 " " NerdTree
 " map <C-m> :NERDTreeToggle<CR>
