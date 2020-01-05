@@ -214,3 +214,13 @@ nnoremap <buffer> <silent> <localleader>C :JupyterConnect<CR>
 " nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
 
 map <leader>z /##<CR>V?##<CR>
+
+" " forcing view to start up on no virtual env
+" " Always use the same virtualenv for vim, regardless of what Python
+" " environment is loaded in the shell from which vim is launched
+" let g:vim_virtualenv_path = '/mnt/home/jj/vim_env/'
+" if exists('g:vim_virtualenv_path')
+"     pythonx import os; import vim
+"     pythonx activate_this = os.path.join(vim.eval('g:vim_virtualenv_path'), 'bin/activate_this.py')
+"     pythonx with open(activate_this) as f: exec(f.read(), {'__file__': activate_this})
+" endif
