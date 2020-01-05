@@ -109,6 +109,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 
 " FZF ctrl-p remap 
 map <C-p> :Files <CR>
+" Azore fix
+let g:fzf_layout = {'left': '50%'}
+" let g:fzf_layout = {'window': 'split enew'}
 
 " NerdTree
 map <C-m> :NERDTreeToggle<CR>
