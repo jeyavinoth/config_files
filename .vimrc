@@ -206,9 +206,10 @@ augroup END
 
 let mapleader=','
 " Jupyter stuff to connect
-nnoremap <buffer> <silent> <localleader>c :JupyterConnect<CR>
+nnoremap <buffer> <silent> <leader>c :JupyterConnect<CR>
 nnoremap <buffer> <silent> <leader>R :JupyterRunFile<CR>
 nnoremap <buffer> <silent> <leader>r :JupyterSendCell<CR>
+nnoremap <buffer> <silent> <leader>d :JupyterCd %:p:h<CR>
 nnoremap <buffer> <silent> <leader>g :JupyterSendRange<CR>
 " nnoremap <buffer> <silent> <localleader>g :JupyterSendRange<CR>
 
@@ -218,7 +219,7 @@ nnoremap <buffer> <silent> <leader>g :JupyterSendRange<CR>
 " nnoremap \z :setlocal foldmethod=expr foldexpr=getline(v:lnum)=='##'?'>1':getline(v:lnum)=='##'<1':'='
 " nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
 
-map <leader>z /##<CR>V?##<CR>
+map <leader>z /##<CR>V?##<CR>zf<CR>
 
 " " forcing view to start up on no virtual env
 " " Always use the same virtualenv for vim, regardless of what Python
