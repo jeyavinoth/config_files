@@ -204,8 +204,13 @@ augroup AutoSaveFolds
   autocmd BufWinEnter * silent loadview
 augroup END
 
+let mapleader=','
 " Jupyter stuff to connect
-nnoremap <buffer> <silent> <localleader>C :JupyterConnect<CR>
+nnoremap <buffer> <silent> <localleader>c :JupyterConnect<CR>
+nnoremap <buffer> <silent> <leader>R :JupyterRunFile<CR>
+nnoremap <buffer> <silent> <leader>r :JupyterSendCell<CR>
+nnoremap <buffer> <silent> <leader>g :JupyterSendRange<CR>
+" nnoremap <buffer> <silent> <localleader>g :JupyterSendRange<CR>
 
 " " my custom fold operation
 " nnoremap <buffer> <silent> <localleader><space><CR>
