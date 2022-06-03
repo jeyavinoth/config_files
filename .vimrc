@@ -56,6 +56,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jupyter-vim/jupyter-vim'
 Plugin 'masukomi/vim-markdown-folding'
+Plugin 'ap/vim-buftabline'
 
 " Plugin 'chrisbra/vim-commentary'
 " Plugin 'scrooloose/nerdcommenter'
@@ -104,7 +105,7 @@ set background=dark
 " commentary additional settings
 
 autocmd FileType python setlocal commentstring=#\ %s  " python
-autocmd FileType python setlocal ts=2 sts=2 et sw=2  " python
+autocmd FileType python setlocal ts=4 sts=4 et sw=4  " python
 autocmd FileType vim setlocal commentstring=\"\ %s    " vim
 autocmd FileType matlab setlocal commentstring=\%\ %s " matlab
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " getting rid of autocommenting next line
@@ -112,7 +113,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 " FZF ctrl-p remap 
 map <C-p> :Files <CR>
 " Azore fix
-let g:fzf_layout = {'left': '50%'}
+" let g:fzf_layout = {'left': '50%'}
 " let g:fzf_layout = {'window': 'split enew'}
 
 " " NerdTree
@@ -172,8 +173,8 @@ set noshowmode " Hide the default mode text
 
 hi CursorLine ctermbg=darkgrey cterm=none
 set mouse=a " allow mouse usage
-set tabstop=2 " set tab spacing as 2
-set shiftwidth=2 " >> | << moves by 2 spaces
+set tabstop=4 " set tab spacing as 2
+set shiftwidth=4 " >> | << moves by 2 spaces
 set autoindent " auto indents the next line
 set expandtab " expands tab to spaces
 set showmatch " shows matching brackets/quotes
@@ -230,3 +231,8 @@ map <leader>z /##<CR>V?##<CR>zf<CR>
 "     pythonx activate_this = os.path.join(vim.eval('g:vim_virtualenv_path'), 'bin/activate_this.py')
 "     pythonx with open(activate_this) as f: exec(f.read(), {'__file__': activate_this})
 " endif
+
+" Buftabline
+set hidden
+nnoremap <C-H> :bnext<CR>
+nnoremap <C-L> :bprev<CR>
