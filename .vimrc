@@ -40,8 +40,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 colorscheme gruvbox
+set background=dark
 " colorscheme atom-dark-256
-" set background=dark
 
 " FZF ctrl-p remap
 map <C-p> :Files <CR>
