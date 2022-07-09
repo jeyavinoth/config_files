@@ -2,52 +2,24 @@
 
 " These lines setup the evn to show graphics and colors
 set nocompatible
-filetype off
 set t_Co=256
+filetype off
 
-filetype plugin on
-filetype plugin indent on
+" filetype plugin on
+" filpetype plugin indent on
 
 " setting up vundle install
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" Call a word prcoessor version of VIM if needed by type :PW
-func! WordProcessor()
-" movement changes
-map j gj
-map k gk
-" formatting text
-setlocal formatoptions=1
-" setlocal noexpandtab
-setlocal wrap
-setlocal linebreak
-" spelling and thesaurus
-setlocal spell spelllang=en_us
-set thesaurus+=/nas/users/jeyaratn/.vim/thesaurus/mthesaur.txt
-" complete+=s makes autocompletion search the thesaurus
-set complete+=s
-set tw=79
-set fo?
-set fo+=t
-set fo-=l
-colorscheme hybrid-light
-" colorscheme solarized8_high
-" colorscheme Lucius
-" LuciusWhite
-endfu
-com! PW call WordProcessor()
 
 " VUNLDE PACKAGES TO BE INSTALLED
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
-" Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'shougo/deoplete.nvim'
+" Plugin 'shougo/deoplete.nvim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
@@ -55,8 +27,10 @@ Plugin 'KabbAmine/vCoolor.vim' " color picker for vim
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jupyter-vim/jupyter-vim'
-Plugin 'masukomi/vim-markdown-folding'
 Plugin 'ap/vim-buftabline'
+
+Plugin 'masukomi/vim-markdown-folding'
+Plugin 'tpope/vim-fugitive'
 
 " Plugin 'chrisbra/vim-commentary'
 " Plugin 'scrooloose/nerdcommenter'
