@@ -10,21 +10,24 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " install Vundle
 Plugin 'Valloric/YouCompleteMe' " autocomplete vim 
 Plugin 'tpope/vim-surround' " sorround words, etc ysw)
+Plugin 'tpope/vim-fugitive' " git integration
 Plugin 'ap/vim-buftabline' " show opened buffer files on top
 Plugin 'tpope/vim-repeat' " updated . repeat
 Plugin 'junegunn/fzf' " fzf file search
 Plugin 'junegunn/fzf.vim' " fzf with vim 
 Plugin 'vim-airline/vim-airline' " powerline at bottom with details
 Plugin 'tomtom/tcomment_vim' " gcc comment
-Plugin 'jiangmiao/auto-pairs' " auto complete paranthesis
 Plugin 'dense-analysis/ale' " Linting
 Plugin 'nvie/vim-flake8' " flake8 formatting
 Plugin 'preservim/nerdtree' " nerdtree left folder browser
 Plugin 'preservim/tagbar' " tagbar on right to get tags in file
+Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Plugin 'jiangmiao/auto-pairs' " auto complete paranthesis
 
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
@@ -65,7 +68,6 @@ set rnu " set relative numbers
 set nu " set absolute numbers as well
 
 " mouse settings
-set ttymouse=xterm2
 set mouse=a " allow mouse usage
 
 syntax on " setting syntax
@@ -87,15 +89,13 @@ set foldlevel=99 " unfold everyting on file open
 
 " set linters
 let g:ale_linters = {'python' : ['flake8', 'black']}
+let g:ale_open_list = 0
 
 " nerdtree
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-
 nnoremap <C-t> :NERDTreeFocus<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+" nnoremap <C-t> :NERDTree<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
