@@ -62,12 +62,12 @@ set exrc
 set tabstop=4 " set tab spacing as 4
 set softtabstop=4 " set tab spacing 
 set shiftwidth=4 " >> | << moves by 4 spaces 
+set smartindent " smart indents lies
 set autoindent " auto indents next line 
 set expandtab " expands tab to spaces
 set showmatch " shows matching brackets/quotes
 set encoding=utf-8 " setting encoding 
 set fileformat=unix
-set smartindent
 
 set rnu " set relative numbers
 set nu " set absolute numbers as well
