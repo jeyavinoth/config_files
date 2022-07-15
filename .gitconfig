@@ -10,3 +10,12 @@
 [core]
 	editor = vim
 	excludesfile = /home/jj/.gitignore
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[merge]
+    tool = vimdiff

@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/Users/jeyavinoth/Documents/Research/phd/ml_models/dataloader'
+let g:netrw_dirhist_8='/Users/jeyavinoth/Documents/Research/phd/ml_models'
+let g:netrw_dirhist_7='/Users/jeyavinoth/Documents/Research/phd'
+let g:netrw_dirhist_6='/Users/jeyavinoth/Documents/Research'
+let g:netrw_dirhist_5='/Users/jeyavinoth/Documents/Research/convective_model'
+let g:netrw_dirhist_4='/Users/jeyavinoth/Documents/Research'
+let g:netrw_dirhist_3='/Users/jeyavinoth/Documents'
+let g:netrw_dirhist_2='/Users/jeyavinoth'
 let g:netrw_dirhist_1='/Users/jeyavinoth/.vim'

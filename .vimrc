@@ -1,4 +1,3 @@
-
 set nocompatible " be iMproved
 filetype off " required
 set t_Co=256 " 256 colors
@@ -21,6 +20,8 @@ Plugin 'nvie/vim-flake8' " flake8 formatting
 Plugin 'preservim/nerdtree' " nerdtree left folder browser
 Plugin 'preservim/tagbar' " tagbar on right to get tags in file
 Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
+Plugin 'morhetz/gruvbox' " colorscheme gruvbox
+Plugin 'airblade/vim-gitgutter' " shows the +/- for git changes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,6 +55,9 @@ map <C-p> :Files <CR>
 nnoremap <C-H> :bnext<CR> " map next buffer to ctrl+shift+H
 nnoremap <C-L> :bprev<CR> " map prev buffer to ctrl+shift+L
 
+"
+set exrc
+
 " formatting
 set tabstop=4 " set tab spacing as 4
 set softtabstop=4 " set tab spacing 
@@ -67,6 +71,14 @@ set smartindent
 
 set rnu " set relative numbers
 set nu " set absolute numbers as well
+
+set hidden " keep the buffer's open in the background
+set noerrorbells " no error bells in vim
+set guicursor= " leaves block cursors
+set incsearch " highlights as I search
+set scrolloff=5 " set the number of lines kept when scrolling
+set colorcolumn=120 " sets the a column on 120 to show that code is exceeding 120
+set signcolumn=yes " sets the sign column, that shows linting + git stuff
 
 " mouse settings
 set mouse=a " allow mouse usage
