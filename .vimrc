@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim' " install Vundle
 Plugin 'Valloric/YouCompleteMe' " autocomplete vim 
 Plugin 'tpope/vim-surround' " sorround words, etc ysw)
 Plugin 'tpope/vim-fugitive' " git integration
-Plugin 'ap/vim-buftabline' " show opened buffer files on top
 Plugin 'tpope/vim-repeat' " updated . repeat
 Plugin 'junegunn/fzf' " fzf file search
 Plugin 'junegunn/fzf.vim' " fzf with vim 
@@ -27,6 +26,7 @@ Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Plugin 'ap/vim-buftabline' " show opened buffer files on top
 " Plugin 'jiangmiao/auto-pairs' " auto complete paranthesis
 
 " To ignore plugin indent changes, instead use:
@@ -63,6 +63,7 @@ set expandtab " expands tab to spaces
 set showmatch " shows matching brackets/quotes
 set encoding=utf-8 " setting encoding 
 set fileformat=unix
+set smartindent
 
 set rnu " set relative numbers
 set nu " set absolute numbers as well
