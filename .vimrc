@@ -22,12 +22,12 @@ Plugin 'preservim/tagbar' " tagbar on right to get tags in file
 Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 Plugin 'morhetz/gruvbox' " colorscheme gruvbox
 Plugin 'airblade/vim-gitgutter' " shows the +/- for git changes
+Plugin 'ap/vim-buftabline' " show opened buffer files on top
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Plugin 'ap/vim-buftabline' " show opened buffer files on top
 " Plugin 'jiangmiao/auto-pairs' " auto complete paranthesis
 
 " To ignore plugin indent changes, instead use:
@@ -82,11 +82,7 @@ set signcolumn=yes " sets the sign column, that shows linting + git stuff
 
 " mouse settings
 set mouse=a " allow mouse usage
-
 syntax on " setting syntax
-
-" Other mappings
-nnoremap <space> za
 
 " backup, swap and undo
 set backup
@@ -104,15 +100,17 @@ set foldlevel=99 " unfold everyting on file open
 let g:ale_linters = {'python' : ['flake8', 'black']}
 let g:ale_open_list = 0
 
+" mappings n - normal mode; nore - non recursive; map - mapping
 " nerdtree
 nnoremap <C-t> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " nnoremap <C-t> :NERDTree<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
+" Other mappings
+nnoremap <space> za
+
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
-
-
 
 
