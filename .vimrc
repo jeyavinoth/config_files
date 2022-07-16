@@ -22,12 +22,12 @@ Plugin 'preservim/tagbar' " tagbar on right to get tags in file
 Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 Plugin 'morhetz/gruvbox' " colorscheme gruvbox
 Plugin 'airblade/vim-gitgutter' " shows the +/- for git changes
-Plugin 'ap/vim-buftabline' " show opened buffer files on top
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Plugin 'ap/vim-buftabline' " show opened buffer files on top
 " Plugin 'jiangmiao/auto-pairs' " auto complete paranthesis
 
 " To ignore plugin indent changes, instead use:
