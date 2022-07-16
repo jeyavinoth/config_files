@@ -19,8 +19,8 @@ Plugin 'dense-analysis/ale' " Linting
 Plugin 'nvie/vim-flake8' " flake8 formatting
 Plugin 'preservim/nerdtree' " nerdtree left folder browser
 Plugin 'preservim/tagbar' " tagbar on right to get tags in file
-Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 Plugin 'morhetz/gruvbox' " colorscheme gruvbox
+Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 Plugin 'airblade/vim-gitgutter' " shows the +/- for git changes
 
 " All of your Plugins must be added before the following line
@@ -120,4 +120,5 @@ nnoremap <C-j> :ALEPrevious<CR>
 " Open buffer remap
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 
-
+" setting background to None
+" highlight Normal ctermbg=NONE
