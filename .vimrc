@@ -121,4 +121,4 @@ nnoremap <C-k> :ALEPrevious<CR>
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 
 " setting background to None
-" highlight Normal ctermbg=NONE
+highlight Normal ctermbg=NONE
