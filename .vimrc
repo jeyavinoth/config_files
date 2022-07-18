@@ -99,6 +99,7 @@ set foldlevel=99 " unfold everyting on file open
 " set linters
 let g:ale_linters = {'python' : ['flake8', 'black']}
 let g:ale_open_list = 0
+call ale#Set('python_flake8_options', '--config=$HOME/.config/flake8') " ensure flake8 uses global config
 
 " mappings n - normal mode; nore - non recursive; map - mapping
 " nerdtree
@@ -122,3 +123,6 @@ nnoremap <leader>b :buffers<CR>:buffer<Space>
 
 " setting background to None
 " highlight Normal ctermbg=NONE
+
+" remove trailing whitespaces
+nnoremap <leader>w :%s/\s\+$//e<CR>
