@@ -115,8 +115,8 @@ nnoremap <space> za
 nnoremap <leader>t :TagbarToggle<CR>
 
 " ALE linter mappings
-nnoremap <C-k> :ALENext<CR>
-nnoremap <C-j> :ALEPrevious<CR>
+nnoremap <C-j> :ALENext<CR>
+nnoremap <C-k> :ALEPrevious<CR>
 
 " Open buffer remap
 nnoremap <leader>b :buffers<CR>:buffer<Space>
