@@ -101,6 +101,11 @@ let g:ale_linters = {'python' : ['flake8', 'black']}
 let g:ale_open_list = 0
 call ale#Set('python_flake8_options', '--config=$HOME/.config/flake8') " ensure flake8 uses global config
 
+" MAPPINGS
+
+" Remap the leader 
+let mapleader = " " " remap leader to space
+
 " mappings n - normal mode; nore - non recursive; map - mapping
 " nerdtree
 nnoremap <C-t> :NERDTreeFocus<CR>
@@ -109,7 +114,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
 " Other mappings
-nnoremap <space> za
+" nnoremap <space> za
 
 " tagbar
 nnoremap <leader>t :TagbarToggle<CR>
@@ -125,4 +130,7 @@ nnoremap <leader>b :buffers<CR>:buffer<Space>
 " highlight Normal ctermbg=NONE
 
 " remove trailing whitespaces
-nnoremap <leader>w :%s/\s\+$//e<CR>
+nnoremap <leader>e :%s/\s\+$//e<CR>
+
+" remapping window operations
+nnoremap <Leader>w <C-w>
