@@ -107,8 +107,8 @@ call ale#Set('python_flake8_options', '--config=$HOME/.config/flake8') " ensure 
 let mapleader = " " " remap leader to space
 
 " mappings n - normal mode; nore - non recursive; map - mapping
-" nerdtree
-nnoremap <C-t> :NERDTreeFocus<CR>
+" Nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " nnoremap <C-t> :NERDTree<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
@@ -117,7 +117,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " nnoremap <space> za
 
 " tagbar
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle fj<CR>
 
 " ALE linter mappings
 nnoremap <C-j> :ALENext<CR>
@@ -133,4 +133,8 @@ nnoremap <leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>e :%s/\s\+$//e<CR>
 
 " remapping window operations
-nnoremap <Leader>w <C-w>
+nnoremap <leader>w <C-w>
+
+" Running Python
+autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>
+
