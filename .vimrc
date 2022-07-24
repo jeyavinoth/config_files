@@ -138,3 +138,7 @@ nnoremap <leader>w <C-w>
 " Running Python
 autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>
 
+" mergetool
+nnoremap <leader>dt :difft<CR>
+nnoremap <leader>do :diffo<CR>
+
