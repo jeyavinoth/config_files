@@ -55,9 +55,6 @@ map <C-p> :Files <CR>
 nnoremap <C-H> :bnext<CR> " map next buffer to ctrl+shift+H
 nnoremap <C-L> :bprev<CR> " map prev buffer to ctrl+shift+L
 
-"
-set exrc
-
 " formatting
 set tabstop=4 " set tab spacing as 4
 set softtabstop=4 " set tab spacing 
@@ -142,3 +139,5 @@ autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>
 nnoremap <leader>dt :difft<CR>
 nnoremap <leader>do :diffo<CR>
 
+" Execute local folder rc
+set exrc
