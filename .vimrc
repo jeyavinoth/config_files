@@ -108,8 +108,8 @@ let mapleader = " " " remap leader to space
 
 " mappings n - normal mode; nore - non recursive; map - mapping
 " Nerdtree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
 " nnoremap <C-t> :NERDTree<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 
@@ -142,3 +142,9 @@ autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>
 nnoremap <leader>dt :difft<CR>
 nnoremap <leader>do :diffo<CR>
 
+" clipboard yank & paste
+map <leader>y "*y
+map <leader>p "*p
+
+map <leader>Y "+y
+map <leader>P "+p
