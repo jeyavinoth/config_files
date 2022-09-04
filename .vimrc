@@ -73,7 +73,7 @@ set hidden " keep the buffer's open in the background
 set noerrorbells " no error bells in vim
 set guicursor= " leaves block cursors
 set incsearch " highlights as I search
-set scrolloff=5 " set the number of lines kept when scrolling
+set scrolloff=3 " set the number of lines kept when scrolling
 set colorcolumn=120 " sets the a column on 120 to show that code is exceeding 120
 set signcolumn=yes " sets the sign column, that shows linting + git stuff
 
