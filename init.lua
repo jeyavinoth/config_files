@@ -35,6 +35,8 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('neovim/nvim-lspconfig') -- LSP configs for neovim
 
+Plug('puremourning/vimspector') -- vim debugger
+
 -- All of your Plugins must be added before the following line
 vim.call('plug#end')            -- required
 
