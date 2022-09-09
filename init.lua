@@ -66,7 +66,9 @@ vim.o.t_Co = "256" -- 256 colors
 
 vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[set background=dark]])
--- colorscheme atom-dark-256
+
+-- setting background to None
+vim.cmd([[highlight Normal ctermbg=NONE]])
 
 -- formatting
 vim.o.tabstop = 4 -- set tab spacing as 4
@@ -88,9 +90,10 @@ vim.o.errorbells = false -- no error bells in vim
 vim.o.guicursor = true -- leaves block cursors
 vim.o.incsearch = true -- highlights as I search
 vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
-vim.o.colorcolumn = 120 -- sets the a column on 120 to show that code is exceeding 120
+-- vim.colorcolumn = 120 -- sets the a column on 120 to show that code is exceeding 120
 -- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
 vim.cmd([[set signcolumn=yes]])
+vim.cmd([[set colorcolumn=120]])
 
 vim.wrap = true -- set wrap
 
@@ -144,9 +147,6 @@ map("n", "<Leader>t", ":TagbarToggle fj<CR>", { noremap = true })
 -- ALE linter mappings
 map("n", "<C-j>", ":ALENext<CR>", { noremap = true })
 map("n", "<C-k>", ":ALEPrevious<CR>", { noremap = true })
-
--- setting background to None
-vim.cmd([[highlight Normal ctermbg=NONE]])
 
 -- remove trailing whitespaces
 map("n", "<leader>e", ":%s/\\s\\+$//e<CR>", { noremap = true })
