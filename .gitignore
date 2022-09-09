@@ -1,3 +1,4 @@
+# Temporary Files
 *.swp
 *.swo
 *~
@@ -6,3 +7,9 @@
 ~=*=
 view/*
 bundle/*
+
+# Ctags
+tags
+
+# vimspector
+.vimspector.json
