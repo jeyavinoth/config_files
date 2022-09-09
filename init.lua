@@ -8,8 +8,6 @@ function map(mode, lhs, rhs, opts)
 end
 
 -- Plugin Installs
-
--- local
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
 
@@ -29,21 +27,39 @@ Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
 Plug('dense-analysis/ale') -- Linting
 Plug('nvie/vim-flake8') -- flake8 formatting
 
-
 Plug('nvim-lua/plenary.nvim') -- Telescope (fuzzy file finder)
 Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
-Plug('neovim/nvim-lspconfig') -- LSP configs for neovim
-
 Plug('puremourning/vimspector') -- vim debugger
+
+Plug('neovim/nvim-lspconfig')
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-buffer')
+Plug('hrsh7th/cmp-path')
+Plug('hrsh7th/cmp-cmdline')
+Plug('hrsh7th/nvim-cmp')
+Plug('L3MON4D3/LuaSnip')
+Plug('saadparwaiz1/cmp_luasnip')
+-- Plug('sumneko/lua-language-server')
+
+-- -- For vsnip users.
+-- Plug('hrsh7th/cmp-vsnip')
+-- Plug('hrsh7th/vim-vsnip')
+
+-- -- For luasnip users.
+-- Plug('L3MON4D3/LuaSnip')
+-- Plug ('saadparwaiz1/cmp_luasnip')
+
+-- -- For ultisnips users.
+-- Plug('SirVer/ultisnips')
+-- Plug('quangnguyen30192/cmp-nvim-ultisnips')
+
+-- -- For snippy users.
+-- Plug('dcampos/nvim-snippy')
+-- Plug('dcampos/cmp-snippy')
 
 -- All of your Plugins must be added before the following line
 vim.call('plug#end')            -- required
-
--- Deleted Plugins
--- Plug 'puremourning/vimspector' -- vim debugger
--- Plug 'szw/vim-maximizer' -- vim maximizer; maximize and come back
--- Plug 'neoclide/coc.nvim' -- Autocompletion for nvim
 
 -- filetype plugin indent on    -- required, auto set
 vim.o.t_Co = "256" -- 256 colors
@@ -73,7 +89,10 @@ vim.o.guicursor = true -- leaves block cursors
 vim.o.incsearch = true -- highlights as I search
 vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 vim.o.colorcolumn = 120 -- sets the a column on 120 to show that code is exceeding 120
-vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
+-- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
+vim.cmd([[set signcolumn=yes]])
+
+vim.wrap = true -- set wrap
 
 
 -- mouse settings
@@ -164,3 +183,126 @@ map("n", "<Leader>vj", "<Plug>VimspectorStepOver", { noremap = true })
 
 -- Running Python files with <leader>r
 vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]])
+
+-- LSP setup
+require'lspconfig'.pyright.setup{}
+
+-- LSP setup (copy pasted below, no idea how this works or what it does)
+local lsp_defaults = {
+  flags = {
+    debounce_text_changes = 150,
+  },
+  capabilities = require('cmp_nvim_lsp').update_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  ),
+  on_attach = function(client, bufnr)
+    vim.api.nvim_exec_autocmds('User', {pattern = 'LspAttached'})
+  end
+}
+
+local lspconfig = require('lspconfig')
+
+lspconfig.util.default_config = vim.tbl_deep_extend(
+  'force',
+  lspconfig.util.default_config,
+  lsp_defaults
+)
+
+lspconfig.sumneko_lua.setup({
+  single_file_support = true,
+  on_attach = function(client, bufnr)
+    print('hello')
+    lspconfig.util.default_config.on_attach(client, bufnr)
+  end
+})
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
+local cmp = require('cmp')
+local luasnip = require('luasnip')
+
+local select_opts = {behavior = cmp.SelectBehavior.Select}
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end
+  },
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp', keyword_length = 3},
+    {name = 'buffer', keyword_length = 3},
+    {name = 'luasnip', keyword_length = 2},
+  },
+  window = {
+    documentation = cmp.config.window.bordered()
+  },
+  formatting = {
+    fields = {'menu', 'abbr', 'kind'},
+    format = function(entry, item)
+      local menu_icon = {
+        nvim_lsp = 'λ',
+        luasnip = '⋗',
+        buffer = 'Ω',
+        path = '🖫',
+      }
+
+      item.menu = menu_icon[entry.source.name]
+      return item
+    end,
+  },
+  mapping = {
+    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+
+    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
+
+    ['<C-d>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(1) then
+        luasnip.jump(1)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    ['<C-b>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      local col = vim.fn.col('.') - 1
+
+      if cmp.visible() then
+        cmp.select_next_item(select_opts)
+      elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        fallback()
+      else
+        cmp.complete()
+      end
+    end, {'i', 's'}),
+
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item(select_opts)
+      else
+        fallback()
+      end
+    end, {'i', 's'}),
+  },
+})
