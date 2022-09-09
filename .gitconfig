@@ -9,7 +9,7 @@
 
 [core]
 	editor = vim
-	excludesfile = /home/jj/.gitignore
+	excludesfile = ~/.gitignore
 
 [diff]
     tool = vimdiff
