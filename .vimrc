@@ -22,6 +22,9 @@ Plugin 'preservim/tagbar' " tagbar on right to get tags in file
 Plugin 'morhetz/gruvbox' " colorscheme gruvbox
 Plugin 'vim-scripts/auto-pairs-gentle' " gentle version of auto pairs
 Plugin 'airblade/vim-gitgutter' " shows the +/- for git changes
+Plugin 'puremourning/vimspector' " vim debugger
+Plugin 'szw/vim-maximizer' " vim maximizer; maximize and come back
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,6 +134,7 @@ nnoremap <leader>e :%s/\s\+$//e<CR>
 
 " remapping window operations
 nnoremap <leader>w <C-w>
+noremap <leader>wm :MaximizerToggle<CR> 
 
 " Running Python
 autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>
@@ -145,3 +149,19 @@ map <leader>p "*p
 
 map <leader>Y "+y
 map <leader>P "+p
+
+" vim spector stuff
+let g:vimspector_enable_mappings = 'HUMAN'
+nnoremap <Leader>vd :call vimspector#Launch()<CR>
+nnoremap <Leader>ve :call vimspector#Reset()<CR>
+nnoremap <Leader>vc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>vt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>vT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>vr <Plug>VimspectorRestart
+nmap <Leader>vh <Plug>VimspectorStepOut
+nmap <Leader>vl <Plug>VimspectorStepInto
+nmap <Leader>vj <Plug>VimspectorStepOver
+
+
