@@ -114,6 +114,9 @@ vim.undodir = "/tmp//"
 vim.foldmethod = "indent" -- inden when folding
 vim.foldlevel = 99 -- unfold everyting on file open
 
+-- tags setup
+vim.tags = "./tags"
+
 -- set linters
 vim.cmd([[
 let g:ale_linters = {'python' : ['flake8', 'black']}
