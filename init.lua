@@ -32,6 +32,8 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
+Plug 'ellisonleao/glow.nvim' -- Markdown preview
+
 -- LSP completion 
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -42,6 +44,9 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
 -- Plug('sumneko/lua-language-server')
+
+-- Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser 
+
 
 -- -- For vsnip users.
 -- Plug('hrsh7th/cmp-vsnip')
