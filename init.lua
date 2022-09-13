@@ -32,6 +32,8 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
+Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
@@ -189,6 +191,7 @@ vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]]
 
 -- LSP setup
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.sumneko_lua.setup{}
 
 -- LSP setup (copy pasted below, no idea how this works or what it does)
 local lsp_defaults = {
