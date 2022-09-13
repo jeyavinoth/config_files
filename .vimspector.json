@@ -1,0 +1,22 @@
+{
+    "configurations": {
+        "run": {
+            "adapter": "debugpy",
+            "configuration": {
+                "request": "launch",
+                "type": "/mnt/home/jj/.venv/py38/bin/python", 
+                "cwd": "${workspaceRoot}",
+                "program": "${file}",
+                "stopAtEntry": true,
+                "console": "integratedTerminal"
+            },
+            "breakpoints": {
+                "exception": {
+                    "raised": "N",
+                    "uncaught": "",
+                    "userUnhandled": ""
+                }
+            }
+        }
+    }
+}

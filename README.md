@@ -1,4 +1,14 @@
-# Ubuntu 19.10 Installation steps
+# Neovim 
+
+1. Install vim-plug  "https://github.com/junegunn/vim-plug"
+2. Then link init.lua from the repo to ~/.config/nvim/init.lua
+3. Setup vim alias as nvim 
+4. Open vim and then run :PlugInstall
+5. Then install debugpy :VimspectorInstall debugpy
+6. brew install pyright <-- install pyright langserver
+
+
+# Custom Ubuntu 19.10 Setup
 
 Install dconf-editor
 
