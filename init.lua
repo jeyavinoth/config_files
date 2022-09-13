@@ -32,7 +32,6 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
-Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -59,6 +58,8 @@ Plug('saadparwaiz1/cmp_luasnip')
 -- -- For snippy users.
 -- Plug('dcampos/nvim-snippy')
 -- Plug('dcampos/cmp-snippy')
+
+-- Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 
 -- All of your Plugins must be added before the following line
 vim.call('plug#end')            -- required
