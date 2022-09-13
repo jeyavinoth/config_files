@@ -19,7 +19,6 @@ Plug('vim-airline/vim-airline') -- powerline at bottom with details
 Plug('tomtom/tcomment_vim') -- gcc comment
 Plug('preservim/nerdtree') -- nerdtree left folder browser
 Plug('preservim/tagbar') -- tagbar on right to get tags in file
-Plug('morhetz/gruvbox') -- colorscheme gruvbox
 Plug('vim-scripts/auto-pairs-gentle') -- gentle version of auto pairs
 
 Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
@@ -33,6 +32,7 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 Plug('puremourning/vimspector') -- vim debugger
 
 Plug 'ellisonleao/glow.nvim' -- Markdown preview
+Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 
 -- LSP completion 
 Plug('neovim/nvim-lspconfig')
@@ -43,10 +43,11 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
--- Plug('sumneko/lua-language-server')
 
--- Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser 
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser 
 
+
+-- Plug('ThePrimeagen/vim-be-good') -- a game to improve in vim, doesn't work
 
 -- -- For vsnip users.
 -- Plug('hrsh7th/cmp-vsnip')
@@ -64,7 +65,8 @@ Plug('saadparwaiz1/cmp_luasnip')
 -- Plug('dcampos/nvim-snippy')
 -- Plug('dcampos/cmp-snippy')
 
--- Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+-- Plug('morhetz/gruvbox') -- colorscheme gruvbox
+-- Plug('sumneko/lua-language-server')
 
 -- All of your Plugins must be added before the following line
 vim.call('plug#end')            -- required
@@ -72,8 +74,8 @@ vim.call('plug#end')            -- required
 -- filetype plugin indent on    -- required, auto set
 vim.o.t_Co = "256" -- 256 colors
 
+vim.o.background = dark
 vim.cmd([[colorscheme gruvbox]])
-vim.cmd([[set background=dark]])
 
 -- setting background to None
 vim.cmd([[highlight Normal ctermbg=NONE]])
