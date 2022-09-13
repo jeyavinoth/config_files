@@ -33,8 +33,9 @@ Plug('puremourning/vimspector') -- vim debugger
 
 Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+-- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
--- LSP completion 
+-- LSP completion
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
@@ -44,7 +45,7 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
 
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser 
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
 
 -- Plug('ThePrimeagen/vim-be-good') -- a game to improve in vim, doesn't work
@@ -65,7 +66,6 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parse
 -- Plug('dcampos/nvim-snippy')
 -- Plug('dcampos/cmp-snippy')
 
--- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 -- Plug('sumneko/lua-language-server')
 
 -- All of your Plugins must be added before the following line
@@ -197,6 +197,10 @@ map("n", "<Leader>vj", "<Plug>VimspectorStepOver", { noremap = true })
 -- Running Python files with <leader>r
 vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]])
 
+-- Highliting
+require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+
+
 -- LSP setup
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.sumneko_lua.setup{}
@@ -320,3 +324,21 @@ cmp.setup({
     end, {'i', 's'}),
   },
 })
+
+-- -- setup must be called before loading the colorscheme
+-- -- Default options:
+-- require("gruvbox").setup({
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = true,
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "", -- can be "hard", "soft" or empty string
+--   overrides = {},
+-- })
+-- vim.cmd("colorscheme gruvbox")
