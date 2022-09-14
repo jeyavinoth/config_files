@@ -35,6 +35,8 @@ Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
+Plug('neoclide/coc.nvim', {branch = 'release'})
+
 -- LSP completion
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -104,6 +106,8 @@ vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 -- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set colorcolumn=120]])
+
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 vim.wrap = true -- set wrap
 
@@ -236,7 +240,6 @@ lspconfig.sumneko_lua.setup({
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -342,3 +345,4 @@ cmp.setup({
 --   overrides = {},
 -- })
 -- vim.cmd("colorscheme gruvbox")
+--
