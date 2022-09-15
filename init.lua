@@ -175,7 +175,6 @@ map("n", "<leader>e", ":%s/\\s\\+$//e<CR>", { noremap = true })
 
 -- remapping window operations
 map("n", "<leader>w", "<C-w>", { noremap = true })
-map("n", "<leader>wm", ":MaximizerToggle<CR>", { noremap = true })
 
 -- mergetool
 map("n", "<leader>dt", ":difft<CR>", { noremap = true })
@@ -202,6 +201,9 @@ map("n", "<Leader>vr", "<Plug>VimspectorRestart", { noremap = true })
 map("n", "<Leader>vh", "<Plug>VimspectorStepOut", { noremap = true })
 map("n", "<Leader>vl", "<Plug>VimspectorStepInto", { noremap = true })
 map("n", "<Leader>vj", "<Plug>VimspectorStepOver", { noremap = true })
+
+map("n", "<Leader>wm", ":tabedit %<CR>", { noremap = true })
+map("n", "<Leader>wr", ":tabclose<CR>", { noremap = true })
 
 -- Running Python files with <leader>r
 vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]])
