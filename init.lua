@@ -14,7 +14,10 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug('tpope/vim-surround') -- sorround words, etc ysw)
 Plug('tpope/vim-fugitive') -- git integration
 Plug('tpope/vim-repeat') -- updated . repeat
-Plug('vim-airline/vim-airline') -- powerline at bottom with details
+-- Plug('vim-airline/vim-airline') -- powerline at bottom with details
+
+Plug('nvim-lualine/lualine.nvim') -- vim-airline alternative in neovim
+Plug('kyazdani42/nvim-web-devicons') -- dev icons for lualine
 
 Plug('tomtom/tcomment_vim') -- gcc comment
 Plug('preservim/nerdtree') -- nerdtree left folder browser
@@ -199,11 +202,20 @@ vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]]
 
 -- Highliting
 require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+require('lualine').setup()
 
 
 -- LSP setup
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.sumneko_lua.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- LSP setup (copy pasted below, no idea how this works or what it does)
 local lsp_defaults = {
