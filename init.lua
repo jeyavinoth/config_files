@@ -113,7 +113,9 @@ vim.wrap = true -- set wrap
 
 
 -- mouse settings
-vim.mouse = "all" -- allow mouse usage
+-- vim.mouse = "a" -- allow mouse usage
+vim.cmd([[set mouse=a]]) -- allowe mouse usage
+
 
 -- -- backup, swap and undo
 -- set swapfile
