@@ -4,11 +4,12 @@
             "adapter": "debugpy",
             "configuration": {
                 "request": "launch",
-                "type": "/mnt/home/jj/.venv/py38/bin/python", 
+                "type": "python",
                 "cwd": "${workspaceRoot}",
-                "program": "${file}",
                 "stopAtEntry": true,
-                "console": "integratedTerminal"
+                "console": "integratedTerminal",
+                "python": "~/.venv/py10/bin/python", 
+                "program": "${file}"
             },
             "breakpoints": {
                 "exception": {

@@ -38,6 +38,8 @@ Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
+Plug('neoclide/coc.nvim', {branch = 'release'})
+
 -- LSP completion
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
@@ -108,11 +110,15 @@ vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set colorcolumn=120]])
 
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 vim.wrap = true -- set wrap
 
 
 -- mouse settings
-vim.mouse = "all" -- allow mouse usage
+-- vim.mouse = "a" -- allow mouse usage
+vim.cmd([[set mouse=a]]) -- allowe mouse usage
+
 
 -- -- backup, swap and undo
 -- set swapfile
@@ -248,7 +254,6 @@ lspconfig.sumneko_lua.setup({
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -354,3 +359,4 @@ cmp.setup({
 --   overrides = {},
 -- })
 -- vim.cmd("colorscheme gruvbox")
+--
