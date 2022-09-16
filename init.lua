@@ -14,12 +14,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug('tpope/vim-surround') -- sorround words, etc ysw)
 Plug('tpope/vim-fugitive') -- git integration
 Plug('tpope/vim-repeat') -- updated . repeat
-Plug('vim-airline/vim-airline') -- powerline at bottom with details
+-- Plug('vim-airline/vim-airline') -- powerline at bottom with details
+
+Plug('nvim-lualine/lualine.nvim') -- vim-airline alternative in neovim
+Plug('kyazdani42/nvim-web-devicons') -- dev icons for lualine
 
 Plug('tomtom/tcomment_vim') -- gcc comment
 Plug('preservim/nerdtree') -- nerdtree left folder browser
 Plug('preservim/tagbar') -- tagbar on right to get tags in file
-Plug('morhetz/gruvbox') -- colorscheme gruvbox
 Plug('vim-scripts/auto-pairs-gentle') -- gentle version of auto pairs
 
 Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
@@ -32,8 +34,13 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
+Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+-- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
+Plug('neoclide/coc.nvim', {branch = 'release'})
+
+-- LSP completion
 Plug('neovim/nvim-lspconfig')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
@@ -42,7 +49,15 @@ Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
--- Plug('sumneko/lua-language-server')
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/diagnostic-nvim'
+
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
+
+
+-- Plug('ThePrimeagen/vim-be-good') -- a game to improve in vim, doesn't work
 
 -- -- For vsnip users.
 -- Plug('hrsh7th/cmp-vsnip')
@@ -60,14 +75,16 @@ Plug('saadparwaiz1/cmp_luasnip')
 -- Plug('dcampos/nvim-snippy')
 -- Plug('dcampos/cmp-snippy')
 
+-- Plug('sumneko/lua-language-server')
+
 -- All of your Plugins must be added before the following line
 vim.call('plug#end')            -- required
 
 -- filetype plugin indent on    -- required, auto set
 vim.o.t_Co = "256" -- 256 colors
 
+vim.o.background = dark
 vim.cmd([[colorscheme gruvbox]])
-vim.cmd([[set background=dark]])
 
 -- setting background to None
 vim.cmd([[highlight Normal ctermbg=NONE]])
@@ -97,11 +114,15 @@ vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set colorcolumn=120]])
 
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 vim.wrap = true -- set wrap
 
 
 -- mouse settings
-vim.mouse = "all" -- allow mouse usage
+-- vim.mouse = "a" -- allow mouse usage
+vim.cmd([[set mouse=a]]) -- allowe mouse usage
+
 
 -- -- backup, swap and undo
 -- set swapfile
@@ -158,7 +179,6 @@ map("n", "<leader>e", ":%s/\\s\\+$//e<CR>", { noremap = true })
 
 -- remapping window operations
 map("n", "<leader>w", "<C-w>", { noremap = true })
-map("n", "<leader>wm", ":MaximizerToggle<CR>", { noremap = true })
 
 -- mergetool
 map("n", "<leader>dt", ":difft<CR>", { noremap = true })
@@ -186,12 +206,28 @@ map("n", "<Leader>vh", "<Plug>VimspectorStepOut", { noremap = true })
 map("n", "<Leader>vl", "<Plug>VimspectorStepInto", { noremap = true })
 map("n", "<Leader>vj", "<Plug>VimspectorStepOver", { noremap = true })
 
+map("n", "<Leader>wm", ":tabedit %<CR>", { noremap = true })
+map("n", "<Leader>wr", ":tabclose<CR>", { noremap = true })
+
 -- Running Python files with <leader>r
 vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]])
 
+-- Highliting
+require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+require('lualine').setup()
+
+
 -- LSP setup
 require'lspconfig'.pyright.setup{}
-require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.sumneko_lua.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- LSP setup (copy pasted below, no idea how this works or what it does)
 local lsp_defaults = {
@@ -224,7 +260,6 @@ lspconfig.sumneko_lua.setup({
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -312,3 +347,40 @@ cmp.setup({
     end, {'i', 's'}),
   },
 })
+
+
+-- local nvim_lsp = require'lspconfig'
+-- local custom_lsp_attach = function(client)
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+--
+--     require('completion').on_attach(client)
+-- end
+-- nvim_lsp.pylsp.setup({
+--     plugins = {
+--         black = {enabled = true},
+--         isort = {enabled = true},
+--         mypy = {enabled = true},
+--     },
+--     on_attach=custom_lsp_attach
+-- })
+
+-- -- setup must be called before loading the colorscheme
+-- -- Default options:
+-- require("gruvbox").setup({
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = true,
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "", -- can be "hard", "soft" or empty string
+--   overrides = {},
+-- })
+-- vim.cmd("colorscheme gruvbox")
