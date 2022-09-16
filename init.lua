@@ -50,6 +50,10 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/diagnostic-nvim'
+
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
 
@@ -344,6 +348,25 @@ cmp.setup({
   },
 })
 
+
+-- local nvim_lsp = require'lspconfig'
+-- local custom_lsp_attach = function(client)
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+--
+--     require('completion').on_attach(client)
+-- end
+-- nvim_lsp.pylsp.setup({
+--     plugins = {
+--         black = {enabled = true},
+--         isort = {enabled = true},
+--         mypy = {enabled = true},
+--     },
+--     on_attach=custom_lsp_attach
+-- })
+
 -- -- setup must be called before loading the colorscheme
 -- -- Default options:
 -- require("gruvbox").setup({
@@ -361,4 +384,3 @@ cmp.setup({
 --   overrides = {},
 -- })
 -- vim.cmd("colorscheme gruvbox")
---
