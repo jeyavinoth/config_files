@@ -20,9 +20,13 @@ Plug('nvim-lualine/lualine.nvim') -- vim-airline alternative in neovim
 Plug('kyazdani42/nvim-web-devicons') -- dev icons for lualine
 
 Plug('tomtom/tcomment_vim') -- gcc comment
-Plug('preservim/nerdtree') -- nerdtree left folder browser
+-- Plug('preservim/nerdtree') -- nerdtree left folder browser
 Plug('preservim/tagbar') -- tagbar on right to get tags in file
 Plug('vim-scripts/auto-pairs-gentle') -- gentle version of auto pairs
+
+-- nvim-tree
+Plug('kyazdani42/nvim-web-devicons') -- optional, for file icons
+Plug('kyazdani42/nvim-tree.lua')
 
 Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
 
@@ -161,8 +165,8 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true })
 
 -- mappings n - normal mode; nore - non recursive; map - mapping
 -- Nerdtree
-map("n", "<Leader>n", ":NERDTreeToggle<CR>", { noremap = true })
-map("n", "<C-n>", ":NERDTreeFocus<CR>", { noremap = true })
+map("n", "<Leader>n", ":NvimTreeToggle<CR>", { noremap = true })
+-- map("n", "<C-n>", ":NERDTreeFocus<CR>", { noremap = true })
 
 -- Other mappings
 -- nnoremap <space> za
@@ -215,6 +219,8 @@ vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]]
 -- Highliting
 require'nvim-treesitter.configs'.setup{highlight={enable=true}}
 require('lualine').setup()
+require("nvim-tree").setup()
+
 
 
 -- LSP setup
