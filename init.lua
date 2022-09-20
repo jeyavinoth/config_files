@@ -53,11 +53,11 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/diagnostic-nvim'
+Plug('neovim/nvim-lspconfig')
+Plug('nvim-lua/completion-nvim')
+Plug('nvim-lua/diagnostic-nvim')
 
-Plug 'williamboman/nvim-lsp-installer' -- LSP installer
+-- Plug('williamboman/nvim-lsp-installer') -- LSP installer
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
@@ -225,7 +225,7 @@ require("nvim-tree").setup()
 
 
 -- LSP setup
-require("nvim-lsp-installer").setup {}
+-- require("nvim-lsp-installer").setup {}
 require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {
