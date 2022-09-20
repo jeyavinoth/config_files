@@ -175,9 +175,9 @@ map("n", "<Leader>n", ":NvimTreeToggle<CR>", { noremap = true })
 -- tagbar
 map("n", "<Leader>t", ":TagbarToggle fj<CR>", { noremap = true })
 
--- ALE linter mappings
-map("n", "<C-j>", ":ALENext<CR>", { noremap = true })
-map("n", "<C-k>", ":ALEPrevious<CR>", { noremap = true })
+-- -- ALE linter mappings
+-- map("n", "<C-j>", ":ALENext<CR>", { noremap = true })
+-- map("n", "<C-k>", ":ALEPrevious<CR>", { noremap = true })
 
 -- remove trailing whitespaces
 map("n", "<leader>e", ":%s/\\s\\+$//e<CR>", { noremap = true })
@@ -362,6 +362,10 @@ local custom_lsp_attach = function(client)
     print('pylsp_attach')
     require('completion').on_attach(client)
 end
+
+vim.api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 
 require("lspconfig").pylsp.setup {
     filetypes = {"python"},
