@@ -30,8 +30,8 @@ Plug('kyazdani42/nvim-tree.lua')
 
 Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
 
-Plug('dense-analysis/ale') -- Linting
-Plug('nvie/vim-flake8') -- flake8 formatting
+-- Plug('dense-analysis/ale') -- Linting
+-- Plug('nvie/vim-flake8') -- flake8 formatting
 
 Plug('nvim-lua/plenary.nvim') -- Telescope (fuzzy file finder)
 Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
@@ -42,7 +42,7 @@ Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
-Plug('neoclide/coc.nvim', {branch = 'release'})
+-- Plug('neoclide/coc.nvim', {branch = 'release'})
 
 -- LSP completion
 Plug('neovim/nvim-lspconfig')
@@ -57,6 +57,9 @@ Plug('saadparwaiz1/cmp_luasnip')
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
+
+Plug 'williamboman/nvim-lsp-installer'
+
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
@@ -144,12 +147,12 @@ vim.foldlevel = 99 -- unfold everyting on file open
 -- tags setup
 vim.tags = "./tags"
 
--- set linters
-vim.cmd([[
-let g:ale_linters = {'python' : ['flake8', 'black']}
-let g:ale_open_list = 0
-call ale#Set('python_flake8_options', '--config=$HOME/.config/flake8') " ensure flake8 uses global config
-]])
+-- -- set linters
+-- vim.cmd([[
+-- let g:ale_linters = {'python' : ['flake8', 'black']}
+-- let g:ale_open_list = 0
+-- call ale#Set('python_flake8_options', '--config=$HOME/.config/flake8') " ensure flake8 uses global config
+-- ]])
 
 -- MAPPINGS
 
@@ -224,8 +227,8 @@ require("nvim-tree").setup()
 
 
 -- LSP setup
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.sumneko_lua.setup {
+require("nvim-lsp-installer").setup {}
+require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {
             diagnostics = {
@@ -249,23 +252,19 @@ local lsp_defaults = {
 }
 
 local lspconfig = require('lspconfig')
-
 lspconfig.util.default_config = vim.tbl_deep_extend(
   'force',
   lspconfig.util.default_config,
   lsp_defaults
 )
 
-lspconfig.sumneko_lua.setup({
+require("lspconfig").sumneko_lua.setup({
   single_file_support = true,
   on_attach = function(client, bufnr)
     print('hello')
     lspconfig.util.default_config.on_attach(client, bufnr)
   end
 })
-
-require('luasnip.loaders.from_vscode').lazy_load()
-
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -355,23 +354,48 @@ cmp.setup({
 })
 
 
--- local nvim_lsp = require'lspconfig'
--- local custom_lsp_attach = function(client)
---     vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
---     vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
---     vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
---     vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
---
---     require('completion').on_attach(client)
--- end
--- nvim_lsp.pylsp.setup({
---     plugins = {
---         black = {enabled = true},
---         isort = {enabled = true},
---         mypy = {enabled = true},
---     },
---     on_attach=custom_lsp_attach
--- })
+require('lspconfig').pyright.setup {}
+
+local custom_lsp_attach = function(client)
+    vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+    vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+    vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
+    vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    print('pylsp_attach')
+    require('completion').on_attach(client)
+end
+
+require("lspconfig").pylsp.setup {
+    filetypes = {"python"},
+    settings = {
+        configurationSources = {"flake8"},
+        formatCommand = {"black"},
+        pylsp = {
+            plugins = {
+                jedi_completion = {enabled = true},
+                jedi_hover = {enabled = true},
+                jedi_references = {enabled = true},
+                jedi_signature_help = {enabled = true},
+                jedi_symbols = {enabled = true, all_scopes = true},
+                pycodestyle = {enabled = false},
+                flake8 = {
+                    enabled = true,
+                    ignore = {},
+                    maxLineLength = 120
+                },
+                mypy = {enabled = false},
+                yapf = {enabled = false},
+                pylint = {enabled = false},
+                mccabe = {enabled = false},
+                preload = {enabled = false},
+                rope_completion = {enabled = false},
+                black = {enabled = true},
+                isort = {enabled = true}
+            },
+        },
+    },
+    on_attach=custom_lsp_attach
+}
 
 -- -- setup must be called before loading the colorscheme
 -- -- Default options:
