@@ -14,24 +14,18 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug('tpope/vim-surround') -- sorround words, etc ysw)
 Plug('tpope/vim-fugitive') -- git integration
 Plug('tpope/vim-repeat') -- updated . repeat
--- Plug('vim-airline/vim-airline') -- powerline at bottom with details
 
 Plug('nvim-lualine/lualine.nvim') -- vim-airline alternative in neovim
 Plug('kyazdani42/nvim-web-devicons') -- dev icons for lualine
 
 Plug('tomtom/tcomment_vim') -- gcc comment
--- Plug('preservim/nerdtree') -- nerdtree left folder browser
 Plug('preservim/tagbar') -- tagbar on right to get tags in file
 Plug('vim-scripts/auto-pairs-gentle') -- gentle version of auto pairs
 
--- nvim-tree
 Plug('kyazdani42/nvim-web-devicons') -- optional, for file icons
-Plug('kyazdani42/nvim-tree.lua')
+Plug('kyazdani42/nvim-tree.lua') -- nerdtree alternative (left window folder browser)
 
 Plug('airblade/vim-gitgutter') -- shows the +/- for git changes
-
--- Plug('dense-analysis/ale') -- Linting
--- Plug('nvie/vim-flake8') -- flake8 formatting
 
 Plug('nvim-lua/plenary.nvim') -- Telescope (fuzzy file finder)
 Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
@@ -40,9 +34,14 @@ Plug('puremourning/vimspector') -- vim debugger
 
 Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
--- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 
--- Plug('neoclide/coc.nvim', {branch = 'release'})
+-- Plug('morhetz/gruvbox') -- colorscheme gruvbox
+-- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
+
+-- Plug('dense-analysis/ale') -- Linting
+-- Plug('nvie/vim-flake8') -- flake8 formatting
+-- Plug('preservim/nerdtree') -- nerdtree left folder browser
+-- Plug('vim-airline/vim-airline') -- powerline at bottom with details
 
 -- LSP completion
 Plug('neovim/nvim-lspconfig')
@@ -58,8 +57,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'nvim-lua/diagnostic-nvim'
 
-Plug 'williamboman/nvim-lsp-installer'
-
+Plug 'williamboman/nvim-lsp-installer' -- LSP installer
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
