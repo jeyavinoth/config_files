@@ -33,7 +33,11 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 Plug('puremourning/vimspector') -- vim debugger
 
 -- Plug 'ellisonleao/glow.nvim' -- Markdown preview
+
+-- Colorschemes
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+Plug('marko-cerovac/material.nvim') -- material theme
+Plug('folke/tokyonight.nvim', {branch = 'main'})
 
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 -- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
@@ -90,6 +94,9 @@ vim.o.t_Co = "256" -- 256 colors
 
 vim.o.background = dark
 vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme material]])
+-- vim.g.material_style = "darker"
+-- vim.cmd([[colorscheme tokyonight-storm]])
 
 -- setting background to None
 vim.cmd([[highlight Normal ctermbg=NONE]])
