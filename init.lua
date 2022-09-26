@@ -32,7 +32,7 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
-Plug 'ellisonleao/glow.nvim' -- Markdown preview
+-- Plug 'ellisonleao/glow.nvim' -- Markdown preview
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
@@ -118,6 +118,7 @@ vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 -- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set colorcolumn=120]])
+vim.cmd([[set cursorline]])
 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
