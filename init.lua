@@ -43,7 +43,7 @@ Plug('folke/tokyonight.nvim', {branch = 'main'})
 -- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
 
 -- Plug('dense-analysis/ale') -- Linting
--- Plug('nvie/vim-flake8') -- flake8 formatting
+Plug('nvie/vim-flake8') -- flake8 formatting
 -- Plug('preservim/nerdtree') -- nerdtree left folder browser
 -- Plug('vim-airline/vim-airline') -- powerline at bottom with details
 
@@ -320,7 +320,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<Tab>'] = cmp.mapping.confirm({select = true}),
 
     ['<C-d>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
@@ -338,7 +338,7 @@ cmp.setup({
       end
     end, {'i', 's'}),
 
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<CR>'] = cmp.mapping(function(fallback)
       local col = vim.fn.col('.') - 1
 
       if cmp.visible() then
