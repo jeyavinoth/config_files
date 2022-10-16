@@ -32,14 +32,18 @@ Plug('nvim-telescope/telescope.nvim', {branch = '0.1.x'})
 
 Plug('puremourning/vimspector') -- vim debugger
 
-Plug 'ellisonleao/glow.nvim' -- Markdown preview
+-- Plug 'ellisonleao/glow.nvim' -- Markdown preview
+
+-- Colorschemes
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
+Plug('marko-cerovac/material.nvim') -- material theme
+Plug('folke/tokyonight.nvim', {branch = 'main'})
 
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 -- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
 
 -- Plug('dense-analysis/ale') -- Linting
--- Plug('nvie/vim-flake8') -- flake8 formatting
+Plug('nvie/vim-flake8') -- flake8 formatting
 -- Plug('preservim/nerdtree') -- nerdtree left folder browser
 -- Plug('vim-airline/vim-airline') -- powerline at bottom with details
 
@@ -53,11 +57,11 @@ Plug('hrsh7th/nvim-cmp')
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/diagnostic-nvim'
+Plug('neovim/nvim-lspconfig')
+Plug('nvim-lua/completion-nvim')
+Plug('nvim-lua/diagnostic-nvim')
 
-Plug 'williamboman/nvim-lsp-installer' -- LSP installer
+-- Plug('williamboman/nvim-lsp-installer') -- LSP installer
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
@@ -90,6 +94,9 @@ vim.o.t_Co = "256" -- 256 colors
 
 vim.o.background = dark
 vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd([[colorscheme material]])
+-- vim.g.material_style = "darker"
+-- vim.cmd([[colorscheme tokyonight-storm]])
 
 -- setting background to None
 vim.cmd([[highlight Normal ctermbg=NONE]])
@@ -118,6 +125,7 @@ vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 -- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
 vim.cmd([[set signcolumn=yes]])
 vim.cmd([[set colorcolumn=120]])
+vim.cmd([[set cursorline]])
 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -160,6 +168,7 @@ vim.g.mapleader = " " -- remap leader to space
 -- Telescope
 -- Find files using Telescope command-line sugar.
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true })
+map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { noremap = true })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true })
@@ -225,7 +234,7 @@ require("nvim-tree").setup()
 
 
 -- LSP setup
-require("nvim-lsp-installer").setup {}
+-- require("nvim-lsp-installer").setup {}
 require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {
@@ -311,7 +320,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['<Tab>'] = cmp.mapping.confirm({select = true}),
 
     ['<C-d>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
@@ -329,17 +338,17 @@ cmp.setup({
       end
     end, {'i', 's'}),
 
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      local col = vim.fn.col('.') - 1
-
-      if cmp.visible() then
-        cmp.select_next_item(select_opts)
-      elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        fallback()
-      else
-        cmp.complete()
-      end
-    end, {'i', 's'}),
+    -- ['<CR>'] = cmp.mapping(function(fallback)
+    --   local col = vim.fn.col('.') - 1
+    --
+    --   if cmp.visible() then
+    --     cmp.select_next_item(select_opts)
+    --   elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    --     fallback()
+    --   else
+    --     cmp.complete()
+    --   end
+    -- end, {'i', 's'}),
 
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
