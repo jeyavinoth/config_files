@@ -39,6 +39,7 @@ Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 Plug('marko-cerovac/material.nvim') -- material theme
 Plug('folke/tokyonight.nvim', {branch = 'main'})
 
+
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 -- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
 
@@ -97,6 +98,7 @@ vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme material]])
 -- vim.g.material_style = "darker"
 -- vim.cmd([[colorscheme tokyonight-storm]])
+
 
 -- setting background to None
 vim.cmd([[highlight Normal ctermbg=NONE]])
@@ -250,7 +252,7 @@ local lsp_defaults = {
   flags = {
     debounce_text_changes = 150,
   },
-  capabilities = require('cmp_nvim_lsp').update_capabilities(
+  capabilities = require('cmp_nvim_lsp').default_capabilities(
     vim.lsp.protocol.make_client_capabilities()
   ),
   on_attach = function(client, bufnr)
