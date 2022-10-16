@@ -36,7 +36,7 @@ Plug('puremourning/vimspector') -- vim debugger
 
 -- Colorschemes
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
-Plug('marko-cerovac/material.nvim') -- material theme
+-- Plug('marko-cerovac/material.nvim') -- material theme
 Plug('folke/tokyonight.nvim', {branch = 'main'})
 
 
