@@ -15,8 +15,8 @@ mkdir ~/.backup
 mkdir ~/.undo
 
 # adding alias to zshrc 
-echo 'alias tmux="tmux -2"' >> ~/.zshrc
-echo 'alias ll="ls -lhtr"' >> ~/.zshrc
-echo 'alias rsync="rsync --progress"' >> ~/.zshrc
-echo 'alias rm="rm -i"' >> ~/.zshrc
-echo 'alias ca="conda activate"' >> ~/.zshrc
+# echo 'alias ll="ls -lhtr"' >> ~/.zshrc
+# echo 'alias rsync="rsync --progress"' >> ~/.zshrc
+# echo 'alias rm="rm -i"' >> ~/.zshrc
+# echo 'alias ca="conda activate"' >> ~/.zshrc
+echo 'source ~/.vim/aliases.sh' >> ~/.zshrc
