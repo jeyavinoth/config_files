@@ -55,19 +55,19 @@ Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
-Plug('L3MON4D3/LuaSnip')
-Plug('saadparwaiz1/cmp_luasnip')
+-- Plug('L3MON4D3/LuaSnip')
+-- Plug('saadparwaiz1/cmp_luasnip')
 
-Plug('neovim/nvim-lspconfig')
-Plug('nvim-lua/completion-nvim')
-Plug('nvim-lua/diagnostic-nvim')
+-- Plug('neovim/nvim-lspconfig')
+-- Plug('nvim-lua/completion-nvim')
+-- Plug('nvim-lua/diagnostic-nvim')
 
 -- Plug('williamboman/nvim-lsp-installer') -- LSP installer
 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) -- Parser
 
 
--- Plug('ThePrimeagen/vim-be-good') -- a game to improve in vim, doesn't work
+Plug('ThePrimeagen/vim-be-good') -- a game to improve in vim, doesn't work
 
 -- -- For vsnip users.
 -- Plug('hrsh7th/cmp-vsnip')
@@ -232,7 +232,48 @@ require'nvim-treesitter.configs'.setup{highlight={enable=true}}
 require('lualine').setup()
 require("nvim-tree").setup()
 
+-- Mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  -- vim.keymap.set('n', '<leader>wl', function()
+  --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  -- end, bufopts)
+  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  -- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+require('lspconfig')['pyright'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
 -- LSP setup
 -- require("nvim-lsp-installer").setup {}
@@ -259,6 +300,7 @@ local lsp_defaults = {
   end
 }
 
+
 local lspconfig = require('lspconfig')
 lspconfig.util.default_config = vim.tbl_deep_extend(
   'force',
@@ -274,10 +316,10 @@ require("lspconfig").sumneko_lua.setup({
   end
 })
 
-require('luasnip.loaders.from_vscode').lazy_load()
+-- require('luasnip.loaders.from_vscode').lazy_load()
 
 local cmp = require('cmp')
-local luasnip = require('luasnip')
+-- local luasnip = require('luasnip')
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
 
@@ -360,22 +402,28 @@ cmp.setup({
     end, {'i', 's'}),
   },
 })
-
-
-require('lspconfig').pyright.setup {}
-
-local custom_lsp_attach = function(client)
-    vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
-    vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
-    vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
-    vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-    print('pylsp_attach')
-    require('completion').on_attach(client)
-end
-
-vim.api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+--
+--
+-- require('lspconfig').pyright.setup {}
+--
+-- local custom_lsp_attach = function(client)
+--     local bufopts = { noremap=true, silent=true, buffer=bufnr }
+--
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_keymap(0, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {noremap = true})
+--     vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+--     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+--     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+--     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+--     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+--     print('pylsp_attach')
+--     require('completion').on_attach(client)
+-- end
+--
+-- vim.api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 
 require("lspconfig").pylsp.setup {
     filetypes = {"python"},
@@ -406,7 +454,7 @@ require("lspconfig").pylsp.setup {
             },
         },
     },
-    on_attach=custom_lsp_attach
+    on_attach=on_attach,
 }
 
 -- -- setup must be called before loading the colorscheme
@@ -426,3 +474,12 @@ require("lspconfig").pylsp.setup {
 --   overrides = {},
 -- })
 -- vim.cmd("colorscheme gruvbox")
+vim.cmd([[
+let g:vimspector_sign_priority = {
+  \    'vimspectorBP':         300,
+  \    'vimspectorBPCond':     200,
+  \    'vimspectorBPLog':      200,
+  \    'vimspectorBPDisabled': 100,
+  \    'vimspectorPC':         999,
+  \ }
+]])
