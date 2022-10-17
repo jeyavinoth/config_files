@@ -481,5 +481,6 @@ let g:vimspector_sign_priority = {
   \    'vimspectorBPLog':      200,
   \    'vimspectorBPDisabled': 100,
   \    'vimspectorPC':         999,
+  \    'vimspectorPCBP':         999,
   \ }
 ]])

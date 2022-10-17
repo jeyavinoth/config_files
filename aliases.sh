@@ -6,6 +6,7 @@ alias lS="ls -lhSr"
 # Other general
 alias rsync="rsync --progress"
 alias vim="nvim"
+alias rm="rm -i"
 
 # Git Aliases
 alias gdt="git difftool"
