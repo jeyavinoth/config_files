@@ -38,7 +38,11 @@ Plug('puremourning/vimspector') -- vim debugger
 Plug('ellisonleao/gruvbox.nvim') -- gruvbox theme
 -- Plug('marko-cerovac/material.nvim') -- material theme
 Plug('folke/tokyonight.nvim', {branch = 'main'})
+Plug('ayu-theme/ayu-vim')
 
+-- Harpon
+Plug('nvim-lua/plenary.nvim')
+Plug('ThePrimeagen/harpoon')
 
 -- Plug('morhetz/gruvbox') -- colorscheme gruvbox
 -- Plug('neoclide/coc.nvim', {branch = 'release'}) -- using LSP as an alternative
@@ -98,6 +102,12 @@ vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme material]])
 -- vim.g.material_style = "darker"
 -- vim.cmd([[colorscheme tokyonight-storm]])
+--
+-- vim.cmd([[set termguicolors]])
+-- vim.cmd([[let ayucolor="dark"]])
+-- vim.cmd([[let ayucolor="mirage"]])
+-- vim.cmd([[colorscheme ayu]])
+
 
 
 -- setting background to None
@@ -166,6 +176,10 @@ vim.tags = "./tags"
 -- Remap the leader
 vim.g.mapleader = " " -- remap leader to space
 
+-- Moving lines
+map("n", "<C-j>", "<cmd>:move+<cr>", { noremap = true })
+map("n", "<C-k>", "<cmd>:move-2<cr>", { noremap = true })
+
 -- Telescope
 -- Find files using Telescope command-line sugar.
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true })
@@ -231,6 +245,17 @@ vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]]
 require'nvim-treesitter.configs'.setup{highlight={enable=true}}
 require('lualine').setup()
 require("nvim-tree").setup()
+
+
+-- Harpoon mappings
+map("n", "<Leader>ha", ':lua require("harpoon.mark").add_file()<CR>', { noremap = true })
+map("n", "<Leader>l", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true })
+map("n", "<Leader>hn", ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true })
+map("n", "<Leader>hp", ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true })
+map("n", "<Leader>hf", ':lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true })
+map("n", "<Leader>hd", ':lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true })
+map("n", "<Leader>hs", ':lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true })
+
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
