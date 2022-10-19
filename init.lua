@@ -132,7 +132,7 @@ vim.o.hidden = true -- keep the buffer's open in the background
 vim.o.errorbells = false -- no error bells in vim
 vim.o.guicursor = true -- leaves block cursors
 vim.o.incsearch = true -- highlights as I search
-vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
+-- vim.o.scrolloff = 3 -- set the number of lines kept when scrolling
 -- vim.colorcolumn = 120 -- sets the a column on 120 to show that code is exceeding 120
 -- vim.signcolumn = "yes" -- sets the sign column, that shows linting + git stuff
 vim.cmd([[set signcolumn=yes]])
@@ -467,7 +467,7 @@ require("lspconfig").pylsp.setup {
                 pycodestyle = {enabled = false},
                 flake8 = {
                     enabled = true,
-                    ignore = {},
+                    -- ignore = {},
                     maxLineLength = 120
                 },
                 mypy = {enabled = false},
