@@ -230,11 +230,14 @@ map("n", "<Leader>vc", ":call vimspector#Continue()<CR>", { noremap = true })
 map("n", "<Leader>vt", ":call vimspector#ToggleBreakpoint()<CR>", { noremap = true })
 map("n", "<Leader>vT", ":call vimspector#ClearBreakpoints()<CR>", { noremap = true })
 
-map("n", "<Leader>vr", "<Plug>VimspectorRestart", { noremap = true })
-map("n", "<Leader>vh", "<Plug>VimspectorStepOut", { noremap = true })
-map("n", "<Leader>vl", "<Plug>VimspectorStepInto", { noremap = true })
-map("n", "<Leader>vj", "<Plug>VimspectorStepOver", { noremap = true })
+map("n", "<Leader>vl", ":VimspectorBreakpoints<CR>", { noremap = true })
 
+map("n", "<Leader>vr", "<Plug>VimspectorRestart", { noremap = true })
+map("n", "<Leader>vn", "<Plug>VimspectorStepOver", { noremap = true })
+map("n", "<Leader>vS", "<Plug>VimspectorStepOut", { noremap = true })
+map("n", "<Leader>vs", "<Plug>VimspectorStepInto", { noremap = true })
+
+-- window management
 map("n", "<Leader>wm", ":tabedit %<CR>", { noremap = true })
 map("n", "<Leader>wr", ":tabclose<CR>", { noremap = true })
 
