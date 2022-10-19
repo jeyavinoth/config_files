@@ -173,7 +173,7 @@ vim.tags = "./tags"
 
 -- MAPPINGS
 
--- Remap the leader
+-- Remap the Leader
 vim.g.mapleader = " " -- remap leader to space
 
 -- Moving lines
@@ -207,7 +207,8 @@ map("n", "<Leader>t", ":TagbarToggle fj<CR>", { noremap = true })
 map("n", "<leader>e", ":%s/\\s\\+$//e<CR>", { noremap = true })
 
 -- remapping window operations
-map("n", "<leader>w", "<C-w>", { noremap = true })
+-- map("n", "<leader>w", "<C-w>", { noremap = true })
+map("", "s", "<C-w>", { noremap = true })
 
 -- mergetool
 map("n", "<leader>dt", ":difft<CR>", { noremap = true })
@@ -238,8 +239,7 @@ map("n", "<Leader>vS", "<Plug>VimspectorStepOut", { noremap = true })
 map("n", "<Leader>vs", "<Plug>VimspectorStepInto", { noremap = true })
 
 -- window management
-map("n", "<Leader>wm", ":tabedit %<CR>", { noremap = true })
-map("n", "<Leader>wr", ":tabclose<CR>", { noremap = true })
+map("n", "sm", ":tabedit %<CR>", { noremap = true })
 
 -- Running Python files with <leader>r
 vim.cmd([[autocmd FileType python map <buffer> <leader>r :!clear; python %<CR>]])
@@ -289,11 +289,11 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<leader>wl', function()
   --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   -- end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  -- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  -- vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local lsp_flags = {
@@ -451,7 +451,7 @@ cmp.setup({
 --     require('completion').on_attach(client)
 -- end
 --
--- vim.api.nvim_set_keymap('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 
