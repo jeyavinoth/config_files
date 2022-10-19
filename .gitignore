@@ -14,6 +14,11 @@ tags
 # vimspector
 .vimspector.json
 
+#######################
+### NEOVIM PLUGINS ####
+#######################
+nvim/plugged/*
+
 
 #######################
 ####### Python  #######
