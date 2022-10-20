@@ -43,6 +43,7 @@ return require('packer').startup(
         }
         use 'nvim-telescope/telescope-file-browser.nvim'
         use 'ThePrimeagen/harpoon' -- harpoon to fast switching files
+        use 'kyazdani42/nvim-web-devicons' -- file icons
 
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs
