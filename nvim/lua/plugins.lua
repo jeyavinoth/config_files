@@ -26,6 +26,9 @@ return packer.startup(
         use 'hrsh7th/nvim-cmp' -- Completion
         use 'L3MON4D3/LuaSnip' -- Snippet
 
+        use 'glepnir/lspsaga.nvim' -- LSP saga
+        use 'ray-x/lsp_signature.nvim' -- LSP signature
+
         use {
             'nvim-treesitter/nvim-treesitter', -- Tresitter
             run = ':TSUpdate'
@@ -59,8 +62,6 @@ return packer.startup(
         use 'akinsho/nvim-bufferline.lua' -- TagBuffline
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
-
-        use 'glepnir/lspsaga.nvim' -- LSP saga
 
         use 'preservim/tagbar' -- tagbar on right to get tags in file
 

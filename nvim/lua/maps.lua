@@ -47,19 +47,22 @@ keymap.set('n', '<leader>U', ':move-2<cr>', { silent = true })
 -- Vimspector mappings
 local opts = { noremap = true }
 vim.cmd([[let g:vimspector_enable_mappings = "HUMAN"]])
-keymap.set("n", "<Leader>vd", ":call vimspector#Launch()<CR>", opts)
-keymap.set("n", "<Leader>ve", ":call vimspector#Reset()<CR>", opts)
-keymap.set("n", "<Leader>vc", ":call vimspector#Continue()<CR>", opts)
+keymap.set("n", "<leader>vd", ":call vimspector#Launch()<CR>", opts)
+keymap.set("n", "<leader>ve", ":call vimspector#Reset()<CR>", opts)
+keymap.set("n", "<leader>vc", ":call vimspector#Continue()<CR>", opts)
 
-keymap.set("n", "<Leader>vt", ":call vimspector#ToggleBreakpoint()<CR>", opts)
-keymap.set("n", "<Leader>vT", ":call vimspector#ClearBreakpoints()<CR>", opts)
+keymap.set("n", "<leader>vt", ":call vimspector#ToggleBreakpoint()<CR>", opts)
+keymap.set("n", "<leader>vT", ":call vimspector#ClearBreakpoints()<CR>", opts)
 
-keymap.set("n", "<Leader>vl", ":VimspectorBreakpoints<CR>", opts)
+keymap.set("n", "<leader>vl", ":VimspectorBreakpoints<CR>", opts)
 
-keymap.set("n", "<Leader>vr", "<Plug>VimspectorRestart", opts)
-keymap.set("n", "<Leader>vn", "<Plug>VimspectorStepOver", opts)
-keymap.set("n", "<Leader>vS", "<Plug>VimspectorStepOut", opts)
-keymap.set("n", "<Leader>vs", "<Plug>VimspectorStepInto", opts)
+keymap.set("n", "<leader>vr", "<Plug>VimspectorRestart", opts)
+keymap.set("n", "<leader>vn", "<Plug>VimspectorStepOver", opts)
+keymap.set("n", "<leader>vS", "<Plug>VimspectorStepOut", opts)
+keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 
 -- Tagbar
-vim.keymap.set("n", "<Leader>t", ":Tagbar<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>t", ":Tagbar<CR>", { noremap = true })
+
+-- Set no read only for vimdiff
+vim.keymap.set("n", "<leader>E", "<cmd>set noreadonly<cr>", { noremap = true })
