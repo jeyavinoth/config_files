@@ -10,7 +10,6 @@ keymap.set('n', '-', '<C-x>')
 -- Window binds
 keymap.set('n', '<leader>w', '<C-w>') -- Remap window operations to <leader>w
 
-keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit
 keymap.set('n', 'sh', '<C-w>h') -- Window movements
 keymap.set('n', 'sj', '<C-w>j') -- Window movements
 keymap.set('n', 'sk', '<C-w>k') -- Window movements
@@ -20,6 +19,14 @@ keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
 keymap.set('n', 'sc', '<C-w>c') -- Window close
 keymap.set('n', 'sw', '<C-w>w') -- Next window
 keymap.set('n', 'so', '<C-w>o') -- Next window
+
+-- Tabs
+keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
+keymap.set('n', 'st', ':tabnew<Return>', { silent = true }) -- tab new
+
+-- Buffer binds
+keymap.set('n', '<C-p>', ':bprev<cr>', { silent = true }) -- tabedit current buffer
+keymap.set('n', '<C-n>', ':bnext<cr>', { silent = true }) -- tab new
 
 -- Resizing windows
 keymap.set('n', '<C-w><left>', '<C-w><')
