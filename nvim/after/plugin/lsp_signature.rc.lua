@@ -54,4 +54,3 @@ signature.setup {
         move_cursor_key = nil,
     }
 }
-print('lsp_signature')
