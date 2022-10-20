@@ -6,7 +6,7 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(
+return packer.startup(
     function(use)
         use 'wbthomason/packer.nvim'
         use {
@@ -54,6 +54,15 @@ return require('packer').startup(
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
 
         use 'glepnir/lspsaga.nvim' -- LSP saga
+
+        use {
+            'puremourning/vimspector', -- vim debugger
+            -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
+            -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
+            config = function() require("config.vimspector").setup() end,
+        }
+
+
 
     end
 )

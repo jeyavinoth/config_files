@@ -43,3 +43,20 @@ keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 -- Moving lines
 keymap.set('n', '<leader>D', ':move+<cr>', { silent = true })
 keymap.set('n', '<leader>U', ':move-2<cr>', { silent = true })
+
+-- Vimspector mappings
+local opts = { noremap = true }
+vim.cmd([[let g:vimspector_enable_mappings = "HUMAN"]])
+keymap.set("n", "<Leader>vd", ":call vimspector#Launch()<CR>", opts)
+keymap.set("n", "<Leader>ve", ":call vimspector#Reset()<CR>", opts)
+keymap.set("n", "<Leader>vc", ":call vimspector#Continue()<CR>", opts)
+
+keymap.set("n", "<Leader>vt", ":call vimspector#ToggleBreakpoint()<CR>", opts)
+keymap.set("n", "<Leader>vT", ":call vimspector#ClearBreakpoints()<CR>", opts)
+
+keymap.set("n", "<Leader>vl", ":VimspectorBreakpoints<CR>", opts)
+
+keymap.set("n", "<Leader>vr", "<Plug>VimspectorRestart", opts)
+keymap.set("n", "<Leader>vn", "<Plug>VimspectorStepOver", opts)
+keymap.set("n", "<Leader>vS", "<Plug>VimspectorStepOut", opts)
+keymap.set("n", "<Leader>vs", "<Plug>VimspectorStepInto", opts)
