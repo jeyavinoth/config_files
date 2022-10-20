@@ -13,14 +13,17 @@ vim.opt.background = 'dark'
 -- Colorscheme settings
 
 -- NeoSolarized
-require('lualine').setup {
-    options = {
-        theme = 'solarized_dark'
-    }
-}
 local bufferline_status, bufferline = pcall(require, 'bufferline')
-if (bufferline_status) then
+local neosolarized_status, _ = pcall(require, 'neosolarized')
+
+if (bufferline_status) and (neosolarized_status) then
     -- Neosolarized setup
+    require('lualine').setup {
+        options = {
+            theme = 'solarized_dark'
+        }
+    }
+
     bufferline.setup {
         highlights = {
             separator = {

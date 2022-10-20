@@ -12,13 +12,13 @@ return packer.startup(
 
         -- Colorschemes
 
-        -- use {
-        --     'svrana/neosolarized.nvim',
-        --     requires = { 'tjdevries/colorbuddy.nvim' }
-        -- }
+        use {
+            'svrana/neosolarized.nvim',
+            requires = { 'tjdevries/colorbuddy.nvim' }
+        }
 
-        use 'ellisonleao/gruvbox.nvim'
-        use 'tjdevries/colorbuddy.nvim'
+        -- use 'ellisonleao/gruvbox.nvim'
+        -- use 'tjdevries/colorbuddy.nvim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 

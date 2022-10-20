@@ -18,7 +18,8 @@ keymap.set('n', 'ss', '<C-w>s<C-w>w') -- Horizontal split
 keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
 keymap.set('n', 'sc', '<C-w>c') -- Window close
 keymap.set('n', 'sw', '<C-w>w') -- Next window
-keymap.set('n', 'so', '<C-w>o') -- Next window
+keymap.set('n', 'sq', '<C-w>q') -- Quit window
+keymap.set('n', 'so', '<C-w>o') -- Close everything else other than the current window
 keymap.set('n', 'sd', ':bd<cr>') -- buffer delete
 
 -- Tabs
