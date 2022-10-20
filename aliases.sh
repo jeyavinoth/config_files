@@ -12,3 +12,6 @@ alias rm="rm -i"
 alias gdt="git difftool"
 alias gdtc="git difftool --cached"
 alias gwt="git worktree"
+
+# Tmux session
+alias o="sh ~/.vim/custom_scripts/tmux-session.sh"
