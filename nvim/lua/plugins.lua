@@ -47,11 +47,13 @@ return require('packer').startup(
 
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs
-        use 'windwp/nvim-ts-autotag' -- typescript ?
+        -- use 'windwp/nvim-ts-autotag' -- typescript ?
 
-        -- TagBuffline
-        use 'akinsho/nvim-bufferline.lua'
-        use 'norcalli/nvim-colorizer.lua'
+        use 'akinsho/nvim-bufferline.lua' -- TagBuffline
+
+        use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
+
+        use 'glepnir/lspsaga.nvim' -- LSP saga
 
     end
 )

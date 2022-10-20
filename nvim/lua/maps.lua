@@ -10,16 +10,16 @@ keymap.set('n', '-', '<C-x>')
 -- Window binds
 keymap.set('n', '<leader>w', '<C-w>') -- Remap window operations to <leader>w
 
-keymap.set('n', 'se', ':tabedit %<Return>', { silent = true })  -- tabedit
-keymap.set('n', 'sh', '<C-w>h')  -- Window movements
-keymap.set('n', 'sj', '<C-w>j')  -- Window movements
-keymap.set('n', 'sk', '<C-w>k')  -- Window movements
-keymap.set('n', 'sl', '<C-w>l')  -- Window movements
-keymap.set('n', 'ss', '<C-w>s<C-w>w')  -- Horizontal split
-keymap.set('n', 'sv', '<C-w>v<C-w>w')  -- Vertical split
-keymap.set('n', 'sc', '<C-w>c')  -- Window close
-keymap.set('n', 'sw', '<C-w>w')  -- Next window
-keymap.set('n', 'so', '<C-w>o')  -- Next window
+keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit
+keymap.set('n', 'sh', '<C-w>h') -- Window movements
+keymap.set('n', 'sj', '<C-w>j') -- Window movements
+keymap.set('n', 'sk', '<C-w>k') -- Window movements
+keymap.set('n', 'sl', '<C-w>l') -- Window movements
+keymap.set('n', 'ss', '<C-w>s<C-w>w') -- Horizontal split
+keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
+keymap.set('n', 'sc', '<C-w>c') -- Window close
+keymap.set('n', 'sw', '<C-w>w') -- Next window
+keymap.set('n', 'so', '<C-w>o') -- Next window
 
 -- Resizing windows
 keymap.set('n', '<C-w><left>', '<C-w><')
@@ -41,5 +41,5 @@ keymap.set('n', '<leader>do', ':diffo<Return>')
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 
 -- Moving lines
-keymap.set('n', '<C-j>', ':move+<cr>', { silent = true })
-keymap.set('n', '<C-k>', ':move-2<cr>', { silent = true })
+keymap.set('n', '<leader>D', ':move+<cr>', { silent = true })
+keymap.set('n', '<leader>U', ':move-2<cr>', { silent = true })
