@@ -9,14 +9,15 @@ vim.cmd [[packadd packer.nvim]]
 return packer.startup(
     function(use)
         use 'wbthomason/packer.nvim'
+
+        -- Colorschemes
         use {
             'svrana/neosolarized.nvim',
             requires = { 'tjdevries/colorbuddy.nvim' }
         }
+        -- use 'ellisonleao/gruvbox.nvim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
-
-        use 'tomtom/tcomment_vim' -- gcc comment
 
         use 'neovim/nvim-lspconfig' -- LSP
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -33,6 +34,7 @@ return packer.startup(
         -- Fast editing
         use 'tpope/vim-surround' -- sorround words, etc ysw)
         use 'tpope/vim-repeat' -- updated . repeat
+        use 'tomtom/tcomment_vim' -- gcc comment
 
         -- Git
         -- use 'airblade/vim-gitgutter' -- shows the +/- for git changes

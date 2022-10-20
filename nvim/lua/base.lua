@@ -29,10 +29,10 @@ vim.opt.shell = 'zsh' -- the shell used
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
 vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append { '**' } -- Finding files - search down into subfolders
--- vim.opt.wildignore:append { '*/node_modules/*' } 
+-- vim.opt.wildignore:append { '*/node_modules/*' }
 
 -- ctags settings
-vim.opt.tags:append { './tags' } -- Look for ctags 
+vim.opt.tags:append { './tags' } -- Look for ctags
 
 -- Undo settings
 vim.bo.undofile = true -- set an undofile; nice to have a undo even after closing files
@@ -52,7 +52,7 @@ vim.opt.smarttab = true
 vim.opt.showmatch = true -- shows matching brackets/quotes
 vim.opt.shiftwidth = 4 -- >> | << moves by 4 spaces
 vim.opt.tabstop = 4 -- set tab spacing as 4
-vim.opt.softtabstop = 4 -- set tab spacing 
+vim.opt.softtabstop = 4 -- set tab spacing
 vim.opt.expandtab = true -- expaands tabs to spaces
 vim.opt.autoindent = true -- auto indent
 vim.opt.smartindent = true -- smart indent
@@ -79,5 +79,5 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     command = "set nopaste"
 })
 
--- Add asterisk in block comments 
+-- Add asterisk in block comments
 vim.opt.formatoptions:append { 'r' }

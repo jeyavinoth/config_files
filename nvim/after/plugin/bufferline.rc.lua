@@ -1,6 +1,7 @@
 local status, bufferline = pcall(require, 'bufferline')
 if (not status) then return end
 
+-- Neosolarized setup
 bufferline.setup {
     options = {
         model = 'tabs',
