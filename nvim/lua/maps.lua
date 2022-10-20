@@ -1,8 +1,5 @@
 local keymap = vim.keymap
 
--- Do not yank when deleting with x
-keymap.set('n', 'x', '"_x')
-
 -- Remapping leaders, and window leader
 vim.g.mapleader = " " -- remap leader to space
 
