@@ -32,8 +32,13 @@ return packer.startup(
 
         -- Fast editing
         use 'tpope/vim-surround' -- sorround words, etc ysw)
-        use 'tpope/vim-fugitive' -- git integration
         use 'tpope/vim-repeat' -- updated . repeat
+
+        -- Git
+        -- use 'airblade/vim-gitgutter' -- shows the +/- for git changes
+        -- use 'tpope/vim-fugitive' -- git integration
+        use 'dinhhuy258/git.nvim' -- git integration built on top of vim-fugitive
+        use 'lewis6991/gitsigns.nvim' -- git integration built on top of vim-fugitive
 
         -- File navigation
         use 'nvim-lua/plenary.nvim' -- common utilities
@@ -55,6 +60,8 @@ return packer.startup(
 
         use 'glepnir/lspsaga.nvim' -- LSP saga
 
+        use 'preservim/tagbar' -- tagbar on right to get tags in file
+
         use {
             'puremourning/vimspector', -- vim debugger
             -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
@@ -62,7 +69,7 @@ return packer.startup(
             config = function() require("config.vimspector").setup() end,
         }
 
-
+        -- use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
     end
 )

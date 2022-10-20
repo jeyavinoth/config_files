@@ -60,3 +60,6 @@ keymap.set("n", "<Leader>vr", "<Plug>VimspectorRestart", opts)
 keymap.set("n", "<Leader>vn", "<Plug>VimspectorStepOver", opts)
 keymap.set("n", "<Leader>vS", "<Plug>VimspectorStepOut", opts)
 keymap.set("n", "<Leader>vs", "<Plug>VimspectorStepInto", opts)
+
+-- Tagbar
+vim.keymap.set("n", "<Leader>t", ":Tagbar<CR>", { noremap = true })
