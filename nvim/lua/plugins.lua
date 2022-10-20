@@ -49,5 +49,9 @@ return require('packer').startup(
         use 'windwp/nvim-autopairs' -- autopairs
         use 'windwp/nvim-ts-autotag' -- typescript ?
 
+        -- TagBuffline
+        use 'akinsho/nvim-bufferline.lua'
+        use 'norcalli/nvim-colorizer.lua'
+
     end
 )
