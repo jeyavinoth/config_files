@@ -19,14 +19,15 @@ keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
 keymap.set('n', 'sc', '<C-w>c') -- Window close
 keymap.set('n', 'sw', '<C-w>w') -- Next window
 keymap.set('n', 'so', '<C-w>o') -- Next window
+keymap.set('n', 'sd', ':bd<cr>') -- buffer delete
 
 -- Tabs
 keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
 keymap.set('n', 'st', ':tabnew<Return>', { silent = true }) -- tab new
 
--- Buffer binds
-keymap.set('n', '<C-p>', ':bprev<cr>', { silent = true }) -- tabedit current buffer
-keymap.set('n', '<C-n>', ':bnext<cr>', { silent = true }) -- tab new
+-- -- Buffer binds
+-- keymap.set('n', '<C-p>', ':bprev<cr>', { silent = true }) -- tabedit current buffer
+-- keymap.set('n', '<C-n>', ':bnext<cr>', { silent = true }) -- tab new
 
 -- Resizing windows
 keymap.set('n', '<C-w><left>', '<C-w><')
