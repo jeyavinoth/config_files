@@ -2,6 +2,7 @@
 alias ll="ls -lhtr"
 alias l="ls -l"
 alias lS="ls -lhSr"
+alias la="ls -lha"
 
 # Other general
 alias rsync="rsync --progress"
