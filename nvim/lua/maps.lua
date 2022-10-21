@@ -62,6 +62,7 @@ keymap.set("n", "<leader>vc", ":call vimspector#Continue()<CR>", opts)
 
 keymap.set("n", "<leader>vt", ":call vimspector#ToggleBreakpoint()<CR>", opts)
 keymap.set("n", "<leader>vT", ":call vimspector#ClearBreakpoints()<CR>", opts)
+keymap.set("n", "<leader>vb", ":VimspectorBreakpoints<CR>", opts)
 
 keymap.set("n", "<leader>vl", ":VimspectorBreakpoints<CR>", opts)
 

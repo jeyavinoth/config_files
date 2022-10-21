@@ -28,7 +28,10 @@ nvim_lsp.pylsp.setup {
                 jedi_references = { enabled = true },
                 jedi_signature_help = { enabled = true },
                 jedi_symbols = { enabled = true, all_scopes = true },
-                pycodestyle = { enabled = false },
+                pycodestyle = {
+                    enabled = false,
+                    maxLineLength = 120
+                },
                 flake8 = {
                     enabled = true,
                     -- ignore = {},

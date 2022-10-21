@@ -44,7 +44,7 @@ return packer.startup(
 
         -- Git
         -- use 'airblade/vim-gitgutter' -- shows the +/- for git changes
-        -- use 'tpope/vim-fugitive' -- git integration
+        use 'tpope/vim-fugitive' -- git integration
         use 'dinhhuy258/git.nvim' -- git integration built on top of vim-fugitive
         use 'lewis6991/gitsigns.nvim' -- git integration built on top of vim-fugitive
 
