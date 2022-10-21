@@ -1,6 +1,6 @@
 # LS
 alias ll="ls -lhtr"
-alias l="ls -l"
+alias l="ls -lh"
 alias lS="ls -lhSr"
 alias la="ls -lha"
 
