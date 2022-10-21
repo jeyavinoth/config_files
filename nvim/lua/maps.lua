@@ -45,6 +45,8 @@ keymap.set('', '<leader>P', '"*P')
 -- Git mergetools
 keymap.set('n', '<leader>dt', ':difft<Return>')
 keymap.set('n', '<leader>do', ':diffo<Return>')
+keymap.set('n', '<leader>dr', ':diffget REMOTE<Return>')
+keymap.set('n', '<leader>dl', ':diffget LOCAL<Return>')
 
 -- Remove trailing whitespace
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
