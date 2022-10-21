@@ -1,5 +1,4 @@
 local keymap = vim.keymap
-
 -- Remapping leaders, and window leader
 vim.g.mapleader = " " -- remap leader to space
 
@@ -43,10 +42,15 @@ keymap.set('', '<leader>Y', '"*Y')
 keymap.set('', '<leader>P', '"*P')
 
 -- Git mergetools
-keymap.set('n', '<leader>dt', ':difft<Return>')
-keymap.set('n', '<leader>do', ':diffo<Return>')
+keymap.set('n', '<leader>dt', ':diffthis<Return>')
+keymap.set('n', '<leader>do', ':diffoff<Return>')
 keymap.set('n', '<leader>dr', ':diffget REMOTE<Return>')
+keymap.set('n', '<leader>db', ':diffget BASE<Return>')
 keymap.set('n', '<leader>dl', ':diffget LOCAL<Return>')
+keymap.set('n', '<leader>dg', ':diffget<Return>')
+
+keymap.set('n', '<leader>cg', ":lua require('themes').gruvbox()<Return>")
+keymap.set('n', '<leader>cn', ":lua require('themes').neosolarized()<Return>")
 
 -- Remove trailing whitespace
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
