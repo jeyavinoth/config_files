@@ -72,7 +72,7 @@ return packer.startup(
             'puremourning/vimspector', -- vim debugger
             -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
             -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
-            config = function() require("config.vimspector").setup() end,
+            -- config = function() require("config.vimspector").setup() end,
         }
 
         -- use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
