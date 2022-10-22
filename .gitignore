@@ -18,6 +18,7 @@ tags
 ### NEOVIM PLUGINS ####
 #######################
 nvim/plugged/*
+nvim/plugin/*
 
 
 #######################
