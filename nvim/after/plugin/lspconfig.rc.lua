@@ -1,7 +1,7 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
-local protocol = require('vim.lsp.protocol')
+-- local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
     -- formatting
@@ -41,7 +41,7 @@ nvim_lsp.pylsp.setup {
                 preload = { enabled = false },
                 rope_completion = { enabled = false },
                 black = { enabled = true },
-                isort = { enabled = true }
+                isort = { enabled = false }
             },
         },
     }
@@ -59,7 +59,7 @@ nvim_lsp.sumneko_lua.setup {
         Lua = {
             diagnostics = {
                 -- Get the language server to recognize the "vim" global
-                globals = { 'vim' }
+                globals = { 'vim', 'hs' }
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
