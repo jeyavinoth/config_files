@@ -10,6 +10,7 @@ ln -s ./.gitignore ~/.gitignore
 ln -s ./.vim ~/.vim
 ln -s ./.tmux.conf ~/.tmux.conf
 ln -s ./.vim/nvim ~/.config/nvim
+ln -s ./.vim/.hammerspoon ~/.hammerspoon
 
 # # making directories needed for my vim files
 # mkdir ~/.backup
