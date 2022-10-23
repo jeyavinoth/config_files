@@ -7,4 +7,3 @@ vim.opt.pumblend = 5
 
 -- Background settings
 vim.opt.background = 'dark'
--- vim.cmd([[highlight Normal ctermbg=None]])

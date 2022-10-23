@@ -133,6 +133,7 @@ function themes.gruvbox()
         }
     end
     vim.cmd('colorscheme gruvbox')
+    -- vim.cmd([[highlight Normal ctermbg=None]])
     initialize_lualine('gruvbox')
 end
 
