@@ -1,3 +1,0 @@
-Neosolarized = function()
-
-end
