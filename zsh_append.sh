@@ -16,3 +16,6 @@ alias gwt="git worktree"
 
 # Tmux session
 alias o="sh ~/.vim/custom_scripts/tmux-session.sh"
+
+# Bind key 
+bindkey -v
