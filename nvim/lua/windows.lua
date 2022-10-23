@@ -1,1 +1,1 @@
-vim.opt.clipboar:prepend { 'unnamed', 'unnamedplus' }
+-- vim.opt.clipboar:prepend { 'unnamed', 'unnamedplus' }
