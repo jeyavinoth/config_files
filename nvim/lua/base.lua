@@ -82,3 +82,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisk in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- Block Cursor
+-- vim.opt.guicursor = ""
