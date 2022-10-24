@@ -85,3 +85,6 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Block Cursor
 -- vim.opt.guicursor = ""
+
+-- Vim-slime
+vim.cmd('let g:slime_target="tmux"') -- using tmux for vim-slime

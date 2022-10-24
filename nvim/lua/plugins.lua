@@ -77,5 +77,8 @@ return packer.startup(
 
         -- use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
+        -- trying out plugins
+        use 'jpalardy/vim-slime' -- send text to tmux pane
+
     end
 )
