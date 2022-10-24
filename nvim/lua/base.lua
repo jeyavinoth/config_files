@@ -88,3 +88,5 @@ vim.opt.formatoptions:append { 'r' }
 
 -- Vim-slime
 vim.cmd('let g:slime_target="tmux"') -- using tmux for vim-slime
+vim.cmd('let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}') -- defaults and send to last pane
+
