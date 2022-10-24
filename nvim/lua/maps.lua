@@ -59,6 +59,9 @@ keymap.set('n', '<leader>cn', ":lua require('themes').neosolarized()<Return>")
 -- Remove trailing whitespace
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 
+-- UndoTree
+keymap.set('n', '<leader>U', ':UndotreeToggle<CR>')
+
 -- Moving lines
 keymap.set('n', '-', ':move-2<cr>', { silent = true })
 keymap.set('n', '=', ':move+<cr>', { silent = true })

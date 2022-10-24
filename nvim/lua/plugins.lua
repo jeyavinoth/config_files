@@ -78,7 +78,9 @@ return packer.startup(
         -- use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
         -- trying out plugins
-        use 'jpalardy/vim-slime' -- send text to tmux pane
+        use 'jpalardy/vim-slime' -- send text to tmux pane (make sure I am using this plugin regularly)
+
+        use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
 
     end
 )
