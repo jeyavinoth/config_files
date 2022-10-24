@@ -22,5 +22,5 @@ ln -s ./.vim/.hammerspoon ~/.hammerspoon
 # echo 'alias rm="rm -i"' >> ~/.zshrc
 # echo 'alias ca="conda activate"' >> ~/.zshrc
 # echo 'source ~/.vim/aliases.sh' >> ~/.zshrc
-grep -qxF 'source ~/.vim/aliases.sh' ~/.zshrc || echo 'source ~/.vim/aliases.sh' >> foo.bar
+grep -qxF 'source ~/.vim/zsh_append.sh' ~/.zshrc || echo 'source ~/.vim/zsh_append.sh' >> ~/.zshrc
 

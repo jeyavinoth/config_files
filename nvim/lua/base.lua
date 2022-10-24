@@ -18,10 +18,10 @@ vim.opt.autoindent = true
 -- vim.opt.scrolloff = 10 -- set the number of lines kept when scrolling (ex. C-d, C-u)
 
 -- Base configs
-vim.cmd('set mouse=a')
-vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 1
+vim.cmd('set mouse=a') -- set the usage of mouse, when needed
+vim.opt.backup = false -- have no backup file
+vim.opt.showcmd = true -- show what command was executed
+vim.opt.cmdheight = 1 -- height of the command line at the bottom
 vim.opt.laststatus = 2
 vim.opt.shell = 'zsh' -- the shell used
 
