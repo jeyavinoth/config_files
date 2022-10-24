@@ -2,9 +2,9 @@ local keymap = vim.keymap
 -- Remapping leaders, and window leader
 vim.g.mapleader = " " -- remap leader to space
 
--- Increment/Decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+-- -- Increment/Decrement
+-- keymap.set('n', '+', '<C-a>')
+-- keymap.set('n', '-', '<C-x>')
 
 -- Window binds
 keymap.set('n', '<leader>w', '<C-w>') -- Remap window operations to <leader>w
@@ -41,6 +41,10 @@ keymap.set('', '<leader>p', '"*p')
 keymap.set('', '<leader>Y', '"*Y')
 keymap.set('', '<leader>P', '"*P')
 
+keymap.set('', '<leader>rd', '"_d') -- delete to empty register
+keymap.set('', '<leader>rp', '"_dp') -- delete to empty register
+keymap.set('', '<leader>rD', '"_D') -- delete to empty register
+
 -- Git mergetools
 keymap.set('n', '<leader>dt', ':diffthis<Return>')
 keymap.set('n', '<leader>do', ':diffoff<Return>')
@@ -56,8 +60,8 @@ keymap.set('n', '<leader>cn', ":lua require('themes').neosolarized()<Return>")
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 
 -- Moving lines
-keymap.set('n', '<leader>D', ':move+<cr>', { silent = true })
-keymap.set('n', '<leader>U', ':move-2<cr>', { silent = true })
+keymap.set('n', '-', ':move-2<cr>', { silent = true })
+keymap.set('n', '=', ':move+<cr>', { silent = true })
 
 -- Vimspector mappings
 local opts = { noremap = true }
