@@ -66,9 +66,21 @@ vim.opt.breakindent = true -- wrapped lines will have same visual indents
 vim.opt.errorbells = false -- no error bells in vim
 
 -- Undercurl
+-- doesn't work with iterm2
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
--- doesn't work with iterm2
+
+-- Set block cursor style
+-- Reference chart of values
+--  PS = 0 --> blinking block
+--  PS = 1 --> blinking block (default)
+--  PS = 2 --> steady block
+--  PS = 3 --> blinking underline
+--  PS = 4 --> steady underline
+--  PS = 5 --> blinking bar (xterm)
+--  PS = 6 --> steady bar (xterm)
+vim.cmd([[let &t_SI = "\e[6 q"]])
+vim.cmd([[let &t_EI = "\e[2 q"]])
 
 -- Columns (color/sign)
 vim.opt.signcolumn = 'yes'

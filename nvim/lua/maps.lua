@@ -60,7 +60,7 @@ keymap.set('n', '<leader>cn', ":lua require('themes').neosolarized()<Return>")
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 
 -- UndoTree
-keymap.set('n', '<leader>U', ':UndotreeToggle<CR>')
+keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 
 -- Moving lines
 keymap.set('n', '-', ':move-2<cr>', { silent = true })
