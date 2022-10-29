@@ -41,9 +41,7 @@ keymap.set('', '<leader>p', '"*p')
 keymap.set('', '<leader>Y', '"*Y')
 keymap.set('', '<leader>P', '"*P')
 
-keymap.set('', '<leader>rd', '"_d') -- delete to empty register
-keymap.set('', '<leader>rp', '"_dp') -- delete to empty register
-keymap.set('', '<leader>rD', '"_D') -- delete to empty register
+keymap.set('', '<leader>r', '"_') -- empty register
 
 -- Git mergetools
 keymap.set('n', '<leader>dt', ':diffthis<Return>')

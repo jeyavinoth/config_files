@@ -82,5 +82,7 @@ return packer.startup(
 
         use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
 
+        use 'xuhdev/vim-latex-live-preview'
+
     end
 )
