@@ -106,5 +106,15 @@ vim.cmd('let g:slime_dont_ask_default = 1')
 -- Latex formatting (vim-latex-live-preview)
 vim.cmd('let g:tex_flavor = "latex"')
 vim.cmd('autocmd Filetype tex setl updatetime=1')
-vim.cmd("let g:livepreview_previewer = 'evince'")
--- vim.cmd("let g:livepreview_previewer = 'open -a Preview'")
+
+-- setting preview based on operating system
+local has = function(x)
+    return vim.fn.has(x) == 1
+end
+local is_mac = has "macunix"
+if is_mac then
+    vim.cmd("let g:livepreview_previewer = 'open -a Preview'")
+else
+    vim.cmd("let g:livepreview_previewer = 'evince'")
+end
+
