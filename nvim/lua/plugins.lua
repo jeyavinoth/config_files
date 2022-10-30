@@ -36,6 +36,7 @@ return packer.startup(
             'nvim-treesitter/nvim-treesitter', -- Tresitter
             run = ':TSUpdate'
         }
+        use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
         -- Fast editing
         use 'tpope/vim-surround' -- sorround words, etc ysw)
