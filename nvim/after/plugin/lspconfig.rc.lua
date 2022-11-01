@@ -49,12 +49,12 @@ nvim_lsp.pylsp.setup {
 
 -- Pyright Setup
 nvim_lsp.pyright.setup {
-    on_attach = on_attach
+    -- on_attach = on_attach
 }
 
 -- Lua formatting
 nvim_lsp.sumneko_lua.setup {
-    on_attach = on_attach,
+    -- on_attach = on_attach,
     settings = {
         Lua = {
             diagnostics = {
