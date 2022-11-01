@@ -47,6 +47,7 @@ yabai -m rule --add app="^XQuartz$" manage=off
 # move apps to specific spaces
 yabai -m rule --add app="^Alacritty$" space=^1
 yabai -m rule --add app="^Google Chrome$" space=^2
+yabai -m rule --add app="^Brave$" space=^4
 yabai -m rule --add app="^FileZilla$" space=^5
 yabai -m rule --add app="^Safari$" space=^6
 yabai -m rule --add app="^Scapple$" space=^7
