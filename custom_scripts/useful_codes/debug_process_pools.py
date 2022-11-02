@@ -6,9 +6,9 @@ vals = range(10000)
 
 
 def _process_one(val: int) -> int:
-    print(f"Running {val}")
     _identity = mp.current_process()._identity[0]
-    RemotePdb('localhost', 4444+_identity).set_trace()
+    print(f"Running {val} in {_identity}")
+    RemotePdb('localhost', 4000+_identity).set_trace()
     return val**2
 
 
