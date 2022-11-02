@@ -1,4 +1,4 @@
-local status, _ = pcall(require, 'lspsaga')
+local status, saga = pcall(require, 'lspsaga')
 if (not status) then return end
 
 -- This line seems to hog CPU when using lspsaga
