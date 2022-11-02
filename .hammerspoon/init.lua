@@ -15,4 +15,5 @@ require('lua/keybinds/navigation') -- Navigation Binds
 -- ctrl + alt + cmd + h --> send window to prev monitor
 -- ctrl + alt + cmd + l --> send window to next monitor
 -- ctrl + alt + cmd + m --> switch to meet.google.com tab in Chrome
+-- ctrl + alt + cmd + n --> toggle notification bar in MAC
 -- ctrl + alt + cmd + j --> switch to Jimmy's server jupyter lab tab in Chrome

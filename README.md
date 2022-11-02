@@ -1,37 +1,41 @@
 # Neovim 
 
-1. Install vim-plug  "https://github.com/junegunn/vim-plug"
-2. Then link init.lua from the repo to ~/.config/nvim/init.lua
+1. Install Packer package installer  "https://github.com/wbthomason/packer.nvim"
+2. Then link the folder nvim to ~/.config/nvim
 3. Setup vim alias as nvim 
-4. Open vim and then run :PlugInstall
+4. Open vim and then run :PackerInstall (the first install will cause issues with :TSUpdate [treesitter])
 5. Then install debugpy :VimspectorInstall debugpy
 6. brew install pyright <-- install pyright langserver
+7. pip install neovim
+8. pip install python-lsp-server
+9. pip install pyright flake8 black isort  # formatting stuff 
 
 
-# Custom Ubuntu 19.10 Setup
+# Hammerspoon
 
-Install dconf-editor
+* This is specific to MAC
 
-1) To make applications minimize on side bar click
+    **<em>List of Binds</em>**
+    * ctrl + alt + cmd + \ &rarr; connect airpods
+    * ctrl + alt + cmd + shift + \ &rarr; disconnect airpods
+    * ctrl + alt + cmd + shift + \ &rarr; disconnect airpods
+    * ctrl + alt + cmd + h &rarr; send window to prev monitor
+    * ctrl + alt + cmd + l &rarr; send window to next monitor
+    * ctrl + alt + cmd + m &rarr; switch to meet.google.com tab in Chrome
+    * ctrl + alt + cmd + n &rarr; toggle the notificaiton bar on mac 
+    * ctrl + alt + cmd + j &rarr; switch to Jimmy's server jupyter lab tab in Chrome
 
-Go to : 
+# Other stuff
 
-/org/gnome/shell/extensions/dash-to-dock/click-action
+## Mozilla Thunderbird
 
-change click-action custom value to "minimize-or-overview"
+1) Install following add ons: 
 
-2) Setup laptop at 1920 x 1080, install Gnome tweaks --> Fonts --> Scaling Factor --> 1.25
+    * owl exhcange, for microsoft - For my staff ccny account
 
+    * gContactSync - for goolge sync of address book
 
-# Mozilla Thunderbird 
+2) Minimize on close - minimizes thunderbird instead of closing it, can still be cloased via the menu
 
-1) Install following add ons
-
-owl exhcange, for microsoft - For my staff ccny account
-
-gContactSync - for goolge sync of address book
-
-Minimize on close - minimizes thunderbird instead of closing it, can still be cloased via the menu
-
-2) Go to view --> folders --> unified, then sort by --> threaded 
+    * Go to view --> folders --> unified, then sort by --> threaded 
 

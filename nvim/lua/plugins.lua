@@ -85,5 +85,12 @@ return packer.startup(
 
         use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
 
+        -- Markdown preview setup: install without yarn or npm
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = function() vim.fn["mkdp#util#install"]() end,
+        })
+
+
     end
 )
