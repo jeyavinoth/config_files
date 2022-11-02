@@ -15,7 +15,7 @@ alias gdtc="git difftool --cached"
 alias gwt="git worktree"
 
 # Tmux session
-alias o="sh ~/.vim/custom_scripts/tmux-session.sh"
+alias o="sh ~/.dotfiles/custom_scripts/tmux-session.sh"
 
 # Bind key 
 bindkey -v
