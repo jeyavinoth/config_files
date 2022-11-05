@@ -8,11 +8,11 @@
   lg = !"git lg1"
 
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 
 [diff]
-    tool = nvimdiff
+	tool = nvimdiff
 
 [difftool]
     prompt = false
