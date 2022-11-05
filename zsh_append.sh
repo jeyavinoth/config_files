@@ -18,6 +18,8 @@ alias gwt="git worktree"
 
 # Tmux session / keybinds
 alias o="sh ~/.dotfiles/custom_scripts/tmux-session.sh"
+
+# Tmux Aliases
 alias ta="tmux a -t"
 alias tn="tmux new -s"
 alias tls="tmux ls"
