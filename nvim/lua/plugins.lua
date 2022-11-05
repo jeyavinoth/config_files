@@ -63,7 +63,7 @@ return packer.startup(
         use 'windwp/nvim-autopairs' -- autopairs
         -- use 'windwp/nvim-ts-autotag' -- typescript ?
 
-        use 'akinsho/nvim-bufferline.lua' -- TagBuffline
+        -- use 'akinsho/nvim-bufferline.lua' -- TagBuffline
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
 
