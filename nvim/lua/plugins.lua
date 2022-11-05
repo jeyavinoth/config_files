@@ -81,7 +81,7 @@ return packer.startup(
         -- trying out plugins
         use 'jpalardy/vim-slime' -- send text to tmux pane (make sure I am using this plugin regularly)
 
-        use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
+        -- use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
 
         use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
 
