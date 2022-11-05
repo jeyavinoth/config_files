@@ -1,8 +1,9 @@
 local status, bufferline = pcall(require, 'bufferline')
 if (not status) then return end
 
-vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})
-vim.api.nvim_set_keymap('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', {})
+-- Removed this because <C-i> = <Tab>, and makes it so that I can't jump using C-i / C-o
+-- vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})
+-- vim.api.nvim_set_keymap('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', {})
 
 -- Neosolarized setup
 bufferline.setup {
