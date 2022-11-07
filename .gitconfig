@@ -8,17 +8,23 @@
   lg = !"git lg1"
 
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 
 [diff]
-    tool = nvimdiff
+	tool = nvimdiff
+
+[diff "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [difftool]
     prompt = false
 
 [merge]
     tool = nvimdiff
+
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [mergetool]
 	keepBackup = false

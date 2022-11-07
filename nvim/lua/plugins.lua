@@ -11,14 +11,21 @@ return packer.startup(
         use 'wbthomason/packer.nvim'
 
         -- Colorschemes
+        use 'tjdevries/colorbuddy.nvim'
 
+        -- use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
+        -- use 'ellisonleao/gruvbox.nvim'
         use {
-            'svrana/neosolarized.nvim',
-            requires = { 'tjdevries/colorbuddy.nvim' }
+            "catppuccin/nvim",
+            as = "catppuccin",
+            config = function()
+                require("catppuccin").setup {
+                    flavour = "macchiato" -- mocha, macchiato, frappe, latte
+                }
+                vim.api.nvim_command "colorscheme catppuccin"
+            end
         }
 
-        use 'ellisonleao/gruvbox.nvim'
-        -- use 'tjdevries/colorbuddy.nvim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
@@ -63,7 +70,7 @@ return packer.startup(
         use 'windwp/nvim-autopairs' -- autopairs
         -- use 'windwp/nvim-ts-autotag' -- typescript ?
 
-        use 'akinsho/nvim-bufferline.lua' -- TagBuffline
+        -- use 'akinsho/nvim-bufferline.lua' -- TagBuffline
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
 
@@ -81,9 +88,16 @@ return packer.startup(
         -- trying out plugins
         use 'jpalardy/vim-slime' -- send text to tmux pane (make sure I am using this plugin regularly)
 
-        use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
+        -- use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
 
         use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
+
+        -- Markdown preview setup: install without yarn or npm
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = function() vim.fn["mkdp#util#install"]() end,
+        })
+
 
     end
 )

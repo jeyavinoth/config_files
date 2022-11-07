@@ -1,8 +1,5 @@
 local status, n = pcall(require, 'neosolarized')
-if (not status) then
-    print('No neosolarized')
-    return
-end
+if not status then return end
 
 n.setup({ comment_italics = true })
 
@@ -32,3 +29,9 @@ Group.new('DiagnosticUnderlineError', colors.none, colors.none, styles.undercurl
 Group.new('DiagnosticUnderlineWarn', colors.none, colors.none, styles.undercurl, cWarn)
 Group.new('DiagnosticUnderlineInfo', colors.none, colors.none, styles.undercurl, cInfo)
 Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
+
+-- -- Added this to get better colors for nvimdiff
+-- vim.cmd([[highlight DiffAdd    ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightGreen]])
+-- vim.cmd([[highlight DiffDelete ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightRed]])
+-- vim.cmd([[highlight DiffChange ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightGreen]])
+-- vim.cmd([[highlight DiffText   ctermfg=10 ctermbg=88 cterm=bold gui=none guifg=bg guibg=Orange]])
