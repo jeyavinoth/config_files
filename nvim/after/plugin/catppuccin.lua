@@ -1,7 +1,6 @@
 local status, c = pcall(require, 'catppuccin')
 if not status then return end
 
-vim.cmd.colorscheme "catppuccin"
 
 c.setup({
     flavour = "frappe", -- latte, frappe, macchiato, mocha
@@ -43,3 +42,4 @@ c.setup({
     },
 })
 
+vim.cmd.colorscheme "catppuccin"
