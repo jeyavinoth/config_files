@@ -13,18 +13,20 @@ return packer.startup(
         -- Colorschemes
         use 'tjdevries/colorbuddy.nvim'
 
-        -- use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
-        -- use 'ellisonleao/gruvbox.nvim'
-        use {
-            "catppuccin/nvim",
-            as = "catppuccin",
-            config = function()
-                require("catppuccin").setup {
-                    flavour = "macchiato" -- mocha, macchiato, frappe, latte
-                }
-                vim.api.nvim_command "colorscheme catppuccin"
-            end
-        }
+        -- -- use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
+        -- -- use 'ellisonleao/gruvbox.nvim'
+        use { "catppuccin/nvim", as = "catppuccin"}
+
+        -- use {
+        --     "catppuccin/nvim",
+        --     as = "catppuccin",
+        --     config = function()
+        --         require("catppuccin").setup {
+        --             flavour = "latte" -- mocha, macchiato, frappe, latte
+        --         }
+        --         vim.api.nvim_command "colorscheme catppuccin"
+        --     end
+        -- }
 
 
         use 'hoob3rt/lualine.nvim' -- statusline
