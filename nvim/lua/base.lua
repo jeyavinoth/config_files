@@ -94,6 +94,10 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisk in block comments
 vim.opt.formatoptions:append { 'r' }
+-- vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "o" , "c", "r" } end, })
+
+-- Remove autocommenting on "o"
+vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "o" } end, })
 
 -- Block Cursor
 vim.opt.guicursor = ""
