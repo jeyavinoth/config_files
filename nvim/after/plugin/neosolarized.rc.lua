@@ -30,8 +30,10 @@ Group.new('DiagnosticUnderlineWarn', colors.none, colors.none, styles.undercurl,
 Group.new('DiagnosticUnderlineInfo', colors.none, colors.none, styles.undercurl, cInfo)
 Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl, cHint)
 
--- -- Added this to get better colors for nvimdiff
--- vim.cmd([[highlight DiffAdd    ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightGreen]])
+-- -- -- Added this to get better colors for nvimdiff
+-- vim.cmd([[highlight DiffAdd    ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=colors.base03]])
 -- vim.cmd([[highlight DiffDelete ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightRed]])
 -- vim.cmd([[highlight DiffChange ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightGreen]])
 -- vim.cmd([[highlight DiffText   ctermfg=10 ctermbg=88 cterm=bold gui=none guifg=bg guibg=Orange]])
+
+vim.cmd([[colorscheme neosolarized]])
