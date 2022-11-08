@@ -56,7 +56,7 @@ vim.opt.tabstop = 4 -- set tab spacing as 4
 vim.opt.softtabstop = 4 -- set tab spacing
 vim.opt.expandtab = true -- expaands tabs to spaces
 vim.opt.autoindent = true -- auto indent
-vim.opt.smartindent = true -- smart indent
+-- vim.opt.smartindent = true -- smart indent
 
 -- Wrapping text
 vim.opt.wrap = false -- wrap lines
