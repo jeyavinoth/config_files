@@ -15,7 +15,9 @@ return packer.startup(
 
         -- use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
         -- use 'ellisonleao/gruvbox.nvim'
-        use { "catppuccin/nvim", as = "catppuccin"}
+        -- use { "catppuccin/nvim", as = "catppuccin"}
+        use "EdenEast/nightfox.nvim" -- Packer
+
 
         -- use {
         --     "catppuccin/nvim",
