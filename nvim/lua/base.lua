@@ -15,7 +15,7 @@ vim.opt.title = true
 vim.opt.autoindent = true
 
 -- Scrolling
--- vim.opt.scrolloff = 10 -- set the number of lines kept when scrolling (ex. C-d, C-u)
+vim.opt.scrolloff = 10 -- set the number of lines kept when scrolling (ex. C-d, C-u)
 
 -- Base configs
 vim.cmd('set mouse=a') -- set the usage of mouse, when needed
