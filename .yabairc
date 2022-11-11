@@ -45,14 +45,14 @@ yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^XQuartz$" manage=off
 
 # move apps to specific spaces
-yabai -m rule --add app="^Alacritty$" space=^1
-yabai -m rule --add app="^Google Chrome$" space=^2
-yabai -m rule --add app="^Brave$" space=^4
-yabai -m rule --add app="^FileZilla$" space=^5
-yabai -m rule --add app="^Safari$" space=^6
-yabai -m rule --add app="^Scapple$" space=^7
-yabai -m rule --add app="^Notion$" space=^8
-yabai -m rule --add app="^Slack$" space=^9
+yabai -m rule --add app="^Alacritty$" space=^1  # main terminal space
+yabai -m rule --add app="^Google Chrome$" space=^2  # main browsing space
+yabai -m rule --add app="^Brave$" space=^3  # personal browsing space
+yabai -m rule --add app="^FileZilla$" space=^5  # file transfer / browser
+# yabai -m rule --add app="^Safari$" space=^6  # other browsing
+yabai -m rule --add app="^Scapple$" space=^7  # thought process / mapping
+yabai -m rule --add app="^Notion$" space=^8  # note taking
+yabai -m rule --add app="^Slack$" space=^9  # meeting / communication
 
 killall limelight &> /dev/null
 limelight &> /dev/null &
