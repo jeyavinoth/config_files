@@ -13,8 +13,8 @@ return packer.startup(
         -- Colorschemes
         use 'tjdevries/colorbuddy.nvim'
 
-        -- use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
-        -- use 'ellisonleao/gruvbox.nvim'
+        use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
+        use 'ellisonleao/gruvbox.nvim'
         -- use { "catppuccin/nvim", as = "catppuccin"}
         use "EdenEast/nightfox.nvim" -- Packer
 
