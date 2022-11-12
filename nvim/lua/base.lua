@@ -59,7 +59,7 @@ vim.opt.autoindent = true -- auto indent
 -- vim.opt.smartindent = true -- smart indent
 
 -- Wrapping text
-vim.opt.wrap = false -- wrap lines
+vim.opt.wrap = true -- wrap lines
 vim.opt.breakindent = true -- wrapped lines will have same visual indents
 
 -- Bells

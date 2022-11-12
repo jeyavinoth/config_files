@@ -12,3 +12,7 @@ keymap.set("n", "<Leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', { nor
 keymap.set("n", "<Leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true })
 keymap.set("n", "<Leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true })
 keymap.set("n", "<Leader>5", ':lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true })
+keymap.set("n", "<Leader>6", ':lua require("harpoon.ui").nav_file(6)<CR>', { noremap = true })
+keymap.set("n", "<Leader>7", ':lua require("harpoon.ui").nav_file(7)<CR>', { noremap = true })
+keymap.set("n", "<Leader>8", ':lua require("harpoon.ui").nav_file(8)<CR>', { noremap = true })
+keymap.set("n", "<Leader>9", ':lua require("harpoon.ui").nav_file(9)<CR>', { noremap = true })
