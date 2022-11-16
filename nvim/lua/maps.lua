@@ -20,6 +20,7 @@ keymap.set('n', 'sw', '<C-w>w') -- Next window
 keymap.set('n', 'sq', '<C-w>q') -- Quit window
 keymap.set('n', 'so', '<C-w>o') -- Close everything else other than the current window
 keymap.set('n', 'sd', ':bd<cr>') -- buffer delete
+keymap.set('n', 'sz', ':ZenMode<cr>', { silent = true }) -- ZenMode
 
 -- Tabs
 keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer

@@ -105,6 +105,5 @@ return packer.startup(
         -- ZenMode
         use "folke/zen-mode.nvim"
 
-
     end
 )
