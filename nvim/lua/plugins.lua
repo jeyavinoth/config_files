@@ -102,6 +102,9 @@ return packer.startup(
             run = function() vim.fn["mkdp#util#install"]() end,
         })
 
+        -- ZenMode
+        use "folke/zen-mode.nvim"
+
 
     end
 )
