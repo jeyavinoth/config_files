@@ -24,6 +24,11 @@ alias ta="tmux a -t"
 alias tn="tmux new -s"
 alias tls="tmux ls"
 
+# Developer
+# Build Tags
+alias build_ctags="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags"
+
+
 # Bind key 
 bindkey -v
 
