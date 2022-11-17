@@ -124,4 +124,4 @@ end
 
 -- Folding for markdown
 vim.cmd("let g:markdown_folding = 1")
-
+vim.cmd("set foldlevel=20")
