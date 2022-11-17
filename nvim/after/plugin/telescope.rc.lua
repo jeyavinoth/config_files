@@ -45,7 +45,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>ff",
-    '<cmd>lua require("telescope.builtin").find_files({ no_ignore = false , hidden = true})<cr>', opts)
+    '<cmd>lua require("telescope.builtin").find_files({ no_ignore = true , hidden = true})<cr>', opts)
 keymap.set("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
 keymap.set("n", "<leader>f\\", '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 keymap.set("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', opts)
