@@ -36,4 +36,4 @@ Group.new('DiagnosticUnderlineHint', colors.none, colors.none, styles.undercurl,
 -- vim.cmd([[highlight DiffChange ctermfg=10 ctermbg=17 cterm=bold gui=none guifg=bg guibg=LightGreen]])
 -- vim.cmd([[highlight DiffText   ctermfg=10 ctermbg=88 cterm=bold gui=none guifg=bg guibg=Orange]])
 
-vim.cmd([[colorscheme neosolarized]])
+vim.cmd([[ colorscheme neosolarized ]])
