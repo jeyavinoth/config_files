@@ -121,3 +121,7 @@ if is_mac then
 else
     vim.cmd("let g:livepreview_previewer = 'evince'")
 end
+
+-- Folding for markdown
+vim.cmd("let g:markdown_folding = 1")
+
