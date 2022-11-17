@@ -111,7 +111,7 @@ vim.cmd([[let g:slime_dont_ask_default = 1]])
 vim.cmd([[let g:tex_flavor = "latex"]])
 vim.cmd([[autocmd Filetype tex setl updatetime=1]])
 
--- setting preview based on operating system
+-- setting latex preview based on operating system
 local has = function(x)
     return vim.fn.has(x) == 1
 end
