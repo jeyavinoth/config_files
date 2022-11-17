@@ -86,5 +86,8 @@ keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 -- Tagbar
 vim.keymap.set("n", "<leader>t", ":Tagbar<CR>", { noremap = true })
 
+-- Float Terminal
+vim.keymap.set("n", "<leader>ft", ":FloatermToggle<CR>", { noremap = true })
+
 -- Set no read only for vimdiff
 vim.keymap.set("n", "<leader>E", "<cmd>set noreadonly<cr>", { noremap = true })

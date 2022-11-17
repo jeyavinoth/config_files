@@ -105,5 +105,8 @@ return packer.startup(
         -- ZenMode
         use "folke/zen-mode.nvim"
 
+        -- Floating Terminal
+        use 'voldikss/vim-floaterm'
+
     end
 )

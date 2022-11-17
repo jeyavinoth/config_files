@@ -7,3 +7,5 @@ vim.opt.pumblend = 5
 
 -- Background settings
 vim.opt.background = 'dark'
+
+vim.cmd([[ au ColorScheme * hi Normal ctermbg=none guibg=none ]])
