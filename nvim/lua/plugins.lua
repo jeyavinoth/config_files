@@ -17,6 +17,7 @@ return packer.startup(
         use { "catppuccin/nvim", as = "catppuccin"}
         use "EdenEast/nightfox.nvim" -- Packer
         use 'ellisonleao/gruvbox.nvim'
+        use 'ayu-theme/ayu-vim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 

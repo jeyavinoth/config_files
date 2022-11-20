@@ -9,4 +9,13 @@ vim.opt.pumblend = 5
 vim.opt.background = 'dark'
 
 vim.cmd([[ au ColorScheme * hi Normal ctermbg=none guibg=none ]])
-vim.cmd([[ colorscheme gruvbox ]])
+vim.cmd([[ colorscheme nightfox ]])
+
+-- Ayu-dark theme
+vim.cmd([[
+    set termguicolors     " enable true colors support
+    let ayucolor="dark"   " for dark version of theme
+    colorscheme ayu
+]])
+-- let ayucolor="light"  " for light version of theme
+-- let ayucolor="mirage" " for mirage version of theme
