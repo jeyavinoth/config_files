@@ -4,7 +4,7 @@ if (not status) then return end
 gruvbox.setup({
     undercurl = true,
     underline = true,
-    bold = true,
+    bold = false,
     italic = true,
     strikethrough = true,
     invert_selection = false,
