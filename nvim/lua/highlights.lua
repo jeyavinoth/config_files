@@ -10,8 +10,14 @@ vim.opt.background = 'dark'
 
 vim.cmd([[ au ColorScheme * hi Normal ctermbg=none guibg=none ]])
 
--- Colorschemes
-vim.cmd([[ colorscheme duskfox ]])
+-- -- Colorschemes
+-- vim.cmd([[ colorscheme duskfox ]])
+-- vim.cmd([[ colorscheme terafox ]])
+-- vim.cmd([[ colorscheme nightfox ]])
+-- vim.cmd([[ colorscheme carbonfox ]])
+-- vim.cmd([[ colorscheme nordfox ]])
+-- -- vim.cmd([[ colorscheme dawnfox ]])
+-- -- vim.cmd([[ colorscheme dayfox ]])
 
 -- -- Ayu-dark theme
 -- vim.cmd([[
@@ -22,5 +28,5 @@ vim.cmd([[ colorscheme duskfox ]])
 -- -- let ayucolor="light"  " for light version of theme
 -- -- let ayucolor="mirage" " for mirage version of theme
 
--- -- Colorschemes
--- vim.cmd([[ colorscheme gruvbox ]])
+-- Colorschemes
+vim.cmd([[ colorscheme gruvbox ]])
