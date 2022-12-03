@@ -35,7 +35,7 @@ nvim_lsp.pylsp.setup {
                     -- ignore = {},
                     maxLineLength = 120
                 },
-                mypy = { enabled = false },
+                mypy = { enabled = true },
                 yapf = { enabled = false },
                 pylint = { enabled = false },
                 mccabe = { enabled = false },
@@ -48,10 +48,10 @@ nvim_lsp.pylsp.setup {
     }
 }
 
--- Pyright Setup
-nvim_lsp.pyright.setup {
-    -- on_attach = on_attach
-}
+-- -- Pyright Setup
+-- nvim_lsp.pyright.setup {
+--     -- on_attach = on_attach
+-- }
 
 -- Lua formatting
 nvim_lsp.sumneko_lua.setup {
