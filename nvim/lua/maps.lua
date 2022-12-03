@@ -84,11 +84,15 @@ keymap.set("n", "<leader>vS", "<Plug>VimspectorStepOut", opts)
 keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 
 -- Tagbar
-vim.keymap.set("n", "<leader>T", ":Tagbar<CR>", { noremap = true })
+keymap.set("n", "<leader>T", ":Tagbar<CR>", { noremap = true })
 
 -- Float Terminal
-vim.keymap.set("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
-vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
+keymap.set("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
+keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 
 -- Set no read only for vimdiff
-vim.keymap.set("n", "<leader>E", "<cmd>set noreadonly<cr>", { noremap = true })
+keymap.set("n", "<leader>E", "<cmd>set noreadonly<cr>", { noremap = true })
+
+-- -- Center the view on ctrl-d
+-- keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+-- keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
