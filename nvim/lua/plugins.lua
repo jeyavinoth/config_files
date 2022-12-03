@@ -18,6 +18,10 @@ return packer.startup(
         use "EdenEast/nightfox.nvim" -- Packer
         use 'ellisonleao/gruvbox.nvim'
         use 'ayu-theme/ayu-vim'
+        use 'tomasr/molokai'
+        use 'jnurmine/Zenburn'
+        use 'arcticicestudio/nord-vim'
+        use 'gosukiwi/vim-atom-dark'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
