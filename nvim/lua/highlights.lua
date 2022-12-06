@@ -36,5 +36,6 @@ vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 -- vim.cmd([[ let g:rehash256 = 1 ]])
 
 -- vim.cmd([[ colorscheme gruvbox ]])
-vim.cmd([[ colorscheme nordfox ]])
+-- vim.cmd([[ colorscheme nordfox ]])
 -- vim.cmd([[ colorscheme dracula ]])
+vim.cmd([[ colorscheme ayu-dark ]])
