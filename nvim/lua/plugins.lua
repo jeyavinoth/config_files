@@ -20,8 +20,9 @@ return packer.startup(
         use 'ayu-theme/ayu-vim'
         use 'tomasr/molokai'
         use 'jnurmine/Zenburn'
-        use 'arcticicestudio/nord-vim'
         use 'gosukiwi/vim-atom-dark'
+        use 'shaunsingh/nord.nvim'
+        use 'Mofiqul/dracula.nvim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
