@@ -42,7 +42,7 @@ vim.undodir = "/tmp//"
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true -- highlights as I search
 
 -- Completion settings
