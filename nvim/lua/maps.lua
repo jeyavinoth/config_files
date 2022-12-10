@@ -91,8 +91,11 @@ keymap.set("n", "<leader>t", ":FloatermToggle<CR>", { noremap = true })
 keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 
 -- Set no read only for vimdiff
-keymap.set("n", "<leader>E", "<cmd>set noreadonly<cr>", { noremap = true })
+keymap.set("n", "<leader>E", "<cmd>set noreadonly<CR>", { noremap = true })
 
 -- -- Center the view on ctrl-d
 -- keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 -- keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+
+-- Nvim-tree 
+keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
