@@ -14,7 +14,9 @@ ts.setup {
         'python',
         'lua',
         'json',
-        'css'
+        'css',
+        'c',
+        'help'
     },
     autotag = {
         enable = true
