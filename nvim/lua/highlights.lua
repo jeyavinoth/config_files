@@ -9,6 +9,7 @@ vim.opt.pumblend = 5
 vim.opt.background = 'dark'
 
 vim.cmd([[ au ColorScheme * hi Normal ctermbg=none guibg=none ]])
+vim.cmd([[ au ColorScheme * hi NormalFloat ctermbg=none guibg=none ]])
 vim.cmd([[ au ColorScheme * hi SignColumn ctermbg=none guibg=none ]])
 vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 
