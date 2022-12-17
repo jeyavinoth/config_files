@@ -61,9 +61,9 @@ keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 -- UndoTree
 keymap.set('n', '<leader>u', ':UndotreeToggle<CR>')
 
--- Moving lines
-keymap.set('n', '-', ':move-2<cr>', { silent = true })
-keymap.set('n', '=', ':move+<cr>', { silent = true })
+-- -- Moving lines
+-- keymap.set('n', '-', ':move-2<cr>', { silent = true })
+-- keymap.set('n', '=', ':move+<cr>', { silent = true })
 
 -- Vimspector mappings
 local opts = { noremap = true }
