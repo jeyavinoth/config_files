@@ -34,15 +34,17 @@ vim.opt.path:append { '**' } -- Finding files - search down into subfolders
 -- ctags settings
 vim.opt.tags:append { './tags' } -- Look for ctags
 
--- Undo settings
-vim.bo.undofile = true -- set an undofile; nice to have a undo even after closing files
-vim.undodir = "/tmp//"
+-- Undo settings, File settings
+vim.opt.swapfile = false -- get rid of swap files 
+vim.opt.backup = false -- get rid of swap files 
+vim.opt.undofile = true -- set an undofile; nice to have a undo even after closing files
+vim.opt.undodir = "/tmp//"
 
 -- Search
 vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true -- highlights as I search
 
 -- Completion settings
