@@ -34,6 +34,7 @@ return packer.startup(
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
+        -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
         use 'neovim/nvim-lspconfig' -- LSP
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
         use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
