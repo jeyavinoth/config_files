@@ -5,7 +5,10 @@ ts.setup {
     highlight = {
         enable = true,
         disable = {},
+        additional_vim_regex_highlighting = false
     },
+    sync_install = false,
+    auto_install = true,
     indent = {
         enable = true,
         disable = {},
