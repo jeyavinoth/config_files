@@ -31,6 +31,7 @@ return packer.startup(
                 vim.cmd('colorscheme rose-pine')
             end
         })
+        use 'cocopon/iceberg.vim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
