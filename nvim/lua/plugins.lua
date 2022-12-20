@@ -24,13 +24,7 @@ return packer.startup(
         use 'Mofiqul/dracula.nvim'
         -- use 'ayu-theme/ayu-vim' -- Use the one below instead
         use 'Shatur/neovim-ayu'
-        use({
-            'rose-pine/neovim',
-            as = 'rose-pine',
-            config = function()
-                vim.cmd('colorscheme rose-pine')
-            end
-        })
+        use 'rose-pine/neovim'
         use 'cocopon/iceberg.vim'
 
         use 'hoob3rt/lualine.nvim' -- statusline
