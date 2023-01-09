@@ -6,25 +6,29 @@ vim.g.mapleader = " " -- remap leader to space
 -- keymap.set('n', '+', '<C-a>')
 -- keymap.set('n', '-', '<C-x>')
 
--- Window binds
-keymap.set('n', '<leader>w', '<C-w>') -- Remap window operations to <leader>w
+-- Window binds (Don't need some of the keymaps when using DVORAK)
+-- keymap.set('n', '<leader>w', '<C-w>') -- Remap window operations to <leader>w
 
-keymap.set('n', 'sh', '<C-w>h') -- Window movements
-keymap.set('n', 'sj', '<C-w>j') -- Window movements
-keymap.set('n', 'sk', '<C-w>k') -- Window movements
-keymap.set('n', 'sl', '<C-w>l') -- Window movements
-keymap.set('n', 'ss', '<C-w>s<C-w>w') -- Horizontal split
-keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
-keymap.set('n', 'sc', '<C-w>c') -- Window close
-keymap.set('n', 'sw', '<C-w>w') -- Next window
-keymap.set('n', 'sq', '<C-w>q') -- Quit window
-keymap.set('n', 'so', '<C-w>o') -- Close everything else other than the current window
-keymap.set('n', 'sd', ':bd<cr>') -- buffer delete
-keymap.set('n', 'sz', ':ZenMode<cr>', { silent = true }) -- ZenMode
+-- keymap.set('n', 'sh', '<C-w>h') -- Window movements
+-- keymap.set('n', 'sj', '<C-w>j') -- Window movements
+-- keymap.set('n', 'sk', '<C-w>k') -- Window movements
+-- keymap.set('n', 'sl', '<C-w>l') -- Window movements
+-- keymap.set('n', 'ss', '<C-w>s<C-w>w') -- Horizontal split
+-- keymap.set('n', 'sv', '<C-w>v<C-w>w') -- Vertical split
+-- keymap.set('n', 'sc', '<C-w>c') -- Window close
+-- keymap.set('n', 'sw', '<C-w>w') -- Next window
+-- keymap.set('n', 'sq', '<C-w>q') -- Quit window
+-- keymap.set('n', 'so', '<C-w>o') -- Close everything else other than the current window
+-- keymap.set('n', 'sd', ':bd<cr>') -- buffer delete
+keymap.set('n', '<C-w>z', ':ZenMode<cr>', { silent = true }) -- ZenMode
+keymap.set('n', '<C-w>s', '<C-w>s<C-w>w') -- Horizontal split
+keymap.set('n', '<C-w>v', '<C-w>v<C-w>w') -- Vertical split
 
 -- Tabs
-keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
-keymap.set('n', 'st', ':tabnew<Return>', { silent = true }) -- tab new
+-- keymap.set('n', 'se', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
+-- keymap.set('n', 'st', ':tabnew<Return>', { silent = true }) -- tab new
+keymap.set('n', '<C-w>e', ':tabedit %<Return>', { silent = true }) -- tabedit current buffer
+keymap.set('n', '<C-w>t', ':tabnew<Return>', { silent = true }) -- tab new
 
 -- -- Buffer binds
 -- keymap.set('n', '<C-p>', ':bprev<cr>', { silent = true }) -- tabedit current buffer
