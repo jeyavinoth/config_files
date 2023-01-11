@@ -13,9 +13,9 @@ return packer.startup(
         -- Colorschemes
         use 'tjdevries/colorbuddy.nvim'
 
-        use {'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' }}
-        use { "catppuccin/nvim", as = "catppuccin"}
-        use "EdenEast/nightfox.nvim" -- Packer
+        use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
+        use { 'catppuccin/nvim', as = 'catppuccin' }
+        use 'EdenEast/nightfox.nvim' -- Packer
         use 'ellisonleao/gruvbox.nvim'
         use 'tomasr/molokai'
         use 'jnurmine/Zenburn'
@@ -70,8 +70,6 @@ return packer.startup(
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs
         -- use 'windwp/nvim-ts-autotag' -- typescript ?
-
-        -- use 'akinsho/nvim-bufferline.lua' -- TagBuffline
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
 

@@ -56,9 +56,6 @@ keymap.set('n', '<leader>db', ':diffget BASE<Return>')
 keymap.set('n', '<leader>dl', ':diffget LOCAL<Return>')
 keymap.set('n', '<leader>dg', ':diffget<Return>')
 
-keymap.set('n', '<leader>cg', ":lua require('themes').gruvbox()<Return>")
-keymap.set('n', '<leader>cn', ":lua require('themes').neosolarized()<Return>")
-
 -- Remove trailing whitespace
 keymap.set('n', '<leader>e', ':%s/\\s\\+$//e<CR>')
 
