@@ -16,10 +16,8 @@ vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 -- vim.cmd([[ colorscheme duskfox ]])
 -- vim.cmd([[ colorscheme terafox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
--- vim.cmd([[ colorscheme carbonfox ]])
+vim.cmd([[ colorscheme carbonfox ]])
 -- vim.cmd([[ colorscheme nordfox ]])
--- vim.cmd([[ colorscheme dawnfox ]])
--- vim.cmd([[ colorscheme dayfox ]])
 
 -- -- Ayu-dark theme
 -- vim.cmd([[
@@ -42,5 +40,7 @@ vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ colorscheme rose-pine ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
+-- vim.cmd([[ colorscheme nightfox ]])
+-- vim.cmd([[ colorscheme nightfox ]])
 
-require("neosolarized").setup({ comment_italics = true })
+-- require("neosolarized").setup({ comment_italics = true })

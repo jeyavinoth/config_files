@@ -1,6 +1,13 @@
 local status, nf = pcall(require, "nightfox")
 if not status then return end
 
+local specs = {
+    nightfox = {syntax = {bracket = "orange"}},
+    carbonfox = {syntax = {bracket = "red.bright"}},
+    terafox = {syntax = {bracket = "orange"}},
+    nordfox = {syntax = {bracket = "orange"}},
+}
+
 -- Default options
 nf.setup({
   options = {
@@ -32,7 +39,7 @@ nf.setup({
     },
   },
   palettes = {},
-  specs = {},
+  specs = specs,
   groups = {},
 })
 
