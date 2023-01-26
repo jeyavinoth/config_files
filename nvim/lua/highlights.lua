@@ -16,7 +16,7 @@ vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 -- vim.cmd([[ colorscheme duskfox ]])
 -- vim.cmd([[ colorscheme terafox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
-vim.cmd([[ colorscheme carbonfox ]])
+-- vim.cmd([[ colorscheme carbonfox ]])
 -- vim.cmd([[ colorscheme nordfox ]])
 
 -- -- Ayu-dark theme
@@ -36,7 +36,7 @@ vim.cmd([[ colorscheme carbonfox ]])
 
 -- vim.cmd([[ colorscheme nordfox ]])
 -- vim.cmd([[ colorscheme dracula ]])
--- vim.cmd([[ colorscheme ayu-dark ]])
+vim.cmd([[ colorscheme ayu-dark ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ colorscheme rose-pine ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
