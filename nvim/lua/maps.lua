@@ -85,7 +85,8 @@ keymap.set("n", "<leader>vS", "<Plug>VimspectorStepOut", opts)
 keymap.set("n", "<leader>vs", "<Plug>VimspectorStepInto", opts)
 
 -- Vimslime binds 
-keymap.set("n", "<C-c><C-s>", ":SlimeSend<CR>", opts)
+-- keymap.set("n", "<C-c><C-s>", ":SlimeSend<CR>", opts)
+keymap.set("n", "<C-c><C-j>", ":SlimeSend<CR>", opts)
 
 -- Tagbar
 keymap.set("n", "<leader>T", ":Tagbar<CR>", { noremap = true })

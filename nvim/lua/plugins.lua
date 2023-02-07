@@ -37,7 +37,7 @@ return packer.startup(
         use 'hrsh7th/nvim-cmp' -- Completion
         use 'L3MON4D3/LuaSnip' -- Snippet
 
-        use ({ 
+        use ({
             'glepnir/lspsaga.nvim',
             branch = "main",
             config = function()
