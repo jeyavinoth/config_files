@@ -37,7 +37,14 @@ return packer.startup(
         use 'hrsh7th/nvim-cmp' -- Completion
         use 'L3MON4D3/LuaSnip' -- Snippet
 
-        use 'glepnir/lspsaga.nvim' -- LSP saga
+        use ({ 
+            'glepnir/lspsaga.nvim',
+            branch = "main",
+            config = function()
+                require("lspsaga").setup({})
+            end,
+            requires = { {"nvim-tree/nvim-web-devicons"} }
+        })
         use 'ray-x/lsp_signature.nvim' -- LSP signature
 
         use {
