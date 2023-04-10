@@ -2,9 +2,8 @@ local status, saga = pcall(require, 'lspsaga')
 if (not status) then return end
 
 -- This line seems to hog CPU when using lspsaga
--- saga.init_lsp_saga {
---     server_filetype_map = {}
--- }
+saga.setup({})
+
 
 local opts = { noremap = true, silent = true }
 

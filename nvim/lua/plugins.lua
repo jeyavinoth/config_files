@@ -30,22 +30,17 @@ return packer.startup(
         use 'hoob3rt/lualine.nvim' -- statusline
 
         -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
-        use 'neovim/nvim-lspconfig' -- LSP
+        use {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "neovim/nvim-lspconfig",
+        }
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
-        use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+        use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
         use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim
-        use 'hrsh7th/nvim-cmp' -- Completion
-        use 'L3MON4D3/LuaSnip' -- Snippet
+        use 'hrsh7th/nvim-cmp'     -- Completion
+        use 'L3MON4D3/LuaSnip'     -- Snippet
 
-        use ({
-            'glepnir/lspsaga.nvim',
-            branch = "main",
-            config = function()
-                require("lspsaga").setup({})
-            end,
-            requires = { {"nvim-tree/nvim-web-devicons"} }
-        })
-        use 'ray-x/lsp_signature.nvim' -- LSP signature
 
         use {
             'nvim-treesitter/nvim-treesitter', -- Tresitter
@@ -53,25 +48,49 @@ return packer.startup(
         }
         use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
+        -- use ({
+        --     'glepnir/lspsaga.nvim',
+        --     branch = "main",
+        --     config = function()
+        --         require("lspsaga").setup({})
+        --     end,
+        --     requires = { {"nvim-tree/nvim-web-devicons"} }
+        -- })
+        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
+
+        -- use ({
+        --     'glepnir/lspsaga.nvim',
+        --     branch = "main",
+        --     requires = { {"nvim-tree/nvim-web-devicons"} }
+        -- })
+
+        use({
+            'ray-x/navigator.lua',
+            requires = {
+                { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+            },
+        })
+        use 'ray-x/lsp_signature.nvim' -- LSP signature
+
         -- Fast editing
-        use 'tpope/vim-surround' -- sorround words, etc ysw)
-        use 'tpope/vim-repeat' -- updated . repeat
+        use 'tpope/vim-surround'  -- sorround words, etc ysw)
+        use 'tpope/vim-repeat'    -- updated . repeat
         use 'tomtom/tcomment_vim' -- gcc comment
 
         -- Git
         -- use 'airblade/vim-gitgutter' -- shows the +/- for git changes
-        use 'tpope/vim-fugitive' -- git integration
-        use 'dinhhuy258/git.nvim' -- git integration built on top of vim-fugitive
+        use 'tpope/vim-fugitive'      -- git integration
+        use 'dinhhuy258/git.nvim'     -- git integration built on top of vim-fugitive
         use 'lewis6991/gitsigns.nvim' -- git integration built on top of vim-fugitive
 
         -- File navigation
-        use 'nvim-lua/plenary.nvim' -- common utilities
+        use 'nvim-lua/plenary.nvim'          -- common utilities
         use {
             'nvim-telescope/telescope.nvim', -- Telescope (fuzzy file finder)
             branch = '0.1.x',
         }
         use 'nvim-telescope/telescope-file-browser.nvim'
-        use 'ThePrimeagen/harpoon' -- harpoon to fast switching files
+        use 'ThePrimeagen/harpoon'         -- harpoon to fast switching files
         use 'kyazdani42/nvim-web-devicons' -- file icons
 
         -- Auto pairs
@@ -80,7 +99,7 @@ return packer.startup(
 
         use 'norcalli/nvim-colorizer.lua' -- colorizer to show hex colors
 
-        use 'preservim/tagbar' -- tagbar on right to get tags in file
+        use 'preservim/tagbar'            -- tagbar on right to get tags in file
 
         use {
             'puremourning/vimspector', -- vim debugger
@@ -92,9 +111,9 @@ return packer.startup(
         use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
         -- trying out plugins
-        use 'jpalardy/vim-slime' -- send text to tmux pane (make sure I am using this plugin regularly)
+        use 'jpalardy/vim-slime'            -- send text to tmux pane (make sure I am using this plugin regularly)
 
-        use 'mbbill/undotree' -- undotree (figure the full use of the plugin)
+        use 'mbbill/undotree'               -- undotree (figure the full use of the plugin)
 
         use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
 
@@ -111,13 +130,12 @@ return packer.startup(
         use 'voldikss/vim-floaterm'
 
         -- Trying out something like NerdTree for neovim
-        use ({
+        use({
             'nvim-tree/nvim-tree.lua',
             requires = {
-                    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-                },
-            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+                'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            },
+            tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
         })
-
     end
 )
