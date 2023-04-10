@@ -54,7 +54,7 @@ nvim_lsp.pylsp.setup {
 -- }
 
 -- Lua formatting
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     -- on_attach = on_attach,
     settings = {
         Lua = {

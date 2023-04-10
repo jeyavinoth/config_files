@@ -19,7 +19,6 @@ ts.setup {
         'json',
         'css',
         'c',
-        'help'
     },
     autotag = {
         enable = true
