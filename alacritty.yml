@@ -15,7 +15,7 @@ window:
   padding:
     x: 15 
     y: 15
-  opacity: 0.84
+  opacity: 0.90
   class:
     instance: Alacritty
     general: Alacritty
@@ -27,17 +27,17 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code 
-    style: Medium
+    family: VictorMono Nerd Font
+    style: Regular
   bold:
-    family: Fira Code
+    family: VictorMono Nerd Font
     style: Bold
   italic:
-    family: Fira Code
-    style: MediumItalic
+    family: VictorMono Nerd Font
+    style: Italic
   bold_italic:
-    family: Fira Code
-    style: BoldItalic
+    family: VictorMono Nerd Font
+    style: Bold Italic
   size: 11
 
 # draw_bold_text_with_bright_colors: true

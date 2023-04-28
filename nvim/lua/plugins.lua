@@ -29,6 +29,8 @@ return packer.startup(
 
         use 'hoob3rt/lualine.nvim' -- statusline
 
+        use 'kyazdani42/nvim-web-devicons' -- file icons
+
         -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
         use {
             "williamboman/mason.nvim",
@@ -91,7 +93,6 @@ return packer.startup(
         }
         use 'nvim-telescope/telescope-file-browser.nvim'
         use 'ThePrimeagen/harpoon'         -- harpoon to fast switching files
-        use 'kyazdani42/nvim-web-devicons' -- file icons
 
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs
