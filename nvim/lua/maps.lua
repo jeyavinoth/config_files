@@ -41,10 +41,10 @@ keymap.set('n', '<C-w><down>', '<C-w>+')
 keymap.set('n', '<C-w><up>', '<C-w>-')
 
 -- Clipboard yanks & paste
-keymap.set('', '<leader>y', '"*y')
-keymap.set('', '<leader>p', '"*p')
-keymap.set('', '<leader>Y', '"*Y')
-keymap.set('', '<leader>P', '"*P')
+keymap.set('', '<leader>y', '"+y')
+keymap.set('', '<leader>p', '"+p')
+keymap.set('', '<leader>Y', '"+Y')
+keymap.set('', '<leader>P', '"+P')
 
 keymap.set('', '<leader>r', '"_') -- empty register
 

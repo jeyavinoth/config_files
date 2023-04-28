@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find /mnt/home/jj/johnny ~/Documents/wt/code ~/Documents/phd ~/Documents/Research/phd ~/Documents/wt/workshop ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find /home/jj/ ~/wt/code ~/wt/workshop ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
