@@ -4,6 +4,10 @@
 *~
 *.DS_Store
 
+# Environment variables
+.venv
+.main
+
 ~=*=
 view/*
 bundle/*

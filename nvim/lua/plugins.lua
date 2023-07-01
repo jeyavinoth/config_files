@@ -27,7 +27,7 @@ return packer.startup(
         use 'rose-pine/neovim'
         use 'cocopon/iceberg.vim'
 
-        use 'hoob3rt/lualine.nvim' -- statusline
+        use 'hoob3rt/lualine.nvim'         -- statusline
 
         use 'kyazdani42/nvim-web-devicons' -- file icons
 
@@ -50,13 +50,13 @@ return packer.startup(
         }
         use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
-        use ({
+        use({
             'glepnir/lspsaga.nvim',
             branch = "main",
             config = function()
                 require("lspsaga").setup({})
             end,
-            requires = { {"nvim-tree/nvim-web-devicons"} }
+            requires = { { "nvim-tree/nvim-web-devicons" } }
         })
         use 'ray-x/lsp_signature.nvim' -- LSP signature
 
@@ -92,7 +92,7 @@ return packer.startup(
             branch = '0.1.x',
         }
         use 'nvim-telescope/telescope-file-browser.nvim'
-        use 'ThePrimeagen/harpoon'         -- harpoon to fast switching files
+        use 'ThePrimeagen/harpoon' -- harpoon to fast switching files
 
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs

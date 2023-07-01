@@ -25,6 +25,21 @@ scrolling:
   history: 10000
   multiplier: 3
 
+# font:
+#   normal:
+#     family: JetBrainsMono Nerd Font
+#     style: Medium
+#   bold:
+#     family: JetBrainsMono Nerd Font
+#     style: Bold
+#   italic:
+#     family: JetBrainsMono Nerd Font
+#     style: Oblique # Italic
+#   bold_italic:
+#     family: JetBrainsMono Nerd Font
+#     style: Bold Italic
+#   size: 14
+
 font:
   normal:
     family: VictorMono Nerd Font
@@ -34,7 +49,7 @@ font:
     style: Bold
   italic:
     family: VictorMono Nerd Font
-    style: Oblique # Italic
+    style: Italic # Oblique # Italic
   bold_italic:
     family: VictorMono Nerd Font
     style: Bold Italic
