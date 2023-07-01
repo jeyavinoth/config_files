@@ -27,7 +27,9 @@ return packer.startup(
         use 'rose-pine/neovim'
         use 'cocopon/iceberg.vim'
 
-        use 'hoob3rt/lualine.nvim' -- statusline
+        use 'hoob3rt/lualine.nvim'         -- statusline
+
+        use 'kyazdani42/nvim-web-devicons' -- file icons
 
         -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
         use {
@@ -48,29 +50,29 @@ return packer.startup(
         }
         use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
-        -- use ({
-        --     'glepnir/lspsaga.nvim',
-        --     branch = "main",
-        --     config = function()
-        --         require("lspsaga").setup({})
-        --     end,
-        --     requires = { {"nvim-tree/nvim-web-devicons"} }
-        -- })
-        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
-
-        -- use ({
-        --     'glepnir/lspsaga.nvim',
-        --     branch = "main",
-        --     requires = { {"nvim-tree/nvim-web-devicons"} }
-        -- })
-
         use({
-            'ray-x/navigator.lua',
-            requires = {
-                { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-            },
+            'glepnir/lspsaga.nvim',
+            branch = "main",
+            config = function()
+                require("lspsaga").setup({})
+            end,
+            requires = { { "nvim-tree/nvim-web-devicons" } }
         })
         use 'ray-x/lsp_signature.nvim' -- LSP signature
+
+        -- use ({
+        --     'glepnir/lspsaga.nvim',
+        --     branch = "main",
+        --     requires = { {"nvim-tree/nvim-web-devicons"} }
+        -- })
+
+        -- use({
+        --     'ray-x/navigator.lua',
+        --     requires = {
+        --         { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+        --     },
+        -- })
+        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
 
         -- Fast editing
         use 'tpope/vim-surround'  -- sorround words, etc ysw)
@@ -90,8 +92,7 @@ return packer.startup(
             branch = '0.1.x',
         }
         use 'nvim-telescope/telescope-file-browser.nvim'
-        use 'ThePrimeagen/harpoon'         -- harpoon to fast switching files
-        use 'kyazdani42/nvim-web-devicons' -- file icons
+        use 'ThePrimeagen/harpoon' -- harpoon to fast switching files
 
         -- Auto pairs
         use 'windwp/nvim-autopairs' -- autopairs
