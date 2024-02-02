@@ -50,30 +50,6 @@ return packer.startup(
         }
         use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
-        use({
-            'glepnir/lspsaga.nvim',
-            branch = "main",
-            config = function()
-                require("lspsaga").setup({})
-            end,
-            requires = { { "nvim-tree/nvim-web-devicons" } }
-        })
-        use 'ray-x/lsp_signature.nvim' -- LSP signature
-
-        -- use ({
-        --     'glepnir/lspsaga.nvim',
-        --     branch = "main",
-        --     requires = { {"nvim-tree/nvim-web-devicons"} }
-        -- })
-
-        -- use({
-        --     'ray-x/navigator.lua',
-        --     requires = {
-        --         { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-        --     },
-        -- })
-        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
-
         -- Fast editing
         use 'tpope/vim-surround'  -- sorround words, etc ysw)
         use 'tpope/vim-repeat'    -- updated . repeat
@@ -138,5 +114,58 @@ return packer.startup(
             },
             tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
         })
+
+        -- use ({
+        --     'nvimdev/lspsaga.nvim',
+        --     after = 'nvim-lspconfig',
+        --     config = function()
+        --         require('lspsaga').setup({})
+        --     end,
+        -- })
+
+        use({
+            'glepnir/lspsaga.nvim',
+            branch = "main",
+            config = function()
+                require("lspsaga").setup({})
+            end,
+            requires = { { "nvim-tree/nvim-web-devicons" } }
+        })
+        use 'ray-x/lsp_signature.nvim' -- LSP signature
+
+        use ({
+            'glepnir/lspsaga.nvim',
+            branch = "main",
+            requires = { {"nvim-tree/nvim-web-devicons"} }
+        })
+        use({
+            'ray-x/navigator.lua',
+            requires = {
+                { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+            },
+        })
+        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
+
+        -- -- Copilot
+        -- use 'github/copilot.vim'
+        --
+        --
+
+        use {
+            'VonHeikemen/lsp-zero.nvim',
+            branch = 'v3.x',
+            requires = {
+                --- Uncomment these if you want to manage LSP servers from neovim
+                -- {'williamboman/mason.nvim'},
+                -- {'williamboman/mason-lspconfig.nvim'},
+                -- LSP Support
+                {'neovim/nvim-lspconfig'},
+                -- Autocompletion
+                {'hrsh7th/nvim-cmp'},
+                {'hrsh7th/cmp-nvim-lsp'},
+                {'L3MON4D3/LuaSnip'},
+            }
+        }
+
     end
 )

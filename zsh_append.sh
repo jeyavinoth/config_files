@@ -6,7 +6,7 @@ alias la="ls -lha"
 
 # Other general
 alias rsync="rsync --progress"
-alias vim="nvim"
+# alias vim="nvim"
 alias v="nvim"
 alias view="nvim -R"
 alias rm="rm -i"
