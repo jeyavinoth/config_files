@@ -38,9 +38,11 @@ vim.cmd([[ au ColorScheme * hi LineNr ctermbg=none guibg=none ]])
 -- vim.cmd([[ colorscheme dracula ]])
 -- vim.cmd([[ colorscheme ayu-dark ]])
 vim.cmd([[ colorscheme gruvbox ]])
+-- vim.cmd([[ colorscheme gruvbox-material ]])
 -- vim.cmd([[ colorscheme rose-pine ]])
 -- vim.cmd([[ colorscheme gruvbox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
 -- vim.cmd([[ colorscheme nightfox ]])
 
 -- require("neosolarized").setup({ comment_italics = true })
+

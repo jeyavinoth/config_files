@@ -12,43 +12,21 @@ return packer.startup(
 
         -- Colorschemes
         use 'tjdevries/colorbuddy.nvim'
-
-        use { 'svrana/neosolarized.nvim', requires = { 'tjdevries/colorbuddy.nvim' } }
-        use { 'catppuccin/nvim', as = 'catppuccin' }
-        use 'EdenEast/nightfox.nvim' -- Packer
-        use 'ellisonleao/gruvbox.nvim'
-        use 'tomasr/molokai'
-        use 'jnurmine/Zenburn'
-        use 'gosukiwi/vim-atom-dark'
-        use 'shaunsingh/nord.nvim'
-        use 'Mofiqul/dracula.nvim'
-        -- use 'ayu-theme/ayu-vim' -- Use the one below instead
         use 'Shatur/neovim-ayu'
-        use 'rose-pine/neovim'
-        use 'cocopon/iceberg.vim'
+        use "folke/tokyonight.nvim"
+
+        use 'ellisonleao/gruvbox.nvim'
+        -- use 'sainnhe/gruvbox-material'
 
         use 'hoob3rt/lualine.nvim'         -- statusline
 
         use 'kyazdani42/nvim-web-devicons' -- file icons
 
-        -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
-        use {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
-        }
-        use 'onsails/lspkind-nvim' -- vscode-like pictograms
-        use 'hrsh7th/cmp-buffer'   -- nvim-cmp source for buffer words
-        use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim
-        use 'hrsh7th/nvim-cmp'     -- Completion
-        use 'L3MON4D3/LuaSnip'     -- Snippet
-
-
         use {
             'nvim-treesitter/nvim-treesitter', -- Tresitter
             run = ':TSUpdate'
         }
-        use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
+        -- use 'nvim-treesitter/nvim-treesitter-context' -- the sticky header thing at the top
 
         -- Fast editing
         use 'tpope/vim-surround'  -- sorround words, etc ysw)
@@ -78,21 +56,13 @@ return packer.startup(
 
         use 'preservim/tagbar'            -- tagbar on right to get tags in file
 
-        use {
-            'puremourning/vimspector', -- vim debugger
-            -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
-            -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
-            -- config = function() require("config.vimspector").setup() end,
-        }
-
-        use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
         -- trying out plugins
         use 'jpalardy/vim-slime'            -- send text to tmux pane (make sure I am using this plugin regularly)
 
         use 'mbbill/undotree'               -- undotree (figure the full use of the plugin)
 
-        use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
+        -- use 'xuhdev/vim-latex-live-preview' -- LLPStartPreview, opens up the preview for .tex file
 
         -- Markdown preview setup: install without yarn or npm
         use({
@@ -100,8 +70,8 @@ return packer.startup(
             run = function() vim.fn["mkdp#util#install"]() end,
         })
 
-        -- ZenMode
-        use "folke/zen-mode.nvim"
+        -- -- ZenMode
+        -- use "folke/zen-mode.nvim"
 
         -- Floating Terminal
         use 'voldikss/vim-floaterm'
@@ -115,6 +85,60 @@ return packer.startup(
             tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
         })
 
+        -- -- neovim lsp config
+        -- use({"neovim/nvim-lspconfig"})
+
+
+        -- another alternative is lsp-zero (https://github.com/VonHeikemen/lsp-zero.nvim)
+        use {
+            "neovim/nvim-lspconfig",
+        }
+
+        use {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        }
+
+        use {
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+        }
+
+        -- github copilot
+        use {
+            "github/copilot.vim", branch="release"
+        }
+
+        use {
+          "zbirenbaum/copilot-cmp",
+          config = function()
+              require("copilot_cmp").setup()
+          end,
+        }
+
+        -- use {
+        --     'VonHeikemen/lsp-zero.nvim',
+        --     branch = 'v3.x',
+        --     requires = {
+        --         --- Uncomment these if you want to manage LSP servers from neovim
+        --         {'williamboman/mason.nvim'},
+        --         {'williamboman/mason-lspconfig.nvim'},
+        --         -- LSP Support
+        --         {'neovim/nvim-lspconfig'},
+        --         -- Autocompletion
+        --         {'hrsh7th/nvim-cmp'},
+        --         {'hrsh7th/cmp-nvim-lsp'},
+        --         {'L3MON4D3/LuaSnip'},
+        --     }
+        -- }
+
+        -- use {'hrsh7th/nvim-cmp'}
+        -- use {'hrsh7th/cmp-nvim-lsp'}
+        -- use {'L3MON4D3/LuaSnip'}
+        -- use {'neovim/nvim-lspconfig'}
+
         -- use ({
         --     'nvimdev/lspsaga.nvim',
         --     after = 'nvim-lspconfig',
@@ -123,49 +147,20 @@ return packer.startup(
         --     end,
         -- })
 
-        use({
-            'glepnir/lspsaga.nvim',
-            branch = "main",
-            config = function()
-                require("lspsaga").setup({})
-            end,
-            requires = { { "nvim-tree/nvim-web-devicons" } }
-        })
-        use 'ray-x/lsp_signature.nvim' -- LSP signature
+        -- use {
+        --     'puremourning/vimspector', -- vim debugger
+        --     -- cmd = { "VimspectorInstall", "VimspectorUpdate" },
+        --     -- fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Contninue" },
+        --     -- config = function() require("config.vimspector").setup() end,
+        -- }
 
-        use ({
-            'glepnir/lspsaga.nvim',
-            branch = "main",
-            requires = { {"nvim-tree/nvim-web-devicons"} }
-        })
-        use({
-            'ray-x/navigator.lua',
-            requires = {
-                { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-            },
-        })
-        -- use 'ray-x/lsp_signature.nvim' -- LSP signature
+        -- use 'ThePrimeagen/vim-be-good' -- a game to improve in vim
 
-        -- -- Copilot
-        -- use 'github/copilot.vim'
-        --
-        --
+        -- use {"ray-x/lsp_signature.nvim"}
 
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = 'v3.x',
-            requires = {
-                --- Uncomment these if you want to manage LSP servers from neovim
-                -- {'williamboman/mason.nvim'},
-                -- {'williamboman/mason-lspconfig.nvim'},
-                -- LSP Support
-                {'neovim/nvim-lspconfig'},
-                -- Autocompletion
-                {'hrsh7th/nvim-cmp'},
-                {'hrsh7th/cmp-nvim-lsp'},
-                {'L3MON4D3/LuaSnip'},
-            }
-        }
+	-- Syntax for just files
+        -- use 'NoahTheDuke/vim-just'
+
 
     end
 )

@@ -104,3 +104,9 @@ keymap.set("n", "<leader>E", "<cmd>set noreadonly<CR>", { noremap = true })
 
 -- Nvim-tree 
 keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { noremap = true })
+
+-- Copilot remappings (using C-l because C-j/C-k interfere with cmp tab completions)
+vim.api.nvim_set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', { expr=true, noremap = true, silent = true })
+-- quickly enable/disable copilot
+vim.keymap.set("n", "<leader>cd", ":Copilot disable <CR>", {})
+vim.keymap.set("n", "<leader>ce", ":Copilot enable <CR>", {})
