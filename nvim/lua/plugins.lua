@@ -106,17 +106,17 @@ return packer.startup(
             "saadparwaiz1/cmp_luasnip",
         }
 
-        -- github copilot
-        use {
-            "github/copilot.vim", branch="release"
-        }
+        -- -- github copilot
+        -- use {
+        --     "github/copilot.vim", branch="release"
+        -- }
 
-        use {
-          "zbirenbaum/copilot-cmp",
-          config = function()
-              require("copilot_cmp").setup()
-          end,
-        }
+        -- use {
+        --   "zbirenbaum/copilot-cmp",
+        --   config = function()
+        --       require("copilot_cmp").setup()
+        --   end,
+        -- }
 
         -- use {
         --     'VonHeikemen/lsp-zero.nvim',
@@ -158,8 +158,11 @@ return packer.startup(
 
         -- use {"ray-x/lsp_signature.nvim"}
 
-	-- Syntax for just files
-        -- use 'NoahTheDuke/vim-just'
+        -- Syntax for just files
+        use 'NoahTheDuke/vim-just'
+
+        -- Telescope lsp-handlers (shows gr, etc in telescope)
+        use 'Slotos/telescope-lsp-handlers.nvim'
 
 
     end
